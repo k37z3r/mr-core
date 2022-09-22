@@ -12,13 +12,13 @@
 		"type": "git",
 		"url": "https://github.com/k37z3r/myroleplay"
 	},
-	    "dependencies": {
-        "mysql": ">=2",
-        "discord.js": ">=14",
-        "axios": ">=0.2",
-        "util": ">=0.1",
+	"dependencies": {
+        	"mysql": ">=2",
+        	"discord.js": ">=14",
+        	"axios": ">=0.2",
+        	"util": ">=0.1",
 		"fs": ">=0.0.1-security"
-    },
+    	},
 	"author": "Luz Iferato",
 	"keywords": ["framework","js","core","roleplay","altv","altv-resource","mr-core","myroleplay"],
 	"license": "CC-BY-NC-SA/4.0",
