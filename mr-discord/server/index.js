@@ -82,7 +82,7 @@ alt.on('playerDisconnect', (player) => {
 	//server.channels.cache.get(process.env.DISCORD_STATUS_CHANNEL).send(_L("leaved", [getDiscordNameById(player)]));
 	if (getOnlineUsersById(player.id) > -1)
 		CurrentOnlineUsers.splice(getOnlineUsersById(player.id), 1);
-	con.query("UPDATE users SET id = NULL WHERE id = " + con.escape(player.id), function(err, rows, fields){
+	con.query("UPDATE users SET id = '-1' WHERE id = " + con.escape(player.id), function(err, rows, fields){
 		if (err){
 			throw err.code;
 			process.exit(0);
