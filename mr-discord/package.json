@@ -1,7 +1,7 @@
 {
-	"name": "mr-discord",
-	"version": "1.0.0",
-	"description": "discord-bot incl. auth for mr-core",
+	"name": "myroleplay",
+	"version": "1.1.0",
+	"description": "mr-core is a framework for altv",
 	"main": "",
 	"scripts": {
 		"test": "tsc",
@@ -12,15 +12,16 @@
 		"type": "git",
 		"url": "https://github.com/k37z3r/myroleplay"
 	},
-	"dependencies": {
+		"dependencies": {
 		"mysql": ">=2",
 		"discord.js": ">=14",
 		"axios": ">=0.2",
 		"util": ">=0.1",
-		"fs": ">=0.0.1-security"
+		"fs": ">=0.0.1-security",
+		"dotenv": ">=16.0.0"
 	},
 	"author": "Luz Iferato",
-	"keywords": ["framework","js","core","roleplay","altv","altv-resource","mr-core","myroleplay","discord"],
+	"keywords": ["framework","js","core","roleplay","altv","altv-resource","mr-core","myroleplay"],
 	"license": "CC-BY-NC-SA/4.0",
 	"bugs": "https://github.com/k37z3r/myroleplay/issues",
 	"homepage": "https://github.com/k37z3r",
