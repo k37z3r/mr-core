@@ -1,93 +1,50 @@
 import * as alt from 'alt';
 import axios from 'axios';
-import fs from 'fs';
-import util from 'util';
 import Discord from 'discord.js';
-import dotenv from 'dotenv';
-import mysql from 'mysql';
 const { Client, GatewayIntentBits } = Discord;
 const discordClient = new Client({ intents: [ GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMembers, ] });
-import { _CONFIG } from '../config/config.js';
-import { _L } from '../language/language.js';
+import { DISCORD_APP_ID, DISCORD_SERVER_ID, DISCORD_TOKEN, DISCORD_CITIZEN_ID, DISCORD_ADMIN_ID, DISCORD_MOD_ID, DISCORD_SUPPORTER_ID, DISCORD_STATUS_CHANNEL, mysql_callback, _L, getConfig } from 'mr-functions';
 let WhitelistUpdate;
 var CurrentOnlineUsers = [];
 var WhiteList = [];
-//-----------------auszulagernde funktion
-function mysql_callback(sql, cb){
-	con.query(sql, (err, rows, fields) => {
-		if (err){
-			throw err;
-			process.exit(0);
-		}
-		return cb(rows[0].COUNTER);
-	});
-}
-//-------------------------
-dotenv.config();
-const neededValues = [
-    'MYSQL_HOST',
-    'MYSQL_USER',
-    'MYSQL_PASSWORD',
-    'MYSQL_DATABASE',
-	'DISCORD_APP_ID',
-	'DISCORD_SERVER_ID',
-	'DISCORD_TOKEN',
-	'DISCORD_CITIZEN_ID',
-	'DISCORD_ADMIN_ID',
-	'DISCORD_MOD_ID',
-	'DISCORD_SUPPORTER_ID',
-	'DISCORD_STATUS_CHANNEL'
-];
-neededValues.forEach((value) => {
-    if (!(value in process.env)) {
-        alt.log(`the needed key '${value}' is missing in .env file`);
-        process.exit(0);
-    }
-});
-var con = mysql.createConnection({
-	host: process.env.MYSQL_HOST,
-	user: process.env.MYSQL_USER,
-	password: process.env.MYSQL_PASSWORD,
-	database: process.env.MYSQL_DATABASE
-});
-
 discordClient.on('guildMemberUpdate', (oldMember, newMember) => {
 	refreshWhitelist();
 });
+
 discordClient.on("messageCreate", (message) => {
-	if (!message.content.startsWith(_CONFIG.DISCORD_PREFIX) || message.author.bot)
+	if (!message.content.startsWith(getConfig("DISCORD_PREFIX")) || message.author.bot)
 		return;
 
-	if (message.content.startsWith(`${_CONFIG.DISCORD_PREFIX}whitelist`)) {
+	if (message.content.startsWith(`${getConfig("DISCORD_PREFIX")}whitelist`)) {
 		let userlist='';
-		message.guild.roles.cache.get(process.env.DISCORD_CITIZEN_ID).members.forEach(m=>{
+		message.guild.roles.cache.get(DISCORD_CITIZEN_ID).members.forEach(m=>{
 			let sf_citizen = (element) => element == m.user.id;
 			let index = WhiteList.findIndex(sf_citizen);
 			userlist += '\n' + m.user.username;
 		});
 		message.channel.send(_L("discord_whitelist", [userlist]));
 	}
-	else if (message.content.startsWith(`${_CONFIG.DISCORD_PREFIX}altv`)) {
+	else if (message.content.startsWith(`${getConfig("DISCORD_PREFIX")}altv`)) {
 		message.channel.send(_L("discord_altv"));
 	}
-	else if (message.content.startsWith(`${_CONFIG.DISCORD_PREFIX}help`)) {
+	else if (message.content.startsWith(`${getConfig("DISCORD_PREFIX")}help`)) {
 		message.channel.send(_L("discord_help"));
 	}
 });
 alt.on('playerConnect', (player) => {
-	alt.emitClient(player, 'mr-core:discord:set_discord_app_id',  process.env.DISCORD_APP_ID);
+	alt.emitClient(player, 'mr-core:discord:set_discord_app_id',  DISCORD_APP_ID);
 });
 alt.on('playerDisconnect', (player) => {
-	let server = discordClient.guilds.cache.get(process.env.DISCORD_SERVER_ID);
-	//server.channels.cache.get(process.env.DISCORD_STATUS_CHANNEL).send(_L("leaved", [getDiscordNameById(player)]));
+	if (getConfig("ANNOUNCE_LOG_IN_OUT")){
+		let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
+		server.channels.cache.get(DISCORD_STATUS_CHANNEL).send(_L("leaved", [getDiscordNameById(player.id)]));
+	}
+	mysql_callback("UPDATE users SET id = ? WHERE dsid = ?", [-1, getDiscordById(player.id)], function(result){
+		if (result[0] > 0 && getConfig("LOG_MYSQL"))
+			alt.log(_L("log_user_leaved",[getDiscordNameById(player.id)]));
+	});
 	if (getOnlineUsersById(player.id) > -1)
 		CurrentOnlineUsers.splice(getOnlineUsersById(player.id), 1);
-	con.query("UPDATE users SET id = '-1' WHERE id = " + con.escape(player.id), function(err, rows, fields){
-		if (err){
-			throw err.code;
-			process.exit(0);
-		}
-	});
 });
 alt.onClient('mr-core:discord:token', async (player, token) => {
 	const request = await axios.get('https://discordapp.com/api/users/@me', {
@@ -103,51 +60,49 @@ alt.onClient('mr-core:discord:token', async (player, token) => {
         return;
     }
 	if (WhiteList.indexOf(request.data.id) === -1){
-        player.kick(_L("no_whitelisted", [_CONFIG.DISCORD_INVITE_LINK]));
+        player.kick(_L("no_whitelisted", [getConfig("DISCORD_INVITE_LINK")]));
         return;
 	}
-	mysql_callback('SELECT count(*) AS COUNTER FROM users WHERE dsid=' + con.escape(request.data.id), function(result){
-		if(result == 0){
-			con.query("INSERT INTO users (id, dsid, username) VALUES (" + con.escape(player.id) + ", " + con.escape(request.data.id) + ", " + con.escape(request.data.username) + ")", function(err, rows, fields){
-				if (err){
-					throw err.code;
-					process.exit(0);
-				}
+	mysql_callback('SELECT id FROM users WHERE dsid = ?', [request.data.id], function(result){
+		if (result[0] == 0){
+			mysql_callback("INSERT INTO users SET ?", {id: player.id, dsid: request.data.id, username: request.data.username}, function(result2){
+				if (result2[0] == 1 && getConfig("LOG_MYSQL"))
+					alt.log(_L("log_insert_user",[request.data.username]));
 			});
 		}
 		else{
-			con.query("UPDATE users SET id = " + con.escape(player.id) + " WHERE dsid = " + con.escape(request.data.id), function(err, rows, fields){
-				if (err){
-					throw err.code;
-					process.exit(0);
-				}
+			mysql_callback("UPDATE users SET id = ? WHERE dsid = ?", [player.id, request.data.id], function(result2){
+				if (result2[0] == 1 && getConfig("LOG_MYSQL"))
+					alt.log(_L("log_update_user",[request.data.username]));
 			});
 		}
 	});
-	let server = discordClient.guilds.cache.get(process.env.DISCORD_SERVER_ID);
-	//server.channels.cache.get(process.env.DISCORD_STATUS_CHANNEL).send(_L("joined", [getDiscordNameById(player)]));
+	if (getConfig("ANNOUNCE_LOG_IN_OUT")){
+		let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
+		server.channels.cache.get(DISCORD_STATUS_CHANNEL).send(_L("joined", [getDiscordNameById(player.id)]));
+	}
 });
-
-export function refreshWhitelist(){
-	let server = discordClient.guilds.cache.get(process.env.DISCORD_SERVER_ID);
+function refreshWhitelist(){
+	let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
 	server.members.fetch().then(members => {
 		members.forEach(member =>{
-			let isCitizen = member.roles.cache.has(process.env.DISCORD_CITIZEN_ID);
+			let isCitizen = member.roles.cache.has(DISCORD_CITIZEN_ID);
 			let sf_citizen = (element) => element == member.user.id;
 			let index = WhiteList.findIndex(sf_citizen);
-			let isAdmin = member.roles.cache.has(process.env.DISCORD_ADMIN_ID);
+			let isAdmin = member.roles.cache.has(DISCORD_ADMIN_ID);
 			let sf_Admin = (element) => element == member.user.id;
-			let isMod = member.roles.cache.has(process.env.DISCORD_MOD_ID);
+			let isMod = member.roles.cache.has(DISCORD_MOD_ID);
 			let sf_Mod = (element) => element == member.user.id;
-			let isSupporter = member.roles.cache.has(process.env.DISCORD_SUPPORTER_ID);
+			let isSupporter = member.roles.cache.has(DISCORD_SUPPORTER_ID);
 			let sf_Supporter = (element) => element == member.user.id;
-			if (_CONFIG.WHITELIST){
+			if (getConfig("WHITELIST")){
 				if (!isCitizen){
 					if (index > -1){
 						WhiteList.splice(index, 1);
-						alt.log(_L("log_whitelist_del",[member.user.username]));
+						if (getConfig("LOG_WHITELIST"))
+							alt.log(_L("log_whitelist_del",[member.user.username]));
 						if (getIdByDiscord(member.user.id) != -1){
-							getIdByDiscord(member.user.id).kick(_L("no_whitelisted", [_CONFIG.DISCORD_INVITE_LINK]));
+							getIdByDiscord(member.user.id).kick(_L("no_whitelisted", [getConfig("DISCORD_INVITE_LINK")]));
 							if (getOnlineUsersByDsid(member.user.id) != -1)
 								WhiteList.splice(getOnlineUsersByDsid(member.user.id), 1);
 						}
@@ -156,66 +111,56 @@ export function refreshWhitelist(){
 				else if (isCitizen){
 					if (index <= -1){
 						WhiteList.push(member.user.id);
-						alt.log(_L("log_whitelist_add",[member.user.username]));
+						if (getConfig("LOG_WHITELIST"))
+							alt.log(_L("log_whitelist_add",[member.user.username]));
 					}
 				}
 			}
 			else{
 				if (index <= -1){
 					WhiteList.push(member.user.id);
-					alt.log(_L("log_whitelist_add",[member.user.username]));
+					if (getConfig("LOG_WHITELIST"))
+						alt.log(_L("log_whitelist_add",[member.user.username]));
 				}
 			}
-			mysql_callback('SELECT count(*) AS COUNTER FROM users WHERE dsid=' + con.escape(member.user.id), function(result){
-				if(result > 0){
+			mysql_callback('SELECT id FROM users WHERE dsid = ?', [member.user.id], function(result){
+				if(result[0] > 0){
 					if (!isAdmin){
-						con.query('UPDATE users SET isAdmin="no" WHERE dsid=' + con.escape(member.user.id), (err, rows, fields) => {
-							if (err){
-								throw err;
-								process.exit(0);
-							}
+						mysql_callback('UPDATE users SET isAdmin="no" WHERE dsid = ?', [member.user.id], function(result2){
+							if (result2[0] > 0 && getConfig("LOG_MYSQL"))
+								alt.log(_L("log_adminlist_del",[member.user.username]));
 						});
 					}
 					else if (isAdmin){
-						con.query('UPDATE users SET isAdmin="yes" WHERE dsid=' + con.escape(member.user.id), (err, rows, fields) => {
-							if (err){
-								throw err;
-								process.exit(0);
-							}
+						mysql_callback('UPDATE users SET isAdmin="yes" WHERE dsid = ?', [member.user.id], function(result2){
+							if (result2[0] > 0 && getConfig("LOG_MYSQL"))
+								alt.log(_L("log_adminlist_add",[member.user.username]));
 						});
 					}
 
 					if (!isMod){
-						con.query('UPDATE users SET isMod="no" WHERE dsid=' + con.escape(member.user.id), (err, rows, fields) => {
-							if (err){
-								throw err;
-								process.exit(0);
-							}
+						mysql_callback('UPDATE users SET isMod="no" WHERE dsid = ?', [member.user.id], function(result3) {
+							if (result3[0] > 0 && getConfig("LOG_MYSQL"))
+								alt.log(_L("log_modlist_del",[member.user.username]));
 						});
 					}
 					else if (isMod){
-						con.query('UPDATE users SET isMod="yes" WHERE dsid=' + con.escape(member.user.id), (err, rows, fields) => {
-							if (err){
-								throw err;
-								process.exit(0);
-							}
+						mysql_callback('UPDATE users SET isMod="yes" WHERE dsid = ?', [member.user.id], function (result3) {
+							if (result3[0] > 0 && getConfig("LOG_MYSQL"))
+								alt.log(_L("log_modlist_add",[member.user.username]));
 						});
 					}
 
 					if (!isSupporter){
-						con.query('UPDATE users SET isSupporter="no" WHERE dsid=' + con.escape(member.user.id), (err, rows, fields) => {
-							if (err){
-								throw err;
-								process.exit(0);
-							}
+						mysql_callback('UPDATE users SET isSupporter="no" WHERE dsid = ?', [member.user.id], function (result4) {
+							if (result4[0] > 0 && getConfig("LOG_MYSQL"))
+								alt.log(_L("log_supporterlist_del",[member.user.username]));
 						});
 					}
 					else if (isSupporter){
-						con.query('UPDATE users SET isSupporter="yes" WHERE dsid=' + con.escape(member.user.id), (err, rows, fields) => {
-							if (err){
-								throw err;
-								process.exit(0);
-							}
+						mysql_callback('UPDATE users SET isSupporter="yes" WHERE dsid = ?', [member.user.id], function (result4) {
+							if (result4[0] > 0 && getConfig("LOG_MYSQL"))
+								alt.log(_L("log_supporterlist_add",[member.user.username]));
 						});
 					}
 				}
@@ -237,6 +182,13 @@ function getDiscordNameById(id){
   }
   return -1;
 }
+function getDiscordById(id){
+  for (let i=0; i< CurrentOnlineUsers.length; i++){
+    if (id == CurrentOnlineUsers[i].id)
+      return CurrentOnlineUsers[i].dsid;
+  }
+  return -1;
+}
 function getOnlineUsersByDsid(dsid){
   for (let i=0; i< CurrentOnlineUsers.length; i++){
     if (dsid == CurrentOnlineUsers[i].dsid)
@@ -253,5 +205,5 @@ function getOnlineUsersById(id){
 }
 WhitelistUpdate = alt.setInterval(refreshWhitelist, 300000);
 alt.on('resourceStart', () => {
-    discordClient.login(process.env.DISCORD_TOKEN).then(() => refreshWhitelist());
+    discordClient.login(DISCORD_TOKEN).then(() => refreshWhitelist());
 });
