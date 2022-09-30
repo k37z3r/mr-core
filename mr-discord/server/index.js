@@ -81,6 +81,7 @@ alt.onClient('mr-core:discord:token', async (player, token) => {
 		let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
 		server.channels.cache.get(DISCORD_STATUS_CHANNEL).send(_L("joined", [getDiscordNameById(player.id)]));
 	}
+	alt.emitClient(player, "mr-core:discord:loggedin", "success");
 });
 function refreshWhitelist(){
 	let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
