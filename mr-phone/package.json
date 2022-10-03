@@ -1,7 +1,7 @@
 {
 	"name": "mr-phone",
-	"version": "1.0.0"
-	"description": "mobile phone for char with plugins (for coding a plugin, you have to need coding a JS-File and copy to 'plugins' folder)",
+	"version": "1.0.0",
+	"description": "mobile phone for char with plugins. for coding a plugin, you have to need coding a JS-File and copy to 'plugins-folder",
 	"main": "",
 	"scripts": {
 		"test": "tsc",
