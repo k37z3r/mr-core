@@ -23,6 +23,7 @@ var start_display = '<div id="phone_top_apps"></div><div id="phone_bottom_menu">
 var show = false;
 var app_store = [];
 var installed = [];
+var plugin_array = [];
 if (localStorage.getItem("installed_apps") != null){
 	let datas = JSON.parse(localStorage.getItem("installed_apps"));
 	for (let i = 0; i < datas.length; i++){
@@ -93,9 +94,19 @@ $(document).ready(function(){
 			applyCursorRippleEffect(e, '#phone_buttons');
 		}
 	});
-	alt.on("openPhone", openPhone);
 	alt.on("closePhone", closePhone);
+	alt.on("openPhone", openPhone);
+	alt.on('load_res_plugins', p_array => {
+		dynamicallyLoadScript(p_array);
+	});
 });
+function dynamicallyLoadScript(url) {
+	for (let i = 0; i < url.length; i++){
+		var script = document.createElement("script");
+		script.src = "./plugins/" + url[i];
+		document.head.appendChild(script);
+	}
+}
 function applyCursorRippleEffect(e, a) {
 	const ripple = document.createElement("div");
 	ripple.className = "ripple";

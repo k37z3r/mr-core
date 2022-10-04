@@ -18,27 +18,6 @@
 				<div id="phone_back"><i class="fa-solid fa-circle-chevron-left phone_icons"></i></div>
 			</div>
 		</div>
-		<script>
-			$(document).ready(function(){
-				function dynamicallyLoadScript(url) {
-					for (let i = 0; i < url.length; i++){
-						var script = document.createElement("script");
-						script.src = "./plugins/" + url[i] + ".js";
-						document.head.appendChild(script);
-					}
-					
-				}
-				dynamicallyLoadScript(["sms",
-				"callapp",
-				"camera",
-				"discord",
-				"whatsapp",
-				"settings",
-				"snake",
-				"appstore",
-				]);
-			});
-		</script>
 	</body>
 </html>
 
