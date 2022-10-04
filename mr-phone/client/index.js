@@ -33,3 +33,6 @@ alt.emitServer("mr-phone:get_scripts");
 alt.onServer('mr-phone:set_scripts', (p_array) => {
 	view.emit("load_res_plugins", p_array);
 });
+alt.onServer('mr-phone:set_language', (p_array) => {
+	view.emit("load_language", p_array);
+});
