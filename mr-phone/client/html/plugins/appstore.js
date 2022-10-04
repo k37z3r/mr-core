@@ -14,7 +14,7 @@ $(document).ready(function(){
 function list_app_store_apps(){
 	let ret = "<div id='appstore_overview'><table cellspacing='0' cellpadding='2px' style='background-color: hsla(110, 0%, 70%, 1);padding: 5px;'>";
 	for (let i = 0; i < app_store.length; i++){
-		ret += "<tr><td colspan='2' align='center' style='border: 1px solid black;font-weight: bolder;text-decoration-line: underline overline;'>" + app_store[i][0] + "</td></tr><tr><td style='border-left:1px solid black;' valign='top'>" + app_store[i][2] + "</td><td style='border-right:1px solid black;' valign='center'>" + app_store[i][1] + "</td></tr><tr><td colspan='2' style='border-right:1px solid black; border-left:1px solid black;border-bottom:1px solid black;' id='td_" + app_store[i][0] + "'>" + ((is_installed_app(app_store[i][0]))?"<kbd class='appStoreButton' onclick='uninstall_app(\"" + app_store[i][0] + "\")'>Entfernen</kbd>&nbsp;&nbsp;&nbsp;<kbd class='appStoreButton' onclick='open_app(\"" + app_store[i][3] + "\")'>Öffnen</kbd>":"<kbd class='appStoreButton' onclick='install_app(\"" + app_store[i][0] + "\", \"" + app_store[i][3] + "\" )'>Installieren</kbd>") + "</td></tr>";
+		ret += "<tr><td colspan='2' align='center' style='border: 1px solid black;font-weight: bolder;text-decoration-line: underline overline;'>" + app_store[i][0] + "</td></tr><tr><td style='border-left:1px solid black;' valign='top'>" + app_store[i][2] + "</td><td style='border-right:1px solid black;' valign='center'>" + app_store[i][1] + "</td></tr><tr><td colspan='2' style='border-right:1px solid black; border-left:1px solid black;border-bottom:1px solid black;' id='td_" + app_store[i][0] + "'>" + ((is_installed_app(app_store[i][0]))?"<kbd class='appStoreButton' onclick='uninstall_app(\"" + app_store[i][0] + "\")'>" + language_array[6] + "</kbd>&nbsp;&nbsp;&nbsp;<kbd class='appStoreButton' onclick='open_app(\"" + app_store[i][3] + "\")'>" + language_array[7] + "</kbd>":"<kbd class='appStoreButton' onclick='install_app(\"" + app_store[i][0] + "\", \"" + app_store[i][3] + "\" )'>" + language_array[5] + "</kbd>") + "</td></tr>";
 	}
 	ret += "</table></div>"
 	return ret;
@@ -28,12 +28,12 @@ function install_app(app, appid){
 	installed.push(app);
 	localStorage.setItem("installed_apps", JSON.stringify(installed));
 	$("#td_" + app).html("");
-	$("#td_" + app).html("<kbd class='appStoreButton' onclick='uninstall_app(\"" + app + "\")'>Entfernen</kbd>&nbsp;&nbsp;&nbsp;<kbd class='appStoreButton' onclick='open_app(\"" + appid + "\")'>Öffnen</kbd>");
+	$("#td_" + app).html("<kbd class='appStoreButton' onclick='uninstall_app(\"" + app + "\")'>" + language_array[6] + "</kbd>&nbsp;&nbsp;&nbsp;<kbd class='appStoreButton' onclick='open_app(\"" + appid + "\")'>" + language_array[7] + "</kbd>");
 }
 function uninstall_app(app, appid){
 	let findapp = installed.indexOf(app);
 	installed.splice(findapp, 1);
 	localStorage.setItem("installed_apps", JSON.stringify(installed));
 	$("#td_" + app).html("");
-	$("#td_" + app).html("<kbd class='appStoreButton' onclick='install_app(\"" + app + "\")'>Installieren</kbd>");
+	$("#td_" + app).html("<kbd class='appStoreButton' onclick='install_app(\"" + app + "\")'>" + language_array[5] + "</kbd>");
 }

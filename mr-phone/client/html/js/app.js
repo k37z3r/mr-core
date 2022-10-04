@@ -23,7 +23,7 @@ var start_display = '<div id="phone_top_apps"></div><div id="phone_bottom_menu">
 var show = false;
 var app_store = [];
 var installed = [];
-var plugin_array = [];
+var language_array = [];
 if (localStorage.getItem("installed_apps") != null){
 	let datas = JSON.parse(localStorage.getItem("installed_apps"));
 	for (let i = 0; i < datas.length; i++){
@@ -83,21 +83,13 @@ $(document).ready(function(){
 			applyCursorRippleEffect(e, '#phone_buttons');
 		}
 	});
-	$(document).on('click', '#phone_overview', function(e){
-		e.preventDefault();
-		if (phone_soundtouched_storage == "true"){
-			var myAudio = new Audio('./audio/click-21156.mp3');
-			myAudio.volume = soundtouched_volume_storage;
-			myAudio.play();
-		}
-		if (phone_seetouched_storage == "true"){
-			applyCursorRippleEffect(e, '#phone_buttons');
-		}
-	});
 	alt.on("closePhone", closePhone);
 	alt.on("openPhone", openPhone);
 	alt.on('load_res_plugins', p_array => {
 		dynamicallyLoadScript(p_array);
+	});
+	alt.on('load_language', p_array => {
+		language_array = p_array;
 	});
 });
 function dynamicallyLoadScript(url) {
@@ -124,7 +116,7 @@ function close_from_overview(id){
 }
 function load_overview(){
 	$("#phone_container").html("");
-	$("#phone_container").html("<div id='temp' style='display:none'></div><div id='phone_overview'>" + ((phone_cache.length==0)?"<span class='no_open_apps'>Keine offenen Apps gefunden</span>":"") + "</div>");
+	$("#phone_container").html("<div id='temp' style='display:none'></div><div id='phone_overview'>" + ((phone_cache.length==0)?"<span class='no_open_apps'>" + language_array[0] + "</span>":"") + "</div>");
 	for (let i = 0; i < phone_cache.length; i++){
 		$("#temp").html(phone_cache[i]);
 		$("#phone_overview").append("<div class='overview_item_overlay'><div class='overview_item_open' onclick='open_from_overview(\"" + $('.fake_id_to_load_from_cache').val() + "\");'><div class='phone_overview_item'>" + phone_cache[i] + "</div></div><div class='overview_item_close' onclick='close_from_overview(" + i + ");'><i class='fa-solid fa-circle-xmark'></i></div></div>");
@@ -132,9 +124,6 @@ function load_overview(){
 }
 function open_from_overview(id){
 	$("#phone_container").html("");
-//	$("#phone_container").append(phone_cache[id]);
-//	let var_id = $('.fake_id_to_load_from_cache').val();
-//	$("#phone_container").html("");
 	element=start_display;
 	$("#phone_container").html(element);
 	insert_apps_to_start();
@@ -148,7 +137,6 @@ function insert_bottom_menu(){
 	}
 }
 function insert_apps_to_start(){
-	
 	install_apps();
 	$("#phone_top_apps").html("");
 	for (let i = 0; i < phone_top_apps_arr.length; i++){

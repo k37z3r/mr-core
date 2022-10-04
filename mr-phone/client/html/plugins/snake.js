@@ -116,7 +116,7 @@ kbd.held_desk {
     font-size: 20px;
 }`;
 element = '<section id="phone_snake" style="width: 52px; height: 52px; display: flex; background: hsla(50, 65%, 55%, 1); border: 1px solid hsla(204, 71%, 38%, 1); border-radius: 10px; box-shadow: inset 0px 0px 10px 0px hsla(0, 100%, 0%, 1); align-content: flex-start; justify-content: center; align-items: center; flex-wrap: wrap; line-height: 0px; cursor: pointer;"><i class="fa-solid fa-staff-snake phone_bottom_icons phone_top_icons" style="color: hsla(112, 65%, 35%, 1); text-shadow: -1px -1px 0 hsla(0, 100%, 0%, 1), 1px -1px 0 hsla(0, 100%, 0%, 1), -1px 1px 0 hsla(0, 100%, 0%, 1), 1px 1px 0 hsla(0, 100%, 0%, 1); font-size:22px;"></i><br>Snake</section>';
-app_store.push(["Snake", "Bekannt durch Nokia, und angelehnt an das von Nokia im Jahre 1997veröffentlichte Handyspiel Snake", element, "phone_snake"]);
+app_store.push(["Snake", language_array[1], element, "phone_snake"]);
 insert_apps_to_start();
 $(document).ready(function(){
 	var style = document.createElement('style');
@@ -128,7 +128,7 @@ $(document).ready(function(){
 		element = `<input type="hidden" style="display:none;" value="phone_snake" class="fake_id_to_load_from_cache"><div id="snake_bgd">
   <div id="HighscoreBoard">Highscore : </div>
   <div id="scoreBoard">Score : 0</div>
-  <div class="gameOver" style="display:none"><i class="fa-solid fa-triangle-exclamation fa-beat"></i> Game Over <i class="fa-solid fa-triangle-exclamation fa-beat"></i></div>
+  <div class="gameOver" style="display:none"><i class="fa-solid fa-triangle-exclamation fa-beat"></i> ${language_array[4]} <i class="fa-solid fa-triangle-exclamation fa-beat"></i></div>
     <div class="snake_help">
 	<table>
   <tr>
@@ -194,22 +194,22 @@ $(document).ready(function(){
 		});
 
 		$("#phone_container").append(element);
-		$('#HighscoreBoard').html('Highscore : ' + ((localStorage.getItem("snake_highscore")==null)?"0":localStorage.getItem("snake_highscore")));
+		$('#HighscoreBoard').html(language_array[2] + ' : ' + ((localStorage.getItem("snake_highscore")==null)?"0":localStorage.getItem("snake_highscore")));
 		renderBoard();
 		renderFruitCell();
 		$(document).bind('keydown', function(e) {
 			if (e.keyCode == 13 && starting == false){
 				if (gameover){
 					$('div.gameOver').fadeOut('slow', function(){
-						$('#HighscoreBoard').html('Highscore : ' + ((localStorage.getItem("snake_highscore")==null)?0:localStorage.getItem("snake_highscore")));
-						$('#scoreBoard').html('Score : 0');
+						$('#HighscoreBoard').html(language_array[2] + ' : ' + ((localStorage.getItem("snake_highscore")==null)?0:localStorage.getItem("snake_highscore")));
+						$('#scoreBoard').html(language_array[3] + ' : 0');
 						startGame();
 						$('#gamefield').click();
 					});
 				}
 				else{
-					$('#HighscoreBoard').html('Highscore : ' + ((localStorage.getItem("snake_highscore")==null)?0:localStorage.getItem("snake_highscore")));
-					$('#scoreBoard').html('Score : 0');
+					$('#HighscoreBoard').html(language_array[2] + ' : ' + ((localStorage.getItem("snake_highscore")==null)?0:localStorage.getItem("snake_highscore")));
+					$('#scoreBoard').html(language_array[3] + ' : 0');
 					startGame();
 					$('#gamefield').click();
 				}
@@ -218,8 +218,8 @@ $(document).ready(function(){
 				getNewDirection(e.keyCode);
 		});
 		$(document).on("click", "#start_game_snake", function(){
-			$('#HighscoreBoard').html('Highscore : ' + ((localStorage.getItem("snake_highscore")==null)?0:localStorage.getItem("snake_highscore")));
-			$('#scoreBoard').html('Score : 0');
+			$('#HighscoreBoard').html(language_array[2] + ' : ' + ((localStorage.getItem("snake_highscore")==null)?0:localStorage.getItem("snake_highscore")));
+			$('#scoreBoard').html(language_array[3] + ' : 0');
 			startGame();
 			$('#gamefield').click();
 		});
@@ -301,9 +301,9 @@ function updateSnakeCell() {
 					play_success_snd();
 				}
 				score += 10;
-				$('#scoreBoard').html('Score : ' + score);
+				$('#scoreBoard').html(language_array[3] + ' : ' + score);
 				if (localStorage.getItem("snake_highscore")==null || localStorage.getItem("snake_highscore") < score){
-					$('#HighscoreBoard').html('Highscore : ' + score);
+					$('#HighscoreBoard').html(language_array[2] + ' : ' + score);
 					localStorage.setItem("snake_highscore", score);
 				}
 				speed = speed - 2 > 50 ? speed - 2 : speed;
