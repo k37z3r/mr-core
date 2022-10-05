@@ -70,6 +70,16 @@ export function mysql_callback(msql, values, cb){
 		});
 	}
 }
+export async function mysql_select_while(msql, values, cb){
+	var connection = con.query(msql, [values], function(err, result){
+		if (err){
+			throw err;
+			process.exit(0);
+		}
+		let numrows = result.length;
+		return cb([numrows, ((result[0]==undefined)?null:result)]);
+	});
+}
 export const DISCORD_APP_ID = process.env.DISCORD_APP_ID
 export const DISCORD_SERVER_ID = process.env.DISCORD_SERVER_ID
 export const DISCORD_TOKEN = process.env.DISCORD_TOKEN
@@ -102,4 +112,16 @@ export function _L(trans = "", opts="", lang = _CONFIG.LANGUAGE){
 	}
 	if (i==0)
 		return lang+'.'+trans;
+}
+export function get_dsid(disid, cb){
+	var msql = 'SELECT * FROM users WHERE id = ?';
+	var connection = con.query(msql, [disid.id], function(err, result){
+		if (err){
+			throw err;
+			process.exit(0);
+		}
+		let numrows = 0;
+		numrows = result.length;
+		return cb([numrows, ((result[0]==undefined)?null:result[0].dsid)]);
+	});
 }
