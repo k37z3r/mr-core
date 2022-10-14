@@ -47,7 +47,7 @@ export const _CONFIG = {
     Load_MichaelStyle: 'default',    //    default / moved
     Load_MichaelBed: 'default',    //    default / tidy
     Load_MichaelMoviePoster: true,    // Meltdown movie poster
-    Load_MichaelFameShamePoste: true,    // Next to Tracey's bed
+    Load_MichaelFameShamePoster: true,    // Next to Tracey's bed
     Load_MichaelPlaneTicket: true,    // Plane ticket
     Load_MichaelSpyGlasses: true,    // On the shelf inside Michael's bedroom
     Load_MichaelBurgerShot: true,    // Bag and cup in the kitchen, next to the sink
@@ -164,7 +164,7 @@ export const _CONFIG = {
 	Load_NightclubTrophy: true,
 	Load_NightclubTrophyColor: 'gold',    //    gold / silver / bronze
 	Load_NightclubTrophyStyle: 'dancer',    //    dancer / battler / number1
-	Load_DryIce: true,    // Dry ice machines
+	Load_NightclubDryIce: true,    // Dry ice machines
 	Load_NightClubClutter: false,    // Clutter and graffitis
 	Load_NightClubWorkLamps: false,    // Work lamps + trash
 	Load_NightClubTruck: false,    // Truck parked in the garage
