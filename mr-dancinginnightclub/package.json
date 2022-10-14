@@ -1,0 +1,31 @@
+{
+	"name": "mr-dancing-in-nightclub",
+	"version": "1.0.0",
+	"description": "loads PEDs in the Nightclub",
+	"main": "",
+	"scripts": {
+		"test": "tsc",
+		"preversion": "yarn run test",
+		"release": "yarn version --no-git-tag-version"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/k37z3r/myroleplay"
+	},
+	"dependencies": {
+		"mysql": ">=2",
+		"discord.js": ">=14",
+		"axios": ">=0.2",
+		"util": ">=0.1",
+		"fs": ">=0.0.1-security",
+		"mr-functions": ">=0.1",
+		"mr-iplloader": ">=0.1"
+	},
+	"author": "Luz Iferato",
+	"keywords": ["framework","js","core","roleplay","altv","altv-resource","mr-core","myroleplay","discord","phone","iplloader","dancing-in-nighclub"],
+	"license": "CC-BY-NC-SA/4.0",
+	"bugs": "https://github.com/k37z3r/myroleplay/issues",
+	"homepage": "https://github.com/k37z3r",
+	"type": "module",
+	"man": "https://github.com/k37z3r/myroleplay/wiki"
+}
