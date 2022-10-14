@@ -142,7 +142,6 @@ export const _CONFIG = {
     Load_Ammunations: true,    //    249.8, -47.1, 70.0    //    844.0, -1031.5, 28.2    //    -664.0, -939.2, 21.8    //    -1308.7, -391.5, 36.7    //    -3170.0, 1085.0, 20.8    //    -1116.0, 2694.1, 18.6    //    1695.2, 3756.0, 34.7    //    -328.7, 6079.0, 31.5    //    2569.8, 297.8, 108.7    //    19.1, -1110.0, 29.8    //    811.0, -2152.0, 29.6
     Load_AmmunationsGunStore: true,
     Load_AmmunationsGunClub: true,
-
     //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
     //                    Ammunations Settings End                            //
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
@@ -202,5 +201,51 @@ export const _CONFIG = {
     //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
     //                     Nightclubs Settings End                            //
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //                   Biker Club 1 Setting begin                           //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+	Load_BikerClubhouse1: true,    // 1107.04, -3157.399, -37.51859
+	Load_BikerClubhouse1_WallsStyle: "walls1",    //    walls1 / walls2
+	Load_BikerClubhouse1_WallColor: "orange",    //    sable / yellowgray / red / brown / yellow / lightyellow / lightyellowgray / lightgray / orange / gray
+	Load_BikerClubhouse1_Furnitures: "furnishings2",    //    furnishings1 / furnishings2
+	Load_BikerClubhouse1_Furniturescolor: "yellowgray",    //    sable / yellowgray / red / brown / yellow / lightyellow / lightyellowgray / lightgray / orange / gray
+	Load_BikerClubhouse1_Decoration: "decorative1",    //    decorative1 / decorative2
+	Load_BikerClubhouse1_Mural: "rideforeever",    //    ridefree / mods / brave / fist / forest / mods2 / rideForever / heart / route68 / none
+	Load_BikerClubhouse1_GunLocker: "on",    //    on / off / none
+	Load_BikerClubhouse1_ModBooth: "off",    //    on / off / none
+	Load_BikerClubhouse1_Meth: "stage1",    //    stage1 / stage2 / stage3 / none
+	Load_BikerClubhouse1_Cash: "none",    //    stage1 / stage2 / stage3 / none
+	Load_BikerClubhouse1_Weed: "stage2",    //    stage1 / stage2 / stage3 / none
+	Load_BikerClubhouse1_Coke: "stage1",    //    stage1 / stage2 / stage3 / none
+	Load_BikerClubhouse1_Counterfeit: "none",    //    stage1 / stage2 / stage3 / none
+	Load_BikerClubhouse1_Documents: "stage3"    //    stage1 / stage2 / stage3 / none
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //                    Biker Club 1 Setting end                            //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //                   Biker Club 2 Setting begin                           //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+	Load_BikerClubhouse2: true,    // 998.4809, -3164.711, -38.90733
+	Load_BikerClubhouse2_WallsStyle: "walls2",    //    walls1 / walls2
+	Load_BikerClubhouse2_WallColor: "multicolor",    //    gray / greengray / multicolor / orangegray / blue / lightbluesable / greenred / yellowgray / red / fuchsiangray
+	Load_BikerClubhouse2_LowerWallsStyle: "walls1",    //    walls1 / walls2
+	Load_BikerClubhouse2_LowerWallscolor: "blue",    //    gray / greengray / multicolor / orangegray / blue / lightbluesable / greenred / yellowgray / red / fuchsiangray
+	Load_BikerClubhouse2_Furnitures: "furnishings2",    //    furnishings1 / furnishings2
+	Load_BikerClubhouse2_Furniturescolor: "red2",    //    turquoise / darkBrown / brown / turquoise2 / brown2 / gray / red / darkGray / black / red2
+	Load_BikerClubhouse2_Decoration: "decorative2",    //    decorative1 / decorative2
+	Load_BikerClubhouse2_Mural: "graffitis",    //    death1 / citycolor1 / death2 / citycolor2 / graffitis / citycolor3 / citycolor4 / cityblack / death3
+	Load_BikerClubhouse2_GunLocker: "off",    //    on / off / none
+	Load_BikerClubhouse2_ModBooth: "on",    //    on / off / none
+	Load_BikerClubhouse2_Meth: "stage3",    //    stage1 / stage2 / stage3 / none
+	Load_BikerClubhouse2_Cash: "stage1",    //    stage1 / stage2 / stage3 / none
+	Load_BikerClubhouse2_Weed: "stage2",    //    stage1 / stage2 / stage3 / none
+	Load_BikerClubhouse2_Coke: "stage3",    //    stage1 / stage2 / stage3 / none
+	Load_BikerClubhouse2_Counterfeit: "none",    //    stage1 / stage2 / stage3 / none
+	Load_BikerClubhouse2_Documents: "none"    //    stage1 / stage2 / stage3 / none
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //                    Biker Club 2 Setting end                            //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
 };
 
