@@ -70,7 +70,7 @@ export function mysql_callback(msql, values, cb){
 		});
 	}
 }
-export async function mysql_select_while(msql, values, cb){
+export async function mysql_select_while_cb(msql, values, cb){
 	var connection = con.query(msql, [values], function(err, result){
 		if (err){
 			throw err;

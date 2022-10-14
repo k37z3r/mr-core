@@ -42,6 +42,8 @@ export const translations = {
 		"untouchable_apps": "*Telefonbucheinträge, Discord, Whatsapp, Bilder, SMS bleiben unberührt",
 		"yes": "Ja",
 		"no": "Nein",
+		"enter_nightclub": "Drück [38] um den Nightclub zu betreten",
+		"leave_nightclub": "Drück [38] um den Nightclub zu verlassen",
 	},
 	"en": {
 		"log_whitelist_del": "[Whitelist] %s_0 has been removed from the whitelist",
@@ -86,5 +88,7 @@ export const translations = {
 		"untouchable_apps": "*Phonebook entries, Discord, Whatsapp, Pictures, SMS remain untouched",
 		"yes": "Yes",
 		"no": "no",
+		"enter_nightclub": "Press [38] to enter the Nightclub",
+		"leave_nightclub": "Press [38] to leave the Nightclub",
 	},
 }

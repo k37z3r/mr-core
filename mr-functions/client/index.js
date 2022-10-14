@@ -1,5 +1,7 @@
 import * as alt from "alt";
 import * as native from 'natives';
+import { _CONFIG } from '../config/config.js';
+import { translations } from '../language/language.js';
 const view = new alt.WebView("http://resource/client/html/index.html");
 export function EnableIpl(ipl, activate){
 	let key;
@@ -80,4 +82,28 @@ function format_txt(txt){
 	str = str.replace('[38]', '<kbd style="background-color: #eee; border-radius: 3px;border: 1px solid #b4b4b4;box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;color: #333;display: inline-block;font-weight: bolder;line-height: 1; padding: 4px 7px; white-space: nowrap;">E</kbd> / <kbd style="background-color: #eee; border-radius: 3px;border: 1px solid #b4b4b4;box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;color: #333;display: inline-block;font-weight: bolder;line-height: 1; padding: 4px 7px; white-space: nowrap;">RB</kbd>');
 	return str;
 }
-
+export function getConfig(value){
+	for(var key in _CONFIG) {
+		if(key == value) {
+			return _CONFIG[key];
+		}
+	}
+}
+export function _L(trans = "", opts="", lang = _CONFIG.LANGUAGE){
+	var i = 0;
+	var str;
+	for (var key in translations){
+		if (key == lang){
+			str = translations[key][trans];
+			str = (str || key+'.'+trans);
+			for (var opt in opts){
+				var search = "%s_" + opt;
+				str = str.replaceAll(search, opts[opt])
+			}
+		return str;
+		i++;
+		}
+	}
+	if (i==0)
+		return lang+'.'+trans;
+}
