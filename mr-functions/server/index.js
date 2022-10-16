@@ -94,6 +94,7 @@ export function getConfig(value){
 			return _CONFIG[key];
 		}
 	}
+	return 0;
 }
 export function _L(trans = "", opts="", lang = _CONFIG.LANGUAGE){
 	var i = 0;

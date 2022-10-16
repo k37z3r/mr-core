@@ -149,55 +149,55 @@ export const _CONFIG = {
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
     //                     Nightclubs Setting begin                           //
     //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
-	Load_Nightclub: true,    //    -1569.6395 -3016.800 -74.4139
-	Load_NightclubStyle: 'trad',    //    trad / edgy / glam
-	Load_NightclubName: 'technologie',    //    galaxy / studio / omega / technologie / gefangnis / maisonette / tony / palace / paradise
-	Load_NightclubPodiumStyle: 'trad',    //    trad / edgy / glam / none
-	Load_NightclubSpeaker: 'basic',    //    basic / upgrade / none
-	Load_NightclubSecurity: true,
-	Load_NightclubLights: 'droplets_yellow',    //    droplets_yellow / Droplets_green / Droplets_white / Droplets_purple / Neons_yellow / Neons_white / Neons_purple / Neons_cyan / Bands_yellow / Bands_green / Bands_white / Bands_cyan / Laser_yellow / Laser_green / Laser_white / Laser_purple
-	Load_TurnTables: true,
-	Load_TurnTablesStyle: 'style3',    //    style1 / style2 / style3 / style4
-	Load_NightclubBar: true,
-	Load_NightclubBooze: true,
-	Load_NightclubTrophy: true,
-	Load_NightclubTrophyColor: 'gold',    //    gold / silver / bronze
-	Load_NightclubTrophyStyle: 'dancer',    //    dancer / battler / number1
-	Load_NightclubDryIce: true,    // Dry ice machines
-	Load_NightClubClutter: false,    // Clutter and graffitis
-	Load_NightClubWorkLamps: false,    // Work lamps + trash
-	Load_NightClubTruck: false,    // Truck parked in the garage
-	Load_NightClubLightRigsOff: false,    // All light rigs at once but turned off
-	Load_NightClubRoofLightsOff: false,    // Fake lights
-	Load_NightClubFloorTradLights: false,    // Floor lights meant to go with the trad style
-	Load_NightClubChest: false,    // Chest on the VIP desk
-	Load_NightClubVaultAmmunations: false,    // (inside vault) Ammunations
-	Load_NightClubVaultMeth: false,    // (inside vault) Meth bag
-	Load_NightClubVaultFakeID: false,    // (inside vault) Fake ID
-	Load_NightClubVaultWeed: false,    // (inside vault) Opened weed bag
-	Load_NightClubVaultCoke: false,    // (inside vault) Coke doll
-	Load_NightClubVaultCash: false,    // (inside vault) Scrunched fake money
-	Load_NightClubMesaBarrier: true,
-	Load_NightClubMesaPosters: 'maddona',    //    madonna / dixon / forsale / solomun / taleofus
-	Load_NightClubMissionRowBarrier: true,
-	Load_NightClubMissionRowPosters: 'dixon',    //    madonna / dixon / forsale / solomun / taleofus
-	Load_NightClubStrawBerryBarrier: true,
-	Load_NightClubStrawBerryPosters: 'forsale',    //    madonna / dixon / forsale / solomun / taleofus
-	Load_NightClubVineWoodWestBarrier: true,
-	Load_NightClubVineWoodWestPosters: 'solomun',    //    madonna / dixon / forsale / solomun / taleofus
-	Load_NightClubCypressBarrier: true,
-	Load_NightClubCypressPosters: 'taleofus',    //    madonna / dixon / forsale / solomun / taleofus
-	Load_NightClubDelPerroBarrier: true,
-	Load_NightClubDelPerroPosters: 'dixon',    //    madonna / dixon / forsale / solomun / taleofus
-	Load_NightClubAirPortBarrier: true,
-	Load_NightClubAirPortPosters: 'solomun',    //    madonna / dixon / forsale / solomun / taleofus
-	Load_NightClubElysianBarrier: true,
-	Load_NightClubElysianPosters: 'madonna',    //    madonna / dixon / forsale / solomun / taleofus
-	Load_NightClubVineWoodBarrier: true,
-	Load_NightClubVineWoodPosters: 'forsale',    //    madonna / dixon / forsale / solomun / taleofus
-	Load_NightClubVespucciBarrier: true,
-	Load_NightClubVespucciPosters: 'taleofus',    //    madonna / dixon / forsale / solomun / taleofus
-	Load_NightClubDancingPedAtNightclub: true,    // Loads dancing Peds to Nightclub
+    Load_Nightclub: true,    //    -1569.6395 -3016.800 -74.4139
+    Load_NightclubStyle: 'trad',    //    trad / edgy / glam
+    Load_NightclubName: 'technologie',    //    galaxy / studio / omega / technologie / gefangnis / maisonette / tony / palace / paradise
+    Load_NightclubPodiumStyle: 'trad',    //    trad / edgy / glam / none
+    Load_NightclubSpeaker: 'basic',    //    basic / upgrade / none
+    Load_NightclubSecurity: true,
+    Load_NightclubLights: 'droplets_yellow',    //    droplets_yellow / Droplets_green / Droplets_white / Droplets_purple / Neons_yellow / Neons_white / Neons_purple / Neons_cyan / Bands_yellow / Bands_green / Bands_white / Bands_cyan / Laser_yellow / Laser_green / Laser_white / Laser_purple
+    Load_TurnTables: true,
+    Load_TurnTablesStyle: 'style3',    //    style1 / style2 / style3 / style4
+    Load_NightclubBar: true,
+    Load_NightclubBooze: true,
+    Load_NightclubTrophy: true,
+    Load_NightclubTrophyColor: 'gold',    //    gold / silver / bronze
+    Load_NightclubTrophyStyle: 'dancer',    //    dancer / battler / number1
+    Load_NightclubDryIce: true,    // Dry ice machines
+    Load_NightClubClutter: false,    // Clutter and graffitis
+    Load_NightClubWorkLamps: false,    // Work lamps + trash
+    Load_NightClubTruck: false,    // Truck parked in the garage
+    Load_NightClubLightRigsOff: false,    // All light rigs at once but turned off
+    Load_NightClubRoofLightsOff: false,    // Fake lights
+    Load_NightClubFloorTradLights: false,    // Floor lights meant to go with the trad style
+    Load_NightClubChest: false,    // Chest on the VIP desk
+    Load_NightClubVaultAmmunations: false,    // (inside vault) Ammunations
+    Load_NightClubVaultMeth: false,    // (inside vault) Meth bag
+    Load_NightClubVaultFakeID: false,    // (inside vault) Fake ID
+    Load_NightClubVaultWeed: false,    // (inside vault) Opened weed bag
+    Load_NightClubVaultCoke: false,    // (inside vault) Coke doll
+    Load_NightClubVaultCash: false,    // (inside vault) Scrunched fake money
+    Load_NightClubMesaBarrier: true,
+    Load_NightClubMesaPosters: 'maddona',    //    madonna / dixon / forsale / solomun / taleofus
+    Load_NightClubMissionRowBarrier: true,
+    Load_NightClubMissionRowPosters: 'dixon',    //    madonna / dixon / forsale / solomun / taleofus
+    Load_NightClubStrawBerryBarrier: true,
+    Load_NightClubStrawBerryPosters: 'forsale',    //    madonna / dixon / forsale / solomun / taleofus
+    Load_NightClubVineWoodWestBarrier: true,
+    Load_NightClubVineWoodWestPosters: 'solomun',    //    madonna / dixon / forsale / solomun / taleofus
+    Load_NightClubCypressBarrier: true,
+    Load_NightClubCypressPosters: 'taleofus',    //    madonna / dixon / forsale / solomun / taleofus
+    Load_NightClubDelPerroBarrier: true,
+    Load_NightClubDelPerroPosters: 'dixon',    //    madonna / dixon / forsale / solomun / taleofus
+    Load_NightClubAirPortBarrier: true,
+    Load_NightClubAirPortPosters: 'solomun',    //    madonna / dixon / forsale / solomun / taleofus
+    Load_NightClubElysianBarrier: true,
+    Load_NightClubElysianPosters: 'madonna',    //    madonna / dixon / forsale / solomun / taleofus
+    Load_NightClubVineWoodBarrier: true,
+    Load_NightClubVineWoodPosters: 'forsale',    //    madonna / dixon / forsale / solomun / taleofus
+    Load_NightClubVespucciBarrier: true,
+    Load_NightClubVespucciPosters: 'taleofus',    //    madonna / dixon / forsale / solomun / taleofus
+    Load_NightClubDancingPedAtNightclub: true,    // Loads dancing Peds to Nightclub
     //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
     //                     Nightclubs Settings End                            //
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
@@ -205,47 +205,137 @@ export const _CONFIG = {
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
     //                   Biker Club 1 Setting begin                           //
     //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
-	Load_BikerClubhouse1: true,    // 1107.04, -3157.399, -37.51859
-	Load_BikerClubhouse1_WallsStyle: "walls1",    //    walls1 / walls2
-	Load_BikerClubhouse1_WallColor: "orange",    //    sable / yellowgray / red / brown / yellow / lightyellow / lightyellowgray / lightgray / orange / gray
-	Load_BikerClubhouse1_Furnitures: "furnishings2",    //    furnishings1 / furnishings2
-	Load_BikerClubhouse1_Furniturescolor: "yellowgray",    //    sable / yellowgray / red / brown / yellow / lightyellow / lightyellowgray / lightgray / orange / gray
-	Load_BikerClubhouse1_Decoration: "decorative1",    //    decorative1 / decorative2
-	Load_BikerClubhouse1_Mural: "rideforeever",    //    ridefree / mods / brave / fist / forest / mods2 / rideForever / heart / route68 / none
-	Load_BikerClubhouse1_GunLocker: "on",    //    on / off / none
-	Load_BikerClubhouse1_ModBooth: "off",    //    on / off / none
-	Load_BikerClubhouse1_Meth: "stage1",    //    stage1 / stage2 / stage3 / none
-	Load_BikerClubhouse1_Cash: "none",    //    stage1 / stage2 / stage3 / none
-	Load_BikerClubhouse1_Weed: "stage2",    //    stage1 / stage2 / stage3 / none
-	Load_BikerClubhouse1_Coke: "stage1",    //    stage1 / stage2 / stage3 / none
-	Load_BikerClubhouse1_Counterfeit: "none",    //    stage1 / stage2 / stage3 / none
-	Load_BikerClubhouse1_Documents: "stage3"    //    stage1 / stage2 / stage3 / none
-    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    Load_BikerClubhouse1: true,    // 1107.04, -3157.399, -37.51859
+    Load_BikerClubhouse1_WallsStyle: "walls1",    //    walls1 / walls2
+    Load_BikerClubhouse1_WallColor: "orange",    //    sable / yellowgray / red / brown / yellow / lightyellow / lightyellowgray / lightgray / orange / gray
+    Load_BikerClubhouse1_Furnitures: "furnishings2",    //    furnishings1 / furnishings2
+    Load_BikerClubhouse1_Furniturescolor: "yellowgray",    //    sable / yellowgray / red / brown / yellow / lightyellow / lightyellowgray / lightgray / orange / gray
+    Load_BikerClubhouse1_Decoration: "decorative1",    //    decorative1 / decorative2
+    Load_BikerClubhouse1_Mural: "rideforeever",    //    ridefree / mods / brave / fist / forest / mods2 / rideForever / heart / route68 / none
+    Load_BikerClubhouse1_GunLocker: "on",    //    on / off / none
+    Load_BikerClubhouse1_ModBooth: "off",    //    on / off / none
+    Load_BikerClubhouse1_Meth: "stage1",    //    stage1 / stage2 / stage3 / none
+    Load_BikerClubhouse1_Cash: "none",    //    stage1 / stage2 / stage3 / none
+    Load_BikerClubhouse1_Weed: "stage2",    //    stage1 / stage2 / stage3 / none
+    Load_BikerClubhouse1_Coke: "stage1",    //    stage1 / stage2 / stage3 / none
+    Load_BikerClubhouse1_Counterfeit: "none",    //    stage1 / stage2 / stage3 / none
+    Load_BikerClubhouse1_Documents: "stage3",    //    stage1 / stage2 / stage3 / none
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
     //                    Biker Club 1 Setting end                            //
-    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
 
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
     //                   Biker Club 2 Setting begin                           //
     //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
-	Load_BikerClubhouse2: true,    // 998.4809, -3164.711, -38.90733
-	Load_BikerClubhouse2_WallsStyle: "walls2",    //    walls1 / walls2
-	Load_BikerClubhouse2_WallColor: "multicolor",    //    gray / greengray / multicolor / orangegray / blue / lightbluesable / greenred / yellowgray / red / fuchsiangray
-	Load_BikerClubhouse2_LowerWallsStyle: "walls1",    //    walls1 / walls2
-	Load_BikerClubhouse2_LowerWallscolor: "blue",    //    gray / greengray / multicolor / orangegray / blue / lightbluesable / greenred / yellowgray / red / fuchsiangray
-	Load_BikerClubhouse2_Furnitures: "furnishings2",    //    furnishings1 / furnishings2
-	Load_BikerClubhouse2_Furniturescolor: "red2",    //    turquoise / darkBrown / brown / turquoise2 / brown2 / gray / red / darkGray / black / red2
-	Load_BikerClubhouse2_Decoration: "decorative2",    //    decorative1 / decorative2
-	Load_BikerClubhouse2_Mural: "graffitis",    //    death1 / citycolor1 / death2 / citycolor2 / graffitis / citycolor3 / citycolor4 / cityblack / death3
-	Load_BikerClubhouse2_GunLocker: "off",    //    on / off / none
-	Load_BikerClubhouse2_ModBooth: "on",    //    on / off / none
-	Load_BikerClubhouse2_Meth: "stage3",    //    stage1 / stage2 / stage3 / none
-	Load_BikerClubhouse2_Cash: "stage1",    //    stage1 / stage2 / stage3 / none
-	Load_BikerClubhouse2_Weed: "stage2",    //    stage1 / stage2 / stage3 / none
-	Load_BikerClubhouse2_Coke: "stage3",    //    stage1 / stage2 / stage3 / none
-	Load_BikerClubhouse2_Counterfeit: "none",    //    stage1 / stage2 / stage3 / none
-	Load_BikerClubhouse2_Documents: "none"    //    stage1 / stage2 / stage3 / none
-    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    Load_BikerClubhouse2: true,    // 998.4809, -3164.711, -38.90733
+    Load_BikerClubhouse2_WallsStyle: "walls2",    //    walls1 / walls2
+    Load_BikerClubhouse2_WallColor: "multicolor",    //    gray / greengray / multicolor / orangegray / blue / lightbluesable / greenred / yellowgray / red / fuchsiangray
+    Load_BikerClubhouse2_LowerWallsStyle: "walls1",    //    walls1 / walls2
+    Load_BikerClubhouse2_LowerWallscolor: "blue",    //    gray / greengray / multicolor / orangegray / blue / lightbluesable / greenred / yellowgray / red / fuchsiangray
+    Load_BikerClubhouse2_Furnitures: "furnishings2",    //    furnishings1 / furnishings2
+    Load_BikerClubhouse2_Furniturescolor: "red2",    //    turquoise / darkBrown / brown / turquoise2 / brown2 / gray / red / darkGray / black / red2
+    Load_BikerClubhouse2_Decoration: "decorative2",    //    decorative1 / decorative2
+    Load_BikerClubhouse2_Mural: "graffitis",    //    death1 / citycolor1 / death2 / citycolor2 / graffitis / citycolor3 / citycolor4 / cityblack / death3
+    Load_BikerClubhouse2_GunLocker: "off",    //    on / off / none
+    Load_BikerClubhouse2_ModBooth: "on",    //    on / off / none
+    Load_BikerClubhouse2_Meth: "stage3",    //    stage1 / stage2 / stage3 / none
+    Load_BikerClubhouse2_Cash: "stage1",    //    stage1 / stage2 / stage3 / none
+    Load_BikerClubhouse2_Weed: "stage2",    //    stage1 / stage2 / stage3 / none
+    Load_BikerClubhouse2_Coke: "stage3",    //    stage1 / stage2 / stage3 / none
+    Load_BikerClubhouse2_Counterfeit: "none",    //    stage1 / stage2 / stage3 / none
+    Load_BikerClubhouse2_Documents: "none",    //    stage1 / stage2 / stage3 / none
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
     //                    Biker Club 2 Setting end                            //
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //                    Counterfeit Setting begin                           //
     //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+    Load_Counterfeit: true,    // 1121.897, -3195.338, -40.4025
+    Load_CounterfeitPrinter: 'basicProduction', //    upgradeProduction / upgrade / basicProduction / basic / none
+    Load_CounterfeitSecurity: 'upgrade',    //    basic / upgrade
+    Load_CounterfeitDryer1: 'open',    //    open / on / off / none
+    Load_CounterfeitDryer2: 'on',    //    open / on / off / none
+    Load_CounterfeitDryer3: 'off',    //    open / on / off / none
+    Load_CounterfeitDryer4: 'open',    //    open / on / off / none
+    Load_CounterfeitCash: 20,    //    10 / 20 / 100
+    Load_CounterfeitChairs: true,    // Brown chairs at the end of the room
+    Load_CounterfeitCutter: false,    // Money cutting machine
+    Load_CounterfeitFurnitures: true,    // Paper, counting machines, cups
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
+    //                    Counterfeit Setting end                             //
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //                  Cocaine Lockup Setting begin                          //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+    Load_Cocaine: true,    // 1093.6, -3196.6, -38.99841
+    Load_CocaineStyle: 'upgrade',    //    basic / upgrade
+    Load_CocaineSecurity: 'basic',    //    basic / upgrade / none
+    Load_CocaineCoke1: true,    // Cocaine on the basic tables
+    Load_CocaineCoke2: false,    // Cocaine on the basic tables
+    Load_CocaineCoke3: true,    // Cocaine on the basic tables
+    Load_CocaineCoke4: true,    // Cocaine on the upgraded tables
+    Load_CocaineCoke5: false,    // Cocaine on the upgraded tables
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
+    //                   Cocaine Lockup Setting end                           //
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //                 Document forgery Setting begin                         //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+    Load_BikerDocumentForgeryStyle: true,    // 1165, -3196.6, -39.01306
+    Load_BikerDocumentForgeryEquipment: 'basic',    //    basic / upgrade / none
+    Load_BikerDocumentForgerySecurity: 'upgrade',    //    basic / upgrade
+    Load_BikerDocumentForgeryChairs: true,    // Chairs
+    Load_BikerDocumentForgeryProduction: false,    // Papers & Pencils
+    Load_BikerDocumentForgeryFurnitures: false,    // Printers & Shredders
+    Load_BikerDocumentForgeryClutter: true,    // Pizza boxes & Cups
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
+    //                  Document forgery Setting end                          //
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //                     Meth lab Setting begin                             //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+    Load_BikerMethLab: true,    // 1009.5, -3196.6, -38.99682
+    Load_BikerMethLabStyle: 'upgrade',    //    empty / basic / upgrade / none
+    Load_BikerMethLabSecurity: false,
+    Load_BikerMethLabProduction: false,
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
+    //                      Meth lab Setting end                              //
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //                    Weed farm Setting begin                             //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+    Load_BikerWeedFarm: true,    // 1051.491, -3196.536, -39.14842
+    Load_BikerWeedFarmStyle: 'upgrade',    //    basic / upgrade
+    Load_BikerWeedFarmSecurity: 'basic',    //    basic / upgrade
+    Load_BikerWeedFarmPlant1Stage: 'small',    //    small / medium / full
+    Load_BikerWeedFarmPlant1Light: 'upgrade',    //    basic / upgrade
+    Load_BikerWeedFarmPlant2Stage: 'medium',    //    small / medium / full
+    Load_BikerWeedFarmPlant2Light: 'basic',    //    basic / upgrade
+    Load_BikerWeedFarmPlant3Stage: 'full',    //    small / medium / full
+    Load_BikerWeedFarmPlant3Light: 'upgrade',    //    basic / upgrade
+    Load_BikerWeedFarmPlant4Stage: 'small',    //    small / medium / full
+    Load_BikerWeedFarmPlant4Light: 'basic',    //    basic / upgrade
+    Load_BikerWeedFarmPlant5Stage: 'medium',    //    small / medium / full
+    Load_BikerWeedFarmPlant5Light: 'upgrade',    //    basic / upgrade
+    Load_BikerWeedFarmPlant6Stage: 'full',    //    small / medium / full
+    Load_BikerWeedFarmPlant6Light: 'basic',    //    basic / upgrade
+    Load_BikerWeedFarmPlant7Stage: 'small',    //    small / medium / full
+    Load_BikerWeedFarmPlant7Light: 'upgrade',    //    basic / upgrade
+    Load_BikerWeedFarmPlant8Stage: 'medium',    //    small / medium / full
+    Load_BikerWeedFarmPlant8Light: 'basic',    //    basic / upgrade
+    Load_BikerWeedFarmPlant9Stage: 'full',    //    small / medium / full
+    Load_BikerWeedFarmPlant9Light: 'upgrade',    //    basic / upgrade
+    Load_BikerWeedFarmProduction: true,    // Weed on the tables
+    Load_BikerWeedFarmFans: true,    // Fans & mold buckets
+    Load_BikerWeedFarmDrying: true,    // Drying weed hooked to the ceiling
+    Load_BikerWeedFarmChairs: true    // Chairs at the tables
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
+    //                     Weed farm Setting end                              //
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
 };
 
