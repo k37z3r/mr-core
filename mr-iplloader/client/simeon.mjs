@@ -24,6 +24,7 @@ export let Simeon = {
 			if ((shutterid != "none" && shutterid == "shutter_closed") || (shutterid != "none" && shutterid == "shutter_opened")){
 				SetIplProp(7170, shutterid, true);
 			}
+			native.refreshInterior(7170);
 		}
 	}
 }
