@@ -130,7 +130,7 @@ export const _CONFIG = {
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
     //                     Strip Club Setting begin                           //
     //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
-    Load_StripClub: true,
+    Load_StripClub: true,    // 130.71, -1301.89, 29.23
     Load_StripClubMess: true,    // A bit of mess in the office
     //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
     //                     Strip Club Settings End                            //
@@ -149,7 +149,7 @@ export const _CONFIG = {
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
     //                     Nightclubs Setting begin                           //
     //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
-    Load_Nightclub: true,    //    -1569.6395 -3016.800 -74.4139
+    Load_Nightclub: true,    //    -1569.6395, -3016.800, -74.4139
     Load_NightclubStyle: 'trad',    //    trad / edgy / glam
     Load_NightclubName: 'technologie',    //    galaxy / studio / omega / technologie / gefangnis / maisonette / tony / palace / paradise
     Load_NightclubPodiumStyle: 'trad',    //    trad / edgy / glam / none
@@ -333,9 +333,160 @@ export const _CONFIG = {
     Load_BikerWeedFarmProduction: true,    // Weed on the tables
     Load_BikerWeedFarmFans: true,    // Fans & mold buckets
     Load_BikerWeedFarmDrying: true,    // Drying weed hooked to the ceiling
-    Load_BikerWeedFarmChairs: true    // Chairs at the tables
+    Load_BikerWeedFarmChairs: true,    // Chairs at the tables
     //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
     //                     Weed farm Setting end                              //
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //                Doomsday Facility Setting begin                         //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+    Load_DoomsdayFacility: true,    // 345, 4842, -60 / 1286.924, 2846.06, 49.39426 / 18.633, 2610.834, 86.0 / 2768.574, 3919.924, 45.82 / 3406.90, 5504.77, 26.28 / 1.90, 6832.18, 15.82 / -2231.53, 2418.42, 12.18 / -6.92, 3327.0, 41.63 / 2073.62, 1748.77, 104.51 / 1874.35, 284.34, 164.31 / 2050.85, 2950.0, 47.75
+    Load_DoomsdayFacilityStyle: 'utility',    // utility / expertise / altitude / power / authority / influence / order / empire / supremacy
+    Load_DoomsdayFacilityDecal: 'decal_06',    // decal_01 / decal_02 / decal_03 / decal_04 / decal_05 / decal_06 / decal_07 / decal_08 / decal_09 / none
+    Load_DoomsdayFacilityLounge: 'prestige',    // utility / prestige / premier
+    Load_DoomsdayFacilitySleeping: 'premier',    // utility / prestige / premier / none
+    Load_DoomsdayFacilitySecurity: 'on',        // on / off
+    Load_DoomsdayFacilityCanon: 'on',        // on / off
+    Load_DoomsdayFacilityBedroom_Control: true,
+    Load_DoomsdayFacilityLounge_Control:  true,
+    Load_DoomsdayFacilityParts: 'set2',    // set1 / set2 / set3
+    Load_DoomsdayFacilityClutterStyle: 'set3',    // set1 / set2 / set3 / set4 / set5 / set6 / set7 / set8 / set9
+    Load_DoomsdayFacilitycrewEmblem: true,
+    Load_DoomsdayFacilityOutfits: true,
+    Load_DoomsdayFacilityTrophy: true,
+    Load_DoomsdayFacilityTrophyStyle: 'iaa',    // eagle / submarine / iaa
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
+    //                 Doomsday Facility Setting end                          //
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //              Executive Apartments Setting begin                        //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+    Load_ExecutiveApartment1: true,    // -787.7805, 334.92320, 215.8384
+    Load_ExecutiveApartment1Style: 'modern',    // modern / moody / vibrant / sharp / monochrome / seductive / regal / aqua
+    Load_ExecutiveApartment1Strip: 'set2',    // set1 / set2 / set3
+    Load_ExecutiveApartment1Booze: 'set3',    // set1 / set2 / set3
+    Load_ExecutiveApartment1Smoke: 'none',    // stage1 / stage2 / stage3 / none
+    Load_ExecutiveApartment2: true,    // -773.2258, 322.8252, 194.8862
+    Load_ExecutiveApartment2Style: 'sharp',    // modern / moody / vibrant / sharp / monochrome / seductive / regal / aqua
+    Load_ExecutiveApartment2Strip: 'set1',    // set1 / set2 / set3
+    Load_ExecutiveApartment2Booze: 'set1',    // set1 / set2 / set3
+    Load_ExecutiveApartment2Smoke: 'stage3',    // stage1 / stage2 / stage3 / none
+    Load_ExecutiveApartment3: true,    // -787.7805, 334.9232, 186.1134
+    Load_ExecutiveApartment3Style: 'aqua',    // modern / moody / vibrant / sharp / monochrome / seductive / regal / aqua
+    Load_ExecutiveApartment3Strip: 'set3',    // set1 / set2 / set3
+    Load_ExecutiveApartment3Booze: 'set2',    // set1 / set2 / set3
+    Load_ExecutiveApartment3Smoke: 'stage1',    // stage1 / stage2 / stage3 / none
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
+    //               Executive Apartments Setting end                         //
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //              High Life Apartments Setting begin                        //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+    Load_HighLifeApartment1: true,    // -1462.281, -539.6276, 72.44434
+    Load_HighLifeApartment1Strip: 'set2',    // set1 / set2 / set3
+    Load_HighLifeApartment1Booze: 'set3',    // set1 / set2 / set3
+    Load_HighLifeApartment1Smoke: 'stage1',    // stage1 / stage2 / stage3
+    Load_HighLifeApartment2: true,    // -914.9026, -374.8731, 112.6748
+    Load_HighLifeApartment2Strip: 'set2',    // set1 / set2 / set3
+    Load_HighLifeApartment2Booze: 'set3',    // set1 / set2 / set3
+    Load_HighLifeApartment2Smoke: 'stage1',    // stage1 / stage2 / stage3
+    Load_HighLifeApartment3: true,    // -609.5669, 51.28212, 96.60023
+    Load_HighLifeApartment3Strip: 'set2',    // set1 / set2 / set3
+    Load_HighLifeApartment3Booze: 'set3',    // set1 / set2 / set3
+    Load_HighLifeApartment3Smoke: 'stage1',    // stage1 / stage2 / stage3
+    Load_HighLifeApartment4: true,    // -778.5061, 331.316, 210.3972
+    Load_HighLifeApartment4Strip: 'set2',    // set1 / set2 / set3
+    Load_HighLifeApartment4Booze: 'set3',    // set1 / set2 / set3
+    Load_HighLifeApartment4Smoke: 'stage1',    // stage1 / stage2 / stage3
+    Load_HighLifeApartment5: true,    // -22.61353, -590.1432, 78.43091
+    Load_HighLifeApartment5Strip: 'set2',    // set1 / set2 / set3
+    Load_HighLifeApartment5Booze: 'set3',    // set1 / set2 / set3
+    Load_HighLifeApartment5Smoke: 'stage1',    // stage1 / stage2 / stage3
+    Load_HighLifeApartment6: true,    // -609.5669, 51.28212, -183.9808
+    Load_HighLifeApartment6Strip: 'set2',    // set1 / set2 / set3
+    Load_HighLifeApartment6Booze: 'set3',    // set1 / set2 / set3
+    Load_HighLifeApartment6Smoke: 'stage1',    // stage1 / stage2 / stage3
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
+    //               High Life Apartments Setting end                         //
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //               High End Apartments Setting begin                        //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+    Load_HighEndApartment1: true,    // -35.31277, -580.4199, 88.71221
+    Load_HighEndApartment1Strip: 'set2',    // set1 / set2 / set3
+    Load_HighEndApartment1Booze: 'set3',    // set1 / set2 / set3
+    Load_HighEndApartment1Smoke: 'stage1',    // stage1 / stage2 / stage3
+    Load_HighEndApartment2: true,    // -1477.14 -538.7499 55.5264
+    Load_HighEndApartment2Strip: 'set2',    // set1 / set2 / set3
+    Load_HighEndApartment2Booze: 'set3',    // set1 / set2 / set3
+    Load_HighEndApartment2Smoke: 'stage1',    // stage1 / stage2 / stage3
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
+    //                High end Apartments Setting end                         //
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //                 Low End Houses Setting begin                           //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+    Load_LowEndHouse: true,    // 261.4586, -998.8196, -99.00863
+    Load_LowEndHouseStrip: 'set3',    // set1 / set2 / set3
+    Load_LowEndHouseBooze: 'set2',    // set1 / set2 / set3
+    Load_LowEndHouseSmoke: 'stage2',    // stage1 / stage2 / stage3 / none
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
+    //                  Low End Houses Setting end                            //
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //               Middle End Houses Setting begin                          //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+    Load_MidEndHouse: true,    // 347.2686, -999.2955, -99.19622
+    Load_MidEndHouseStrip: 'set1',    // set1 / set2 / set3
+    Load_MidEndHouseBooze: 'set1',    // set1 / set2 / set3
+    Load_MidEndHouseSmoke: 'stage3',    // stage1 / stage2 / stage3 / none
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
+    //                Middle End Houses Setting end                           //
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //                High End Houses Setting begin                           //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+    Load_HighEndHouse1: true,    // -169.286, 486.4938, 137.4436
+    Load_HighEndHouse1Strip: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse1Booze: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse1Smoke: 'stage3',    // stage1 / stage2 / stage3
+    Load_HighEndHouse2: true,    // 340.9412, 437.1798, 149.3925
+    Load_HighEndHouse2Strip: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse2Booze: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse2Smoke: 'stage3',    // stage1 / stage2 / stage3
+    Load_HighEndHouse3: true,    // 373.023, 416.105, 145.7006
+    Load_HighEndHouse3Strip: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse3Booze: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse3Smoke: 'stage3',    // stage1 / stage2 / stage3
+    Load_HighEndHouse4: true,    // -676.127, 588.612, 145.1698
+    Load_HighEndHouse4Strip: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse4Booze: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse4Smoke: 'stage3',    // stage1 / stage2 / stage3
+    Load_HighEndHouse5: true,    // -763.107, 615.906, 144.1401
+    Load_HighEndHouse5Strip: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse5Booze: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse5Smoke: 'stage3',    // stage1 / stage2 / stage3
+    Load_HighEndHouse6: true,    // -857.798, 682.563, 152.6529
+    Load_HighEndHouse6Strip: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse6Booze: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse6Smoke: 'stage3',    // stage1 / stage2 / stage3
+    Load_HighEndHouse7: true,    // 120.5, 549.952, 184.097
+    Load_HighEndHouse7Strip: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse7Booze: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse7Smoke: 'stage3',    // stage1 / stage2 / stage3
+    Load_HighEndHouse8: true,    // -1288, 440.748, 97.69459
+    Load_HighEndHouse8Strip: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse8Booze: 'set1',    // set1 / set2 / set3
+    Load_HighEndHouse8Smoke: 'stage3',    // stage1 / stage2 / stage3
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
+    //                 High End Houses Setting end                            //
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
 };
 
