@@ -12,6 +12,10 @@ export function EnableIpl(ipl, activate){
 			alt.removeIpl(ipl[key]);
 	}
 }
+export function SetPropColor(id, prop, style){
+    native.setInteriorEntitySetColor(id, prop, style);
+    native.refreshInterior(id);
+}
 export function getInteriorByType(x, y, z, name, iplName){
 	let id = 0;
 	alt.requestIpl(iplName);
