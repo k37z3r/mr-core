@@ -1,6 +1,6 @@
 import * as native from 'natives';
 import * as alt from 'alt';
-import { EnableIpl, SetIplProp } from 'mr-functions';
+import { EnableIpl, SetIplProp, SetPropColor } from 'mr-functions';
 
 export let BikerClubhouse1 = {
 	ipl : ["bkr_biker_interior_placement_interior_0_biker_dlc_int_01_milo"],
@@ -33,7 +33,7 @@ export let BikerClubhouse1 = {
 				colorid = 9;
 			else
 				colorid = 0;
-			native.setInteriorEntitySetColor(246273, WallsStyleId, colorid);
+			SetPropColor(246273, WallsStyleId, colorid);
 			if (Furnitures == "furnishings2")
 				FurnituresId = "furnishings_02";
 			else
@@ -59,7 +59,7 @@ export let BikerClubhouse1 = {
 				Furniturescolorid = 9;
 			else
 				Furniturescolorid = 0;
-			native.setInteriorEntitySetColor(246273, FurnituresId, Furniturescolorid);
+			SetPropColor(246273, FurnituresId, Furniturescolorid);
 			if (Decoration == "decorative2")
 				DecorationId = "decorative_02";
 			else

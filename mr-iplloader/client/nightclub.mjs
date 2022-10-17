@@ -1,6 +1,6 @@
 import * as native from 'natives';
 import * as alt from 'alt';
-import { EnableIpl, getInteriorByType, SetIplProp, get_posters, drawTv, CreateNamedRenderTargetForModel, RegisterPoi, _L, getConfig } from 'mr-functions';
+import { EnableIpl, getInteriorByType, SetIplProp, get_posters, drawTv, CreateNamedRenderTargetForModel, RegisterPoi, _L, getConfig, SetPropColor } from 'mr-functions';
 let tvactive = false;
 export let Nightclub = {
 	ipl : ["ba_int_placement_ba", "ba_int_placement_ba_interior_0_dlc_int_01_ba_milo_", "xs_arena_interior_vip", "xs_arena_interior_mod_2", "xs_arena_interior_mod", "xs_arena_interior"],
@@ -155,7 +155,7 @@ export let Nightclub = {
 					colorid = 2;
 				else
 					colorid = 0;
-				native.setInteriorEntitySetColor(271617, trophystyleid, colorid);
+				SetPropColor(271617, trophystyleid, colorid);
 			}
 			if (dryice){
 				native.requestNamedPtfxAsset("scr_ba_club");
