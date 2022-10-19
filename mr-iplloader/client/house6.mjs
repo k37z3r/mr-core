@@ -8,25 +8,25 @@ export let HighEndHouse4 = {
 		if (state){
  			EnableIpl(HighEndHouse4.ipl, state);
             if (Strip == "set1")
-                StripId = "Apart_Mid_Strip_A";
+                StripId = "Apart_Hi_Strip_A";
             else if (Strip == "set2")
-                StripId = "Apart_Mid_Strip_B";
+                StripId = "Apart_Hi_Strip_B";
             else
-                StripId = "Apart_Mid_Strip_C";
+                StripId = "Apart_Hi_Strip_C";
             SetIplProp(208129, StripId, true);
             if (Booze == "set1")
-                BoozeId = "Apart_Mid_Booze_A";
+                BoozeId = "Apart_Hi_Booze_A";
             else if (Booze == "set2")
-                BoozeId = "Apart_Mid_Booze_B";
+                BoozeId = "Apart_Hi_Booze_B";
             else
-                BoozeId = "Apart_Mid_Booze_C";
+                BoozeId = "Apart_Hi_Booze_C";
             SetIplProp(208129, BoozeId, true);
             if (Smoke == "stage1")
-                SmokeId = "Apart_Mid_Smoke_A";
+                SmokeId = "Apart_Hi_Smoke_A";
             else if (Smoke == "stage2")
-                SmokeId = "Apart_Mid_Smoke_B";
+                SmokeId = "Apart_Hi_Smoke_B";
             else
-                SmokeId = "Apart_Mid_Smoke_C";
+                SmokeId = "Apart_Hi_Smoke_C";
             SetIplProp(208129, SmokeId, true);
             native.refreshInterior(208129);
         }

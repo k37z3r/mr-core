@@ -8,27 +8,27 @@ export let HighEndHouse5 = {
 		if (state){
  			EnableIpl(HighEndHouse5.ipl, state);
             if (Strip == "set1")
-                StripId = "Apart_Mid_Strip_A";
+                StripId = "Apart_Hi_Strip_A";
             else if (Strip == "set2")
-                StripId = "Apart_Mid_Strip_B";
+                StripId = "Apart_Hi_Strip_B";
             else
-                StripId = "Apart_Mid_Strip_C";
-            SetIplProp(207105, StripId, true);
+                StripId = "Apart_Hi_Strip_C";
+            SetIplProp(207617, StripId, true);
             if (Booze == "set1")
-                BoozeId = "Apart_Mid_Booze_A";
+                BoozeId = "Apart_Hi_Booze_A";
             else if (Booze == "set2")
-                BoozeId = "Apart_Mid_Booze_B";
+                BoozeId = "Apart_Hi_Booze_B";
             else
-                BoozeId = "Apart_Mid_Booze_C";
-            SetIplProp(207105, BoozeId, true);
+                BoozeId = "Apart_Hi_Booze_C";
+            SetIplProp(207617, BoozeId, true);
             if (Smoke == "stage1")
-                SmokeId = "Apart_Mid_Smoke_A";
+                SmokeId = "Apart_Hi_Smoke_A";
             else if (Smoke == "stage2")
-                SmokeId = "Apart_Mid_Smoke_B";
+                SmokeId = "Apart_Hi_Smoke_B";
             else
-                SmokeId = "Apart_Mid_Smoke_C";
-            SetIplProp(207105, SmokeId, true);
-            native.refreshInterior(207105);
+                SmokeId = "Apart_Hi_Smoke_C";
+            SetIplProp(207617, SmokeId, true);
+            native.refreshInterior(207617);
         }
     }
 }
