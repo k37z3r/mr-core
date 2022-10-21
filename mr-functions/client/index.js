@@ -12,6 +12,20 @@ export function EnableIpl(ipl, activate){
 			alt.removeIpl(ipl[key]);
 	}
 }
+export function setBlip(x,y,z, sprite, scale, color, sndcolor, seccolor, name){
+    let Blip = native.addBlipForCoord(x, y, z);
+    native.setBlipSprite(Blip, sprite);
+    native.setBlipScale(Blip, scale);
+    native.setBlipDisplay(Blip, 4);
+    native.setBlipColour(Blip, color);
+    if (sndcolor){
+        native.setBlipSecondaryColour(Blip, seccolor.r, seccolor.g, seccolor.b);
+    }
+    native.setBlipAsShortRange(Blip, true);
+    native.beginTextCommandSetBlipName("STRING");
+    native.addTextComponentSubstringPlayerName(name);
+    native.endTextCommandSetBlipName(Blip);
+}
 export function SetPropColor(id, prop, style){
     native.setInteriorEntitySetColor(id, prop, style);
     native.refreshInterior(id);
