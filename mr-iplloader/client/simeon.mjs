@@ -1,27 +1,27 @@
 import * as native from 'natives';
-import { EnableIpl, getInteriorByType, SetIplProp } from 'mr-functions';
+import { EnableIpl, SetIplProp, getConfig } from 'mr-functions';
 export let Simeon = {
 	ipl : ["shr_int"],
-	Enable : function(state, style, shutter){
+	Enable : function(state){
 		EnableIpl(Simeon.ipl, state);
 		if (state){
 			let styleid, shutterid;
-			if (style == "noGlass")
+			if (getConfig("Load_SimeonStyle") == "noGlass")
 				styleid = "csr_inMission";
-			else if (style == "destroyed")
+			else if (getConfig("Load_SimeonStyle") == "destroyed")
 				styleid = "csr_afterMissionA";
-			else if (style == "fixed")
+			else if (getConfig("Load_SimeonStyle") == "fixed")
 				styleid = "csr_afterMissionB";
 			else
 				styleid = "csr_beforeMission";
 			SetIplProp(7170, styleid, true);
-			if (shutter == "opened")
+			if (getConfig("Load_SimeonShutter") == "opened")
 				shutterid = "shutter_open";
-			else if (shutter == "closed")
+			else if (getConfig("Load_SimeonShutter") == "closed")
 				shutterid = "shutter_closed";
 			else
 				shutterid = "none";
-			if ((shutterid != "none" && shutterid == "shutter_closed") || (shutterid != "none" && shutterid == "shutter_opened")){
+			if (shutterid != "none"){
 				SetIplProp(7170, shutterid, true);
 			}
 			native.refreshInterior(7170);

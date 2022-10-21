@@ -1,6 +1,6 @@
 import * as alt from "alt";
 import * as native from 'natives';
-import { EnableIpl, getInteriorByType, SetIplProp } from 'mr-functions';
+import { EnableIpl } from 'mr-functions';
 export let Gun_Yacht = {
 	ipl : [
         "gr_heist_yacht2",

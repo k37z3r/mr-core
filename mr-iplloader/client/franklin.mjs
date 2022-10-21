@@ -1,32 +1,32 @@
 import * as native from 'natives';
-import { EnableIpl, getInteriorByType, SetIplProp } from 'mr-functions';
+import { SetIplProp, getConfig } from 'mr-functions';
 export let Franklin = {
 	ipl : [],
-	Enable : function(state, style, glassdoor, progress_flyer, progress_tux, progress_tshirt, bong_and_wine){
+	Enable : function(state){
 		if (state){
 			let styleid, glassdoorid, key;
-			if (style == "unpacking")
+			if (getConfig("Load_FranklinStyle") == "unpacking")
 				styleid = ["franklin_unpacking"];
-			else if (style == "settled")
+			else if (getConfig("Load_FranklinStyle") == "settled")
 				styleid = ["franklin_unpacking", "franklin_settled"];
-			else if (style == "cardboxes")
+			else if (getConfig("Load_FranklinStyle") == "cardboxes")
 				styleid = ["showhome_only"];
 			else
 				styleid = "none";
-			if (styleid != "none" && (style == "unpacking" || style == "settled" || style == "cardboxes")){
+			if (styleid != "none" && (getConfig("Load_FranklinStyle") == "unpacking" || getConfig("Load_FranklinStyle") == "settled" || getConfig("Load_FranklinStyle") == "cardboxes")){
 				for (key in styleid){
 					SetIplProp(206849, styleid[key], true);
 				}
 			}
-			if (glassdoor == "unlocked")
+			if (getConfig("Load_FranklinGlassDoor") == "unlocked")
 				glassdoorid = "unlocked";
 			else
 				glassdoorid = "locked";
 			SetIplProp(206849, glassdoorid, true);
-			SetIplProp(206849, "progress_flyer", progress_flyer);
-			SetIplProp(206849, "progress_tux", progress_tux);
-			SetIplProp(206849, "progress_tshirt", progress_tshirt);
-			SetIplProp(206849, "bong_and_wine", bong_and_wine);
+			SetIplProp(206849, "progress_flyer", getConfig("Load_FranklinProgressFlyer"));
+			SetIplProp(206849, "progress_tux", getConfig("Load_FranklinProgressTux"));
+			SetIplProp(206849, "progress_tshirt", getConfig("Load_FranklinProgressTshirt"));
+			SetIplProp(206849, "bong_and_wine", getConfig("Load_FranklinBongAndWine"));
 			native.refreshInterior(206849);
 		}
 	}

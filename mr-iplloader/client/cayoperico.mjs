@@ -1,4 +1,4 @@
-import { EnableIpl, getInteriorByType, SetIplProp } from 'mr-functions';
+import { EnableIpl } from 'mr-functions';
 import * as game from "natives";
 export let cayoPerico = {
 	ipl : [
