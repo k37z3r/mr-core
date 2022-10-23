@@ -3,6 +3,55 @@ import * as native from 'natives';
 import { _CONFIG } from '../config/config.js';
 import { translations } from '../language/language.js';
 const view = new alt.WebView("http://resource/client/html/index.html");
+export function getRandomInt(max) {
+	return Math.floor(Math.random() * max);
+}
+export const RequestModel = async (modelHash, timeoutMs = 10000) => {
+	return new Promise((resolve, reject) => {
+		if (!native.isModelValid(modelHash)) {
+			reject(new Error(`Model does not exist: ${modelHash}`));
+			return;
+		}
+		if (native.hasModelLoaded(modelHash)) {
+			resolve(true);
+			return;
+		}
+		native.requestModel(modelHash);
+		const deadline = new Date().getTime() + timeoutMs;
+		const inter = alt.setInterval(() => {
+			if (native.hasModelLoaded(modelHash)) {
+				alt.clearInterval(inter);
+				resolve(true);
+			} else if (deadline < new Date().getTime()) {
+				alt.clearInterval(inter);
+				const error = `Loading failed for model: ${modelHash}`;
+				alt.logError(error);
+				reject(new Error(error));
+			}
+		}, 100);
+	});
+};
+export const RequestAnimDict = async (Anim, timeoutMs = 10000) => {
+	return new Promise((resolve, reject) => {
+		if (native.hasAnimDictLoaded(Anim)){
+			resolve(true);
+			return;
+		}
+		native.requestAnimDict(Anim);
+		const deadline = new Date().getTime() + timeoutMs;
+		const inter = alt.setInterval(() => {
+			if (native.hasAnimDictLoaded(Anim)) {
+				alt.clearInterval(inter);
+				resolve(true);
+			} else if (deadline < new Date().getTime()) {
+				alt.clearInterval(inter);
+				const error = `Loading failed for animation: ${Anim}`;
+				alt.logError(error);
+				reject(new Error(error));
+			}
+		}, 100);
+	});
+};
 export function EnableIpl(ipl, activate){
 	let key;
 	for (key in ipl){
