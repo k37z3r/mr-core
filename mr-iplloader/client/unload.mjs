@@ -622,7 +622,16 @@ export let Start = {
 			"imp_sm_15_cargarage_a",
 			"imp_sm_15_cargarage_b",
 			"imp_sm_15_cargarage_c",
-			"imp_sm_15_modgarage"
+			"imp_sm_15_modgarage",
+			"imp_impexp_interior_placement_interior_1_impexp_intwaremed_milo_",
+			"imp_impexp_interior_placement_interior_3_impexp_int_02_milo_",
+			"sf_billboards",
+			"sf_int_placement_sec_interior_2_dlc_garage_sec_milo_",
+			"sf_musicrooftop",
+			"sf_fixeroffice_bh1_05",
+			"sf_fixeroffice_hw1_08",
+			"sf_fixeroffice_kt1_05",
+			"sf_fixeroffice_kt1_08"
 		];
 		let props_a = [
 			"Apart_Hi_Strip_A",
@@ -1262,6 +1271,96 @@ export let Start = {
 			"floor_vinyl_18",
 			"floor_vinyl_19"
 		];
+		let props_ab = [
+			"basic_style_set",
+			"branded_style_set",
+			"urban_style_set",
+			"car_floor_hatch",
+			"door_blocker"
+		];
+		let props_ac = [
+			"pump_01",
+			"pump_02",
+			"pump_03",
+			"pump_04",
+			"pump_05",
+			"pump_06",
+			"pump_07",
+			"pump_08"
+		];
+		let props_ad = [
+			"Entity_Set_Workshop_Wall",
+			"Entity_Set_Wallpaper_01",
+			"Entity_Set_Wallpaper_02",
+			"Entity_Set_Wallpaper_03",
+			"Entity_Set_Wallpaper_04",
+			"Entity_Set_Wallpaper_05",
+			"Entity_Set_Wallpaper_06",
+			"Entity_Set_Wallpaper_07",
+			"Entity_Set_Wallpaper_08",
+			"Entity_Set_Wallpaper_09",
+			"Entity_Set_Art_1",
+			"Entity_Set_Art_2",
+			"Entity_Set_Art_3",
+			"Entity_Set_Art_1_NoMod",
+			"Entity_Set_Art_2_NoMod",
+			"Entity_Set_Art_3_NoMod",
+			"entity_set_tints",
+			"Entity_Set_Workshop_Lights",
+		];
+		let props_ae = [
+			"Entity_Set_Armoury",
+			"Entity_Set_Standard_Office",
+			"Entity_Set_Blocker",
+			"Entity_Set_Wpaper_1",
+			"Entity_Set_Wpaper_3",
+			"Entity_Set_Wpaper_2",
+			"Entity_Set_Wpaper_4",
+			"Entity_Set_Wpaper_5",
+			"Entity_Set_Wpaper_6",
+			"Entity_Set_Wpaper_7",
+			"Entity_Set_Wpaper_8",
+			"Entity_Set_Wpaper_9",
+			"Entity_Set_Moving",
+			"Entity_Set_Tint_AG",
+			"Entity_Set_Spare_Seats",
+			"Entity_Set_Player_Seats",
+			"Entity_Set_Player_Desk",
+			"Entity_Set_M_Golf_Intro",
+			"Entity_Set_M_Setup",
+			"Entity_Set_M_Nightclub",
+			"Entity_Set_M_Yacht",
+			"Entity_Set_M_Promoter",
+			"Entity_Set_M_Limo_Photo",
+			"Entity_Set_M_Limo_Wallet",
+			"Entity_Set_M_The_Way",
+			"Entity_Set_M_Billionaire",
+			"Entity_Set_M_Families",
+			"Entity_Set_M_Ballas",
+			"Entity_Set_M_Hood",
+			"Entity_Set_M_Fire_Booth",
+			"Entity_Set_M_50",
+			"Entity_Set_M_Taxi",
+			"Entity_Set_M_Gone_Golfing",
+			"Entity_Set_M_Motel",
+			"Entity_Set_M_Construction",
+			"Entity_Set_M_Hit_List",
+			"Entity_Set_M_Tuner",
+			"Entity_Set_M_Attack",
+			"Entity_Set_M_Vehicles",
+			"Entity_Set_M_Trip_01",
+			"Entity_Set_M_Trip_02",
+			"Entity_Set_M_Trip_03",
+			"Entity_set_disc_01",
+			"Entity_set_disc_02",
+			"Entity_set_disc_03",
+			"Entity_set_disc_04",
+			"Entity_set_disc_05",
+			"Entity_set_disc_06",
+			"Entity_Set_Art_1",
+			"Entity_Set_Art_2",
+			"Entity_Set_Art_3"
+		];
 		UnSetIplProp(145921, props_a);
 		UnSetIplProp(146177, props_a);
 		UnSetIplProp(146689, props_a);
@@ -1386,6 +1485,13 @@ export let Start = {
 		UnSetIplProp(255233, props_aa);
 		UnSetIplProp(256257, props_aa);
 		UnSetIplProp(257281, props_aa);
+		UnSetIplProp(252673, props_ab);
+		UnSetIplProp(253185, props_ac);
+		UnSetIplProp(286721, props_ad);
+		UnSetIplProp(287489, props_ae);
+		UnSetIplProp(288257, props_ae);
+		UnSetIplProp(288001, props_ae);
+		UnSetIplProp(287745, props_ae);
 		EnableIpl(ipl, false);
 	}
 }
