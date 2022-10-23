@@ -12,7 +12,7 @@ export const _CONFIG = {
     PHONE_NUMBER_STARTING_0: true,
     PHONE_EMAIL_DOMAIN: ["mr-core.de","mr-core.com","mr-core.uk"],
 // IPL-Loader
-	IPL_Blip_Loader: true,
+    IPL_Blip_Loader: true,
     Load_Graffitis: true,    //    1861.28, 2402.11, 58.53    //    2697.32, 3162.18, 58.1    //    2119.12, 3058.21, 53.25
     Load_Bahamamama: true,    //    -1388.0013, -618.41967, 30.819599
     Load_redCarpet: true,    //    300.5927, 199.7589, 104.3776
@@ -148,13 +148,13 @@ export const _CONFIG = {
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
     //                     Nightclubs Setting begin                           //
     //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
-	Load_NightclubBlips_Blips: true,
-	Load_NightclubBlips_Blip: 121,
-	Load_NightclubBlips_Scale: 1.0,
-	Load_NightclubBlips_Color: 7,
-	Load_NightclubBlips_SecondColor: true,
-	Load_NightclubBlips_SecondRolor_RGB: {r: 156, g: 110, b: 175},
-	Load_NightclubBlips_Name: 'Nightclub',
+    Load_NightclubBlips_Blips: true,
+    Load_NightclubBlips_Blip: 121,
+    Load_NightclubBlips_Scale: 1.0,
+    Load_NightclubBlips_Color: 7,
+    Load_NightclubBlips_SecondColor: true,
+    Load_NightclubBlips_SecondRolor_RGB: {r: 156, g: 110, b: 175},
+    Load_NightclubBlips_Name: 'Nightclub',
     Load_Nightclub: true,    //    -1569.6395, -3016.800, -74.4139
     Load_NightclubStyle: 'trad',    //    trad / edgy / glam
     Load_NightclubName: 'technologie',    //    galaxy / studio / omega / technologie / gefangnis / maisonette / tony / palace / paradise
@@ -289,7 +289,7 @@ export const _CONFIG = {
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
     //                 Document forgery Setting begin                         //
     //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
-	Load_BikerDocumentForgery: true,    // 1165, -3196.6, -39.01306
+    Load_BikerDocumentForgery: true,    // 1165, -3196.6, -39.01306
     Load_BikerDocumentForgeryStyle: 'basic',        //    basic / upgrade
     Load_BikerDocumentForgeryEquipment: 'basic',    //    basic / upgrade / none
     Load_BikerDocumentForgerySecurity: 'upgrade',    //    basic / upgrade
@@ -369,13 +369,13 @@ export const _CONFIG = {
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
     //              Executive Apartments Setting begin                        //
     //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
-	Load_ExecutiveApartmentBlips: true,
-	Load_ExecutiveApartmentBlips_Blip: 475,
-	Load_ExecutiveApartmentBlips_Scale: 1.0,
-	Load_ExecutiveApartmentBlips_Color: 27,
-	Load_ExecutiveApartmentBlips_SecondColor: false,
-	Load_ExecutiveApartmentBlips_SecondRolor_RGB: {r: 0, g: 0, b: 0},
-	Load_ExecutiveApartmentBlips_Name: "Executive Apartment",
+    Load_ExecutiveApartmentBlips: true,
+    Load_ExecutiveApartmentBlips_Blip: 475,
+    Load_ExecutiveApartmentBlips_Scale: 1.0,
+    Load_ExecutiveApartmentBlips_Color: 27,
+    Load_ExecutiveApartmentBlips_SecondColor: false,
+    Load_ExecutiveApartmentBlips_SecondRolor_RGB: {r: 0, g: 0, b: 0},
+    Load_ExecutiveApartmentBlips_Name: "Executive Apartment",
     Load_ExecutiveApartment1: true,    // -787.7805, 334.92320, 215.8384
     Load_ExecutiveApartment1Style: 'modern',    // modern / moody / vibrant / sharp / monochrome / seductive / regal / aqua
     Load_ExecutiveApartment1Strip: 'set2',    // set1 / set2 / set3
@@ -398,13 +398,13 @@ export const _CONFIG = {
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
     //              High Life Apartments Setting begin                        //
     //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
-	Load_HighLifeApartmentBlips: true,
-	Load_HighLifeApartmentBlips_Blip: 475,
-	Load_HighLifeApartmentBlips_Scale: 1.0,
-	Load_HighLifeApartmentBlips_Color: 47,
-	Load_HighLifeApartmentBlips_SecondColor: false,
-	Load_HighLifeApartmentBlips_SecondRolor_RGB: {r: 0, g: 0, b: 0},
-	Load_HighLifeApartmentBlips_Name: "High Life Apartment",
+    Load_HighLifeApartmentBlips: true,
+    Load_HighLifeApartmentBlips_Blip: 475,
+    Load_HighLifeApartmentBlips_Scale: 1.0,
+    Load_HighLifeApartmentBlips_Color: 47,
+    Load_HighLifeApartmentBlips_SecondColor: false,
+    Load_HighLifeApartmentBlips_SecondRolor_RGB: {r: 0, g: 0, b: 0},
+    Load_HighLifeApartmentBlips_Name: "High Life Apartment",
     Load_HighLifeApartment1: true,    // -1462.281, -539.6276, 72.44434
     Load_HighLifeApartment1Strip: 'set2',    // set1 / set2 / set3
     Load_HighLifeApartment1Booze: 'set3',    // set1 / set2 / set3
@@ -436,13 +436,13 @@ export const _CONFIG = {
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
     //               High End Apartments Setting begin                        //
     //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
-	Load_HighEndApartmentBlips: true,
-	Load_HighEndApartmentBlips_Blip: 475,
-	Load_HighEndApartmentBlips_Scale: 1.0,
-	Load_HighEndApartmentBlips_Color: 33,
-	Load_HighEndApartmentBlips_SecondColor: false,
-	Load_HighEndApartmentBlips_SecondRolor_RGB: {r: 0, g: 0, b: 0},
-	Load_HighEndApartmentBlips_Name: "High End Apartment",
+    Load_HighEndApartmentBlips: true,
+    Load_HighEndApartmentBlips_Blip: 475,
+    Load_HighEndApartmentBlips_Scale: 1.0,
+    Load_HighEndApartmentBlips_Color: 33,
+    Load_HighEndApartmentBlips_SecondColor: false,
+    Load_HighEndApartmentBlips_SecondRolor_RGB: {r: 0, g: 0, b: 0},
+    Load_HighEndApartmentBlips_Name: "High End Apartment",
     Load_HighEndApartment1: true,    // -35.31277, -580.4199, 88.71221
     Load_HighEndApartment1Strip: 'set2',    // set1 / set2 / set3
     Load_HighEndApartment1Booze: 'set3',    // set1 / set2 / set3
@@ -458,13 +458,13 @@ export const _CONFIG = {
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
     //               Low End Penthouses Setting begin                         //
     //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
-	Load_MidEndHouseBlips: true,
-	Load_MidEndHouseBlips_Blip: 475,
-	Load_MidEndHouseBlips_Scale: 1.0,
-	Load_MidEndHouseBlips_Color: 3,
-	Load_MidEndHouseBlips_SecondColor: false,
-	Load_MidEndHouseBlips_SecondRolor_RGB: {r: 0, g: 0, b: 0},
-	Load_MidEndHouseBlips_Name: "Low End Penthouse",
+    Load_MidEndHouseBlips: true,
+    Load_MidEndHouseBlips_Blip: 475,
+    Load_MidEndHouseBlips_Scale: 1.0,
+    Load_MidEndHouseBlips_Color: 3,
+    Load_MidEndHouseBlips_SecondColor: false,
+    Load_MidEndHouseBlips_SecondRolor_RGB: {r: 0, g: 0, b: 0},
+    Load_MidEndHouseBlips_Name: "Low End Penthouse",
     Load_LowEndHouse: true,    // 261.4586, -998.8196, -99.00863
     Load_LowEndHouseStrip: 'set3',    // set1 / set2 / set3
     Load_LowEndHouseBooze: 'set2',    // set1 / set2 / set3
@@ -476,13 +476,13 @@ export const _CONFIG = {
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
     //             Middle End Penthouses Setting begin                        //
     //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
-	Load_MidEndHouseBlips: true,
-	Load_MidEndHouseBlips_Blip: 475,
-	Load_MidEndHouseBlips_Scale: 1.0,
-	Load_MidEndHouseBlips_Color: 5,
-	Load_MidEndHouseBlips_SecondColor: false,
-	Load_MidEndHouseBlips_SecondRolor_RGB: {r: 0, g: 0, b: 0},
-	Load_MidEndHouseBlips_Name: "Middle End Penthouse",
+    Load_MidEndHouseBlips: true,
+    Load_MidEndHouseBlips_Blip: 475,
+    Load_MidEndHouseBlips_Scale: 1.0,
+    Load_MidEndHouseBlips_Color: 5,
+    Load_MidEndHouseBlips_SecondColor: false,
+    Load_MidEndHouseBlips_SecondRolor_RGB: {r: 0, g: 0, b: 0},
+    Load_MidEndHouseBlips_Name: "Middle End Penthouse",
     Load_MidEndHouse: true,    // 347.2686, -999.2955, -99.19622
     Load_MidEndHouseStrip: 'set1',    // set1 / set2 / set3
     Load_MidEndHouseBooze: 'set1',    // set1 / set2 / set3
@@ -494,13 +494,13 @@ export const _CONFIG = {
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
     //                High End Houses Setting begin                           //
     //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
-	Load_HighEndHouseBlips: true,
-	Load_HighEndHouseBlips_Blip: 475,
-	Load_HighEndHouseBlips_Scale: 1.0,
-	Load_HighEndHouseBlips_Color: 46,
-	Load_HighEndHouseBlips_SecondColor: false,
-	Load_HighEndHouseBlips_SecondRolor_RGB: 0,
-	Load_HighEndHouseBlips_Name: "High End Houses",
+    Load_HighEndHouseBlips: true,
+    Load_HighEndHouseBlips_Blip: 475,
+    Load_HighEndHouseBlips_Scale: 1.0,
+    Load_HighEndHouseBlips_Color: 46,
+    Load_HighEndHouseBlips_SecondColor: false,
+    Load_HighEndHouseBlips_SecondRolor_RGB: 0,
+    Load_HighEndHouseBlips_Name: "High End Houses",
     Load_HighEndHouse1: true,    // -169.286, 486.4938, 137.4436
     Load_HighEndHouse1Strip: 'set1',    // set1 / set2 / set3
     Load_HighEndHouse1Booze: 'set1',    // set1 / set2 / set3
@@ -535,6 +535,120 @@ export const _CONFIG = {
     Load_HighEndHouse8Smoke: 'stage3',    // stage1 / stage2 / stage3
     //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
     //                 High End Houses Setting end                            //
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //                Finance Office Setting begin                            //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+    Load_FinanceOffice1: true,    // -141.1987, -620.913, 168.8205
+    Load_FinanceOffice1Style: 'warm',    // warm / classical / vintage / contrast / rich / cool / ice / conservative / polished
+    Load_FinanceOffice1Cash: 'set15',    // set1 / set2 / set3 / set4 / set5 / set6 / set7 / set8 / set9 / set10 / set11 / set12 / set13 / set14 / set15 / set16 / set17 / set18 / set19 / set20 / set21 / set22 / set23 / set24 / none
+    Load_FinanceOffice1Cigs: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice1Counterfeit: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice1DrugBags: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice1DrugStatue: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice1Electronic: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice1FurCoats: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice1Gems: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice1Guns: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice1Ivory: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice1JewelWatch: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice1Med: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice1Art: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice1Pills: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice1Silver: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice1Chairs: true,
+    Load_FinanceOffice1Booze: true,
+    Load_FinanceOffice2: true,    // -75.8466, -826.9893, 243.3859
+    Load_FinanceOffice2Style: 'warm',    // warm / classical / vintage / contrast / rich / cool / ice / conservative / polished
+    Load_FinanceOffice2Cash: 'set15',    // set1 / set2 / set3 / set4 / set5 / set6 / set7 / set8 / set9 / set10 / set11 / set12 / set13 / set14 / set15 / set16 / set17 / set18 / set19 / set20 / set21 / set22 / set23 / set24 / none
+    Load_FinanceOffice2Cigs: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice2Counterfeit: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice2DrugBags: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice2DrugStatue: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice2Electronic: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice2FurCoats: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice2Gems: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice2Guns: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice2Ivory: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice2JewelWatch: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice2Med: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice2Art: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice2Pills: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice2Silver: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice2Chairs: true,
+    Load_FinanceOffice2Booze: true,
+    Load_FinanceOffice3: true,    // -1579.756, -565.0661, 108.523
+    Load_FinanceOffice3Style: 'warm',    // warm / classical / vintage / contrast / rich / cool / ice / conservative / polished
+    Load_FinanceOffice3Cash: 'set15',    // set1 / set2 / set3 / set4 / set5 / set6 / set7 / set8 / set9 / set10 / set11 / set12 / set13 / set14 / set15 / set16 / set17 / set18 / set19 / set20 / set21 / set22 / set23 / set24 / none
+    Load_FinanceOffice3Cigs: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice3Counterfeit: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice3DrugBags: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice3DrugStatue: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice3Electronic: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice3FurCoats: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice3Gems: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice3Guns: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice3Ivory: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice3JewelWatch: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice3Med: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice3Art: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice3Pills: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice3Silver: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice3Chairs: true,
+    Load_FinanceOffice3Booze: true,
+    Load_FinanceOffice4: true,    // -1392.667, -480.4736, 72.04217 / (if this true then make sure that Load_Garage4Part is set to garage2)
+    Load_FinanceOffice4Style: 'warm',    // warm / classical / vintage / contrast / rich / cool / ice / conservative / polished
+    Load_FinanceOffice4Cash: 'set15',    // set1 / set2 / set3 / set4 / set5 / set6 / set7 / set8 / set9 / set10 / set11 / set12 / set13 / set14 / set15 / set16 / set17 / set18 / set19 / set20 / set21 / set22 / set23 / set24 / none
+    Load_FinanceOffice4Cigs: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice4Counterfeit: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice4DrugBags: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice4DrugStatue: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice4Electronic: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice4FurCoats: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice4Gems: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice4Guns: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice4Ivory: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice4JewelWatch: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice4Med: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice4Art: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice4Pills: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice4Silver: 'none',    // set1 / set2 / set3 / none
+    Load_FinanceOffice4Chairs: true,
+    Load_FinanceOffice4Booze: true,
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
+    //                 Finance Office Setting end                             //
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+
+    //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
+    //                    Garage Setting begin                                //
+    //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
+    Load_Garage1: true,    // -191.0133, -579.1428, 135.0 / -117.4989, -568.1132, 135.0 / -136.0780, -630.1852, 135.0 / -146.6166, -596.6301, 166.0
+    Load_Garage1Part: 'garage2',     // garage1 / garage2 / garage3
+    Load_Garage1Style: 'set3',    // set1 / set2 / set3 / set4
+    Load_Garage1LevelNums: 'set23',    // set1 / set2 / set3 / set4 / set5 / set6 / set7 / set8 / set9 / set10 / set11 / set12 / set13 / set14 / set15 / set16 / set17 / set18 / set19 / set20 / set21 / set22 / set23 / set24 / set25 / set26 / set27 / none
+    Load_Garage1Lightning: 'set5',    // set1 / set2 / set3 / set4 / set5 / set6 / set7 / set8 / set9 / none
+    Load_Garage1floor: "aliens",    // city / seabed / aliens / clouds / money / zebra / blackwhite / barcode / paintbrushbw / grid / splashes / squares / mosaic / paintbrushcolor / curvescolor / marblebrown / marbleblue / marblebw / maze / none
+    Load_Garage2: true,    // -84.2193, -823.0851, 221.0 / -69.8627, -824.7498, 221.0 / -80.4318, -813.2536, 221.0 / -73.9039, -821.6204, 284.0
+    Load_Garage2Part: 'garage2',     // garage1 / garage2 / garage3
+    Load_Garage2Style: 'set3',    // set1 / set2 / set3 / set4
+    Load_Garage2LevelNums: 'set23',    // set1 / set2 / set3 / set4 / set5 / set6 / set7 / set8 / set9 / set10 / set11 / set12 / set13 / set14 / set15 / set16 / set17 / set18 / set19 / set20 / set21 / set22 / set23 / set24 / set25 / set26 / set27 / none
+    Load_Garage2Lightning: 'set5',    // set1 / set2 / set3 / set4 / set5 / set6 / set7 / set8 / set9 / none
+    Load_Garage2floor: "aliens",    // city / seabed / aliens / clouds / money / zebra / blackwhite / barcode / paintbrushbw / grid / splashes / squares / mosaic / paintbrushcolor / curvescolor / marblebrown / marbleblue / marblebw / maze / none
+    Load_Garage3: true,    // -1581.1120, -567.2450, 85.5 / -1568.7390, -562.0455, 85.5 / -1563.5570, -574.4314, 85.5 / -1578.0230, -576.4251, 104.2000
+    Load_Garage3Part: 'garage2',     // garage1 / garage2 / garage3
+    Load_Garage3Style: 'set3',    // set1 / set2 / set3 / set4
+    Load_Garage3LevelNums: 'set23',    // set1 / set2 / set3 / set4 / set5 / set6 / set7 / set8 / set9 / set10 / set11 / set12 / set13 / set14 / set15 / set16 / set17 / set18 / set19 / set20 / set21 / set22 / set23 / set24 / set25 / set26 / set27 / none
+    Load_Garage3Lightning: 'set5',    // set1 / set2 / set3 / set4 / set5 / set6 / set7 / set8 / set9 / none
+    Load_Garage3floor: "aliens",    // city / seabed / aliens / clouds / money / zebra / blackwhite / barcode / paintbrushbw / grid / splashes / squares / mosaic / paintbrushcolor / curvescolor / marblebrown / marbleblue / marblebw / maze / none
+    Load_Garage4: true,    // -1388.8400, -478.7402, 56.1 / -1388.8600, -478.7574, 48.1 / -1374.6820, -474.3586, 56.1 / -1391.2450, -473.9638, 77.2
+    Load_Garage4Part: 'garage2',     // garage1 / garage2 / garage3 (if you would like to set garage1 or garage3 make sure that Load_FinanceOffice4 is set to false)
+    Load_Garage4Style: 'set3',    // set1 / set2 / set3 / set4
+    Load_Garage4LevelNums: 'set23',    // set1 / set2 / set3 / set4 / set5 / set6 / set7 / set8 / set9 / set10 / set11 / set12 / set13 / set14 / set15 / set16 / set17 / set18 / set19 / set20 / set21 / set22 / set23 / set24 / set25 / set26 / set27 / none
+    Load_Garage4Lightning: 'set5',    // set1 / set2 / set3 / set4 / set5 / set6 / set7 / set8 / set9 / none
+    Load_Garage4floor: "aliens",    // city / seabed / aliens / clouds / money / zebra / blackwhite / barcode / paintbrushbw / grid / splashes / squares / mosaic / paintbrushcolor / curvescolor / marblebrown / marbleblue / marblebw / maze / none
+    //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
+    //                     Garage Setting end                                 //
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
 };
 
