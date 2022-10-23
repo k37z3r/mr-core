@@ -203,10 +203,14 @@ export let Nightclub = {
 	}
 }
 if (getConfig("Load_Nightclub")){
+	let model = alt.hash("ba_prop_club_screens_01");
+	const entrancePos = new alt.Vector3(988.06, 80.52, 79.97);
+	const extrancePos = new alt.Vector3(-1569.4, -3017.1, -73.41);
+	let handle = CreateNamedRenderTargetForModel("Club_Projector", model);
 	alt.everyTick(() => {
+		const distance_entry = alt.Player.local.pos.distanceTo(entrancePos);
+		const distance_exit = alt.Player.local.pos.distanceTo(extrancePos);
 		if (drawTv()) {
-			let model = native.getHashKey("ba_prop_club_screens_01");
-			let handle = CreateNamedRenderTargetForModel("Club_Projector", model);
 			native.setTvAudioFrontend(false);
 			native.setTextRenderId(handle);
 			native.setScriptGfxDrawBehindPausemenu(true);
@@ -216,8 +220,6 @@ if (getConfig("Load_Nightclub")){
 		}
 		else
 			drawTv();
-		const distance_entry = alt.Player.local.pos.distanceTo(new alt.Vector3(988.06, 80.52, 79.97));
-		const distance_exit = alt.Player.local.pos.distanceTo(new alt.Vector3(-1569.4, -3017.1, -73.41));
 		RegisterPoi("mr_iplloader_nightclub_entry", 988.06, 80.52, 80.97, 1.5, _L("enter_nightclub"));
 		RegisterPoi("mr_iplloader_nightclub_leave", -1569.4, -3017.1, -74.41, 1.5, _L("leave_nightclub"));
 		if (distance_entry < 1.5 && native.isControlJustPressed(1, 38)){

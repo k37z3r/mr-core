@@ -52,6 +52,14 @@ import { HighEndHouse5 } from './house7.mjs';
 import { HighEndHouse6 } from './house8.mjs';
 import { HighEndHouse7 } from './house9.mjs';
 import { HighEndHouse8 } from './house10.mjs';
+import { FinanceOffice1 } from './office1.mjs';
+import { FinanceOffice2 } from './office2.mjs';
+import { FinanceOffice3 } from './office3.mjs';
+import { FinanceOffice4 } from './office4.mjs';
+import { Garage1 } from './garage1.mjs';
+import { Garage2 } from './garage2.mjs';
+import { Garage3 } from './garage3.mjs';
+import { Garage4 } from './garage4.mjs';
 import { Blips } from './blips.mjs';
 Start.Unload();
 alt.requestIpl("post_hiest_unload");
@@ -261,6 +269,11 @@ HighEndHouse5.Enable(getConfig("Load_HighEndHouse5"));
 HighEndHouse6.Enable(getConfig("Load_HighEndHouse6"));
 HighEndHouse7.Enable(getConfig("Load_HighEndHouse7"));
 HighEndHouse8.Enable(getConfig("Load_HighEndHouse8"));
+FinanceOffice1.Enable(getConfig("Load_FinanceOffice1"));
+FinanceOffice2.Enable(getConfig("Load_FinanceOffice2"));
+FinanceOffice3.Enable(getConfig("Load_FinanceOffice3"));
+FinanceOffice4.Enable(getConfig("Load_FinanceOffice4"));
+Garage1.Enable(getConfig("Load_Garage1"));
 Blips.Enable(getConfig("IPL_Blip_Loader"));
 if (getConfig("Load_cayoPerico")){
 	alt.on("connectionComplete", () => {
