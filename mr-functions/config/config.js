@@ -155,6 +155,7 @@ export const _CONFIG = {
     Load_NightclubBlips_SecondColor: true,
     Load_NightclubBlips_SecondRolor_RGB: {r: 156, g: 110, b: 175},
     Load_NightclubBlips_Name: 'Nightclub',
+	Load_NightclubDJandDancer: true,
     Load_Nightclub: true,    //    -1569.6395, -3016.800, -74.4139
     Load_NightclubStyle: 'trad',    //    trad / edgy / glam
     Load_NightclubName: 'technologie',    //    galaxy / studio / omega / technologie / gefangnis / maisonette / tony / palace / paradise
