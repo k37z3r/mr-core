@@ -1,7 +1,7 @@
 import * as native from 'natives';
 import { EnableIpl, SetIplProp, getConfig } from 'mr-functions';
 export let Simeon = {
-	ipl : ["shr_int"],
+	ipl : ["shr_int", "reh_simeonfix"],
 	Enable : function(state){
 		EnableIpl(Simeon.ipl, state);
 		if (state){

@@ -1,7 +1,7 @@
 import * as native from 'natives';
 import { EnableIpl, SetIplProp, getConfig } from 'mr-functions';
 export let VehicleWarehouse = {
-	ipl : ["imp_impexp_interior_placement_interior_1_impexp_intwaremed_milo_", "imp_impexp_interior_placement_interior_3_impexp_int_02_milo_"],
+	ipl : ["imp_impexp_interior_placement_interior_1_impexp_intwaremed_milo_", "imp_impexp_interior_placement_interior_3_impexp_int_02_milo_", "reh_int_placement_sum2_interior_0_dlc_int_03_sum2_milo_"],
 	Enable : function(state){
         let StyleId, PumpId;
 		if (state){
@@ -32,6 +32,11 @@ export let VehicleWarehouse = {
 			else
 				PumpId = "pump_08";
 			SetIplProp(253185, PumpId, true);
+			SetIplProp(289537, "entity_set_office", true)
+			SetIplProp(289537, "entity_set_light_option_1", true)
+			SetIplProp(289537, "entity_set_light_option_2", true)
+			SetIplProp(289537, "entity_set_light_option_3", true)
+			SetIplProp(289537, "entity_set_tint_options", true)
 			native.refreshInterior(253185);
 			native.refreshInterior(252673);
 		}

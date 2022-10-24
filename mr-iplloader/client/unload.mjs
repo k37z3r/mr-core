@@ -631,7 +631,19 @@ export let Start = {
 			"sf_fixeroffice_bh1_05",
 			"sf_fixeroffice_hw1_08",
 			"sf_fixeroffice_kt1_05",
-			"sf_fixeroffice_kt1_08"
+			"sf_fixeroffice_kt1_08",
+			"sf_int_placement_sec_interior_1_dlc_studio_sec_milo_ ",
+			"sm_smugdlc_interior_placement_interior_0_smugdlc_int_01_milo_",
+			"tr_tuner_shop_burton",
+			"tr_tuner_shop_mesa",
+			"tr_tuner_shop_mission",
+			"tr_tuner_shop_rancho",
+			"tr_tuner_shop_strawberry",
+			"tr_tuner_meetup",
+			"tr_tuner_race_line",
+			"reh_simeonfix",
+			"reh_int_placement_sum2_interior_0_dlc_int_03_sum2_milo_",
+			"reh_int_placement_sum2_interior_1_dlc_int_04_sum2_milo_"
 		];
 		let props_a = [
 			"Apart_Hi_Strip_A",
@@ -1361,6 +1373,116 @@ export let Start = {
 			"Entity_Set_Art_2",
 			"Entity_Set_Art_3"
 		];
+		let props_af = [
+			"Entity_Set_FIX_STU_EXT_P3A1",
+			"Entity_Set_FIX_TRIP1_INT_P2",
+			"Entity_Set_FIX_STU_EXT_P1",
+			"Entity_Set_Fire",
+			"entity_set_default"
+		];
+		let props_ag = [
+			"set_tint_shell",
+			"set_floor_1",
+			"set_floor_2",
+			"set_floor_decal_1",
+			"set_floor_decal_2",
+			"set_floor_decal_3",
+			"set_floor_decal_4",
+			"set_floor_decal_5",
+			"set_floor_decal_6",
+			"set_floor_decal_7",
+			"set_floor_decal_8",
+			"set_floor_decal_9",
+			"set_crane_tint",
+			"set_modarea",
+			"set_office_basic",
+			"set_office_modern",
+			"set_office_traditional",
+			"set_bedroom_modern",
+			"set_bedroom_tint",
+			"set_bedroom_traditional",
+			"set_bedroom_blinds_open",
+			"set_bedroom_blinds_closed",
+			"set_lighting_tint_props",
+			"set_lighting_hangar_a",
+			"set_lighting_hangar_b",
+			"set_lighting_hangar_c",
+			"set_lighting_wall_neutral",
+			"set_lighting_wall_tint01",
+			"set_lighting_wall_tint02",
+			"set_lighting_wall_tint03",
+			"set_lighting_wall_tint04",
+			"set_lighting_wall_tint05",
+			"set_lighting_wall_tint06",
+			"set_lighting_wall_tint07",
+			"set_lighting_wall_tint08",
+			"set_lighting_wall_tint09",
+			"set_bedroom_clutter"
+		];
+		let props_ah = [
+			"entity_set_bedroom",
+			"entity_set_bedroom_empty",
+			"entity_set_bombs",
+			"entity_set_box_clutter",
+			"entity_set_cabinets",
+			"entity_set_car_lift_cutscene",
+			"entity_set_car_lift_default",
+			"entity_set_car_lift_purchase",
+			"entity_set_chalkboard",
+			"entity_set_container",
+			"entity_set_cut_seats",
+			"entity_set_def_table",
+			"entity_set_drive",
+			"entity_set_ecu",
+			"entity_set_IAA",
+			"entity_set_jammers",
+			"entity_set_laptop",
+			"entity_set_lightbox",
+			"entity_set_methLab",
+			"entity_set_plate",
+			"entity_set_scope",
+			"entity_set_style_1",
+			"entity_set_style_2",
+			"entity_set_style_3",
+			"entity_set_style_4",
+			"entity_set_style_5",
+			"entity_set_style_6",
+			"entity_set_style_7",
+			"entity_set_style_8",
+			"entity_set_style_9",
+			"entity_set_table",
+			"entity_set_thermal",
+			"entity_set_tints",
+			"entity_set_train",
+			"entity_set_virus"
+		];
+		let props_ai = [
+			"entity_set_meet_crew",
+			"entity_set_meet_lights",
+			"entity_set_meet_lights_cheap",
+			"entity_set_player",
+			"entity_set_test_crew",
+			"entity_set_test_lights",
+			"entity_set_test_lights_cheap",
+			"entity_set_time_trial"
+		];
+		let props_aj = [
+			"tintable_walls",
+		];
+		let props_ak = [
+			"entity_set_office",
+			"entity_set_light_option_1",
+			"entity_set_light_option_2",
+			"entity_set_light_option_3",
+			"entity_set_tint_options"
+		];
+		let props_am = [
+			"entity_set_style_1",
+			"entity_set_style_2",
+			"entity_set_style_3",
+			"entity_set_style_4",
+			"entity_set_style_5"
+		];
 		UnSetIplProp(145921, props_a);
 		UnSetIplProp(146177, props_a);
 		UnSetIplProp(146689, props_a);
@@ -1492,6 +1614,13 @@ export let Start = {
 		UnSetIplProp(288257, props_ae);
 		UnSetIplProp(288001, props_ae);
 		UnSetIplProp(287745, props_ae);
+		UnSetIplProp(286977, props_af);
+		UnSetIplProp(260353, props_ag);
+		UnSetIplProp(285953, props_ah);
+		UnSetIplProp(285697, props_ai);
+		UnSetIplProp(284673, props_aj);
+		UnSetIplProp(289537, props_ak);
+		UnSetIplProp(289793, props_am);
 		EnableIpl(ipl, false);
 	}
 }
