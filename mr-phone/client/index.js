@@ -2,16 +2,18 @@ import * as alt from "alt";
 let opened = false;
 const view = new alt.WebView("http://resource/client/html/index.html");
 alt.on("keyup", (keycode) => {
-  switch (keycode) {
-    case 77: // Key: M
-		if (opened){
-			close_phone();
-		}
-		else{
-			open_phone();
-		}
-      break;
-  }
+	switch (keycode) {
+		case 77: // Key: M
+			if (!opened && alt.gameControlsEnabled()){
+				open_phone();
+			}
+		break;
+		case 27: // Key: escape
+			if (opened && !alt.gameControlsEnabled()){
+				close_phone();
+			}
+		break;
+	}
 });
 function close_phone(){
 	opened = false;
