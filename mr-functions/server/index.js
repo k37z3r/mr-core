@@ -17,7 +17,13 @@ const neededValues = [
 	'DISCORD_ADMIN_ID',
 	'DISCORD_MOD_ID',
 	'DISCORD_SUPPORTER_ID',
-	'DISCORD_STATUS_CHANNEL'
+	'DISCORD_STATUS_CHANNEL',
+	'DISCORD_INVITE_LINK',
+	'DISCORD_PREFIX',
+	'WHITELIST',
+	'LOG_WHITELIST',
+	'LOG_MYSQL',
+	'ANNOUNCE_LOG_IN_OUT'
 ];
 neededValues.forEach((value) => {
     if (!(value in process.env)) {
@@ -80,14 +86,20 @@ export async function mysql_select_while_cb(msql, values, cb){
 		return cb([numrows, ((result[0]==undefined)?null:result)]);
 	});
 }
-export const DISCORD_APP_ID = process.env.DISCORD_APP_ID
-export const DISCORD_SERVER_ID = process.env.DISCORD_SERVER_ID
-export const DISCORD_TOKEN = process.env.DISCORD_TOKEN
-export const DISCORD_CITIZEN_ID = process.env.DISCORD_CITIZEN_ID
-export const DISCORD_ADMIN_ID = process.env.DISCORD_ADMIN_ID
-export const DISCORD_MOD_ID = process.env.DISCORD_MOD_ID
-export const DISCORD_SUPPORTER_ID = process.env.DISCORD_SUPPORTER_ID
-export const DISCORD_STATUS_CHANNEL = process.env.DISCORD_STATUS_CHANNEL
+export const DISCORD_APP_ID = process.env.DISCORD_APP_ID;
+export const DISCORD_SERVER_ID = process.env.DISCORD_SERVER_ID;
+export const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
+export const DISCORD_CITIZEN_ID = process.env.DISCORD_CITIZEN_ID;
+export const DISCORD_ADMIN_ID = process.env.DISCORD_ADMIN_ID;
+export const DISCORD_MOD_ID = process.env.DISCORD_MOD_ID;
+export const DISCORD_SUPPORTER_ID = process.env.DISCORD_SUPPORTER_ID;
+export const DISCORD_STATUS_CHANNEL = process.env.DISCORD_STATUS_CHANNEL;
+export const DISCORD_INVITE_LINK = process.env.DISCORD_INVITE_LINK;
+export const DISCORD_PREFIX = process.env.DISCORD_PREFIX;
+export const WHITELIST = process.env.WHITELIST;
+export const LOG_WHITELIST = process.env.LOG_WHITELIST;
+export const LOG_MYSQL = process.env.LOG_MYSQL;
+export const ANNOUNCE_LOG_IN_OUT = process.env.ANNOUNCE_LOG_IN_OUT;
 export function getConfig(value){
 	for(var key in _CONFIG) {
 		if(key == value) {
