@@ -1,16 +1,17 @@
 import * as alt from 'alt';
+import fs from "fs";
 import axios from 'axios';
 import Discord from 'discord.js';
-const { Client, GatewayIntentBits } = Discord;
+const { Client, GatewayIntentBits, EmbedBuilder } = Discord;
 const discordClient = new Client({ intents: [ GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMembers, ] });
-import { DISCORD_APP_ID, DISCORD_SERVER_ID, DISCORD_TOKEN, DISCORD_CITIZEN_ID, DISCORD_ADMIN_ID, DISCORD_MOD_ID, DISCORD_SUPPORTER_ID, DISCORD_STATUS_CHANNEL, DISCORD_INVITE_LINK, DISCORD_PREFIX, WHITELIST, LOG_WHITELIST, LOG_MYSQL, ANNOUNCE_LOG_IN_OUT, mysql_callback, _L, getConfig } from 'mr-functions';
+import { DISCORD_APP_ID, DISCORD_SERVER_ID, DISCORD_TOKEN, DISCORD_CITIZEN_ID, DISCORD_ADMIN_ID, DISCORD_MOD_ID, DISCORD_SUPPORTER_ID, DISCORD_STATUS_CHANNEL, DISCORD_INVITE_LINK, DISCORD_PREFIX, WHITELIST, LOG_WHITELIST, LOG_MYSQL, ANNOUNCE_LOG_IN_OUT, DISCORD_INGAME_CHANNEL, mysql_callback, _L, getConfig, sortFunction, registerChatCmd, invokeChatCmd, canSplit, DISCORD_ADMINCALL_CHANNEL } from 'mr-functions';
 let WhitelistUpdate;
 var CurrentOnlineUsers = [];
 var WhiteList = [];
+var msg = [];
 discordClient.on('guildMemberUpdate', (oldMember, newMember) => {
 	refreshWhitelist();
 });
-
 discordClient.on("messageCreate", (message) => {
 	if (!message.content.startsWith(DISCORD_PREFIX) || message.author.bot)
 		return;
@@ -30,13 +31,129 @@ discordClient.on("messageCreate", (message) => {
 	else if (message.content.startsWith(`${DISCORD_PREFIX}help`)) {
 		message.channel.send(_L("discord_help"));
 	}
+	if (message.channel.id === DISCORD_INGAME_CHANNEL) {
+		set_message();
+	}
 });
 alt.on('playerConnect', (player) => {
 	alt.emitClient(player, 'mr-core:discord:set_discord_app_id',  DISCORD_APP_ID);
 });
+registerChatCmd("tp", (player, args) => {
+	let posX = "";
+	let posY = "";
+	let posZ = "";
+	if (args.length == 3){
+		posX = args[0];
+		posY = args[1];
+		posZ = args[2];
+	}
+	else{
+		if (canSplit(args[0], ",")){
+			let pos = args[0].split(",");
+			if (pos.length == 3){
+				posX = pos[0];
+				posY = pos[1];
+				posZ = pos[2];
+			}
+			else{
+				const foundPlayers = alt.Player.all.filter((p) => p.name === args[0]);
+				if (foundPlayers && foundPlayers.length > 0) {
+					posX = foundPlayers[0].pos.x;
+					posY = foundPlayers[0].pos.y;
+					posZ = foundPlayers[0].pos.z;
+				}
+				else
+					return false;
+			}
+		}
+		else
+			return false;
+	}
+	if (posX.length > 0 && posY.length > 0 && posZ.length > 0){
+		posX = parseFloat(posX.trim().replace(",",""));
+		posY = parseFloat(posY.trim().replace(",",""));
+		posZ = parseFloat(posZ.trim().replace(",",""));
+		if (!isNaN(posX) && !isNaN(posY) && !isNaN(posZ)){
+			player.spawn(posX, posY, posZ, 0);
+		}
+		else{
+			const foundPlayers = alt.Player.all.filter((p) => p.name === args[0]);
+			if (foundPlayers && foundPlayers.length > 0) {
+				player.spawn(foundPlayers[0].pos.x, foundPlayers[0].pos.y, foundPlayers[0].pos.z, 0);
+			}
+			else
+				return false;
+		}
+	}
+	else
+		return false;
+});
+registerChatCmd("calladmin", (player, args) => {
+	mysql_callback('SELECT username FROM users WHERE id = ?', [player.id], function(result){
+		if (result[0] > 0){
+			let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
+			server.channels.cache.get(DISCORD_ADMINCALL_CHANNEL).send("<@&" + DISCORD_ADMIN_ID + "> <@&" + DISCORD_MOD_ID + "> <@&" + DISCORD_SUPPORTER_ID + ">\r\n" + _L("need_help", [result[1].username]));
+			set_message();
+		}
+	});
+});
+alt.onClient('mr-core:discord:msgtodiscord', async (player, msg) => {
+	mysql_callback('SELECT username, isAdmin, isMod, isSupporter FROM users WHERE id = ?', [player.id], function(result){
+		if (result[0] > 0){
+			if (msg[0] === "/"){
+				msg = msg.trim().slice(1);
+				if (msg.length>0){
+					if (canSplit(msg, " ")){
+						let args = msg.split(" ");
+						let cmd = args.shift();
+						invokeChatCmd(player, cmd, args);
+					}
+					else
+						invokeChatCmd(player, msg, "");
+				}
+				else
+					return false;
+			}
+			else{
+				let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
+				let channel = server.channels.cache.get(DISCORD_INGAME_CHANNEL);
+				let ColorId = server.roles.cache.get(DISCORD_CITIZEN_ID).hexColor;
+				if (result[1].isSupporter == "yes")
+					ColorId = server.roles.cache.get(DISCORD_SUPPORTER_ID).hexColor;
+				if (result[1].isMod == "yes")
+					ColorId = server.roles.cache.get(DISCORD_MOD_ID).hexColor;
+				if (result[1].isAdmin == "yes")
+					ColorId = server.roles.cache.get(DISCORD_ADMIN_ID).hexColor;
+				let Embed = new EmbedBuilder().setColor(ColorId).setAuthor({ name: result[1].username }).setDescription(msg);
+				channel.send({ embeds: [Embed] });
+				set_message();
+			}
+		}
+	});
+});
+alt.onClient('mr-core:discord:loadmessages', async (player) => {
+	let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
+	msg = [];
+	await server.channels.cache.get(DISCORD_INGAME_CHANNEL).messages.fetch({ limit: 50 }).then(messages => {
+		messages.forEach(message => {
+			server.members.fetch(message.author.id).then(member => {
+				if (message.embeds.length > 0 && message.author.bot == true)
+					msg.push([message.createdTimestamp, message.embeds[0].author.name, message.embeds[0].description, message.embeds[0].hexColor]);
+				else if (message.content.length > 0)
+						msg.push([message.createdTimestamp, message.author.username, message.content, member.displayHexColor]);
+			});
+		});
+	});
+	msg.sort(sortFunction);
+	alt.emitClient(player, "mr-core:discord:setmessages",  msg);
+});
+function set_message(){
+	alt.emitAllClients('mr-core:discord:getmessages');
+}
+//chat ende
 alt.on('playerDisconnect', (player) => {
+	let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
 	if (ANNOUNCE_LOG_IN_OUT=="true"){
-		let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
 		server.channels.cache.get(DISCORD_STATUS_CHANNEL).send(_L("leaved", [getDiscordNameById(player.id)]));
 	}
 	mysql_callback("UPDATE users SET id = ? WHERE dsid = ?", [-1, getDiscordById(player.id)], function(result){
@@ -47,6 +164,7 @@ alt.on('playerDisconnect', (player) => {
 		CurrentOnlineUsers.splice(getOnlineUsersById(player.id), 1);
 });
 alt.onClient('mr-core:discord:token', async (player, token) => {
+	let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
 	const request = await axios.get('https://discordapp.com/api/users/@me', {
 		'headers': {
 			'Content-Type': 'application/x-www-form-urlencoded',
@@ -54,14 +172,19 @@ alt.onClient('mr-core:discord:token', async (player, token) => {
 		}
 	}).catch(function(error) {
 		if (error.response) {
-      console.log(error.response.data);
-      console.log(error.response.status);
-      console.log(error.response.headers);
-    } else if (error.request) {
-      console.log(error.request);
-    } else {
-      console.log('Error', error.message);
-    }
+			console.log(error.response.data);
+			console.log(error.response.status);
+			console.log(error.response.headers);
+			player.kick(_L("discord_error"));
+		}
+		else if (error.request){
+			console.log(error.request);
+			player.kick(_L("discord_error"));
+		}
+		else{
+			console.log('Error', error.message);
+			player.kick(_L("discord_error"));
+		}
 		return null;
 	});
     if (!request || !request.data || !request.data.id || !request.data.username) {
@@ -87,7 +210,6 @@ alt.onClient('mr-core:discord:token', async (player, token) => {
 		}
 	});
 	if (ANNOUNCE_LOG_IN_OUT=="true"){
-		let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
 		server.channels.cache.get(DISCORD_STATUS_CHANNEL).send(_L("joined", [getDiscordNameById(player.id)]));
 	}
 	CurrentOnlineUsers.push({id: player.id, dsid: request.data.id, username: request.data.username});
@@ -190,6 +312,8 @@ function getDiscordNameById(id){
   for (let i=0; i< CurrentOnlineUsers.length; i++){
     if (id == CurrentOnlineUsers[i].id)
       return CurrentOnlineUsers[i].username;
+  
+  console.log(id + " : " + CurrentOnlineUsers[i]);
   }
   return -1;
 }
@@ -215,6 +339,6 @@ function getOnlineUsersById(id){
   return -1;
 }
 WhitelistUpdate = alt.setInterval(refreshWhitelist, 300000);
-alt.on('resourceStart', () => {
+alt.on('resourceStart', async () => {
     discordClient.login(DISCORD_TOKEN).then(() => refreshWhitelist());
 });

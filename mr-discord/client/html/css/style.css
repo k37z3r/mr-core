@@ -1,0 +1,128 @@
+body, html{
+	margin: 0;
+	padding: 0;
+    font-size: 16px;
+    color: rgba(233,241,238,1);
+	overflow: hidden;
+}
+.container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+	bottom:-400px;
+}
+.content {
+    width: 60%;
+    height: 350px;
+    background: rgba(54,57,63,1);
+    color: rgba(233,241,238,1);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.chat {
+    width: 100%;
+    height: 268px;
+    padding: 5px;
+    overflow: auto;
+}
+.msg {
+    background: rgba(64,68,75,1);
+    width: 98%;
+    height: 16px;
+    bottom: 5px;
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+.header {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 20px;
+    align-items: center;
+    background: rgba(32,34,37,1);
+    padding: 10px;
+}
+.fa-discord {
+    color: rgba(114, 136, 218, 1);
+}
+.fa-rectangle-xmark {
+    color: rgba(255, 0, 0, 1);
+	text-shadow: -1px -1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), 1px 1px 0 rgba(0, 0, 0, 1);
+	font-size: 24px;
+}
+.fa-circle-question {
+    color: rgba(248, 255, 145, 1);
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), 1px 1px 0 rgba(0, 0, 0, 1);
+    font-size: 20px;
+}
+.fa-circle-question:active {
+	font-size: 18px;
+}
+.fa-rectangle-xmark:active {
+	font-size: 22px;
+}
+.icons{
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 50px;
+}
+.title {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 20px;
+    letter-spacing: -2px;
+    word-spacing: 2px;
+    font-weight: bold;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    color: #54dcc8;
+    text-shadow: 0 0 1px #000, 0 0 2px #000, 0 0 3px #000, 0 0 4px #54dcc8, 0 0 5px #54dcc8, 0 0 6px #54dcc8, 0 0 7px #54dcc8, 0 0 8px #54dcc8;
+}
+::-webkit-scrollbar {
+	background: rgba(46,51,56,1);
+	width: 8px;
+}
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px rgba(46,51,56,1); 
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: rgba(32,34,37,1); 
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(32,34,37,1); 
+}
+.helpdesk {
+    min-width: 400px;
+    max-width: 400px;
+    top: 40px;
+    right: 10px;
+    padding: 10px 20px;
+    color: #000000;
+    background-color: #f8ff91;
+    font-weight: normal;
+    font-size: 14px;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 99999999;
+    box-sizing: border-box;
+    border: 1px solid #999999;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    display: none;
+}
