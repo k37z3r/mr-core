@@ -18,12 +18,14 @@ const neededValues = [
 	'DISCORD_MOD_ID',
 	'DISCORD_SUPPORTER_ID',
 	'DISCORD_STATUS_CHANNEL',
+	'DISCORD_INGAME_CHANNEL',
 	'DISCORD_INVITE_LINK',
 	'DISCORD_PREFIX',
 	'WHITELIST',
 	'LOG_WHITELIST',
 	'LOG_MYSQL',
-	'ANNOUNCE_LOG_IN_OUT'
+	'ANNOUNCE_LOG_IN_OUT',
+	'DISCORD_ADMINCALL_CHANNEL'
 ];
 neededValues.forEach((value) => {
     if (!(value in process.env)) {
@@ -38,6 +40,27 @@ const con = mysql.createConnection({
 	password: process.env.MYSQL_PASSWORD,
 	database: process.env.MYSQL_DATABASE
 });
+
+
+let cmdHandlers = {};
+export function registerChatCmd(cmd, callback) {
+	cmd = cmd.toLowerCase();
+	if (cmdHandlers[cmd] !== undefined)
+		return false;
+	else
+		cmdHandlers[cmd] = callback;
+}
+export var canSplit = function(str, token){
+    return (str || '').split(token).length > 1;         
+}
+export function invokeChatCmd(player, cmd, args) {
+	cmd = cmd.toLowerCase();
+	const callback = cmdHandlers[cmd];
+	if (callback)
+		callback(player, args);
+	else
+		return false;
+}
 export function mysql_callback(msql, values, cb){
 	if (msql.substr(0,6) == "INSERT"){
 		var connection = con.query(msql, values, function(err, result){
@@ -94,12 +117,14 @@ export const DISCORD_ADMIN_ID = process.env.DISCORD_ADMIN_ID;
 export const DISCORD_MOD_ID = process.env.DISCORD_MOD_ID;
 export const DISCORD_SUPPORTER_ID = process.env.DISCORD_SUPPORTER_ID;
 export const DISCORD_STATUS_CHANNEL = process.env.DISCORD_STATUS_CHANNEL;
+export const DISCORD_INGAME_CHANNEL = process.env.DISCORD_INGAME_CHANNEL;
 export const DISCORD_INVITE_LINK = process.env.DISCORD_INVITE_LINK;
 export const DISCORD_PREFIX = process.env.DISCORD_PREFIX;
 export const WHITELIST = process.env.WHITELIST;
 export const LOG_WHITELIST = process.env.LOG_WHITELIST;
 export const LOG_MYSQL = process.env.LOG_MYSQL;
 export const ANNOUNCE_LOG_IN_OUT = process.env.ANNOUNCE_LOG_IN_OUT;
+export const DISCORD_ADMINCALL_CHANNEL = process.env.DISCORD_ADMINCALL_CHANNEL;
 export function getConfig(value){
 	for(var key in _CONFIG) {
 		if(key == value) {
@@ -137,4 +162,12 @@ export function get_dsid(disid, cb){
 		numrows = result.length;
 		return cb([numrows, ((result[0]==undefined)?null:result[0].dsid)]);
 	});
+}
+export function sortFunction(a, b) {
+    if (a[0] === b[0]) {
+        return 0;
+    }
+    else {
+        return (a[0] < b[0]) ? -1 : 1;
+    }
 }

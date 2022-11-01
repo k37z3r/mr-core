@@ -3,6 +3,7 @@ import * as native from 'natives';
 import { _CONFIG } from '../config/config.js';
 import { translations } from '../language/language.js';
 const view = new alt.WebView("http://resource/client/html/index.html");
+alt.setWatermarkPosition(2);
 export function getRandomInt(max) {
 	return Math.floor(Math.random() * max);
 }

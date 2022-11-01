@@ -44,6 +44,11 @@ export const translations = {
 		"no": "Nein",
 		"enter_nightclub": "Drück [38] um den Nightclub zu betreten",
 		"leave_nightclub": "Drück [38] um den Nightclub zu verlassen",
+		"discord_error": "Es ist ein Fehler aufgetreten, bitte wende dich an den Owner",
+		"teleport_to_coords": "Zu Koordinaten teleportieren",
+		"teleport_to_player": "Zu Spieler teleportieren",
+		"need_help": "AdminCall: %s_0 benötigt Hilfe",
+		"call_admin": "Team um hilfe bitten",
 	},
 	"en": {
 		"log_whitelist_del": "[Whitelist] %s_0 has been removed from the whitelist",
@@ -90,5 +95,10 @@ export const translations = {
 		"no": "no",
 		"enter_nightclub": "Press [38] to enter the Nightclub",
 		"leave_nightclub": "Press [38] to leave the Nightclub",
+		"discord_error": "An error has occurred, please contact the owner",
+		"teleport_to_coords": "Teleport to Coordinates",
+		"teleport_to_player": "Teleport to Player",
+		"need_help": "AdminCall: %s_0 need help",
+		"call_admin": "ask team for help",
 	},
 }
