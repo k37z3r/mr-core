@@ -38,6 +38,9 @@ function sendmessage(msg){
 alt.onServer('mr-core:discord:getmessages', (messages) =>{
 	alt.emitServer("mr-core:discord:loadmessages");
 });
+alt.onServer('mr-core:discord:set_help_tp', (rule) => {
+	view.emit('set_help_tp', rule);
+});
 view.on('mr-core:discord:close_chat', close_chat);
 let opened = false;
 alt.on("keyup", (keycode) => {
@@ -55,6 +58,7 @@ alt.on("keyup", (keycode) => {
 	}
 });
 function open_chat(){
+	alt.emitServer('mr-core:discord:set_help_tp');
 	opened = true;
 	view.emit("openChat", lang_array);
 	alt.toggleGameControls(false);

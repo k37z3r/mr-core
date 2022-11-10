@@ -9,8 +9,13 @@ var opened = false;
 var showhelp = false;
 var msg = "";
 var language = [];
+var tp_help = false;
 alt.on("closeChat", closeChat);
 alt.on("openChat", openChat);
+alt.on('set_help_tp', (rule) => {
+	if (rule == "yes")
+		tp_help = true;
+});
 function openChat(lang_array){
 	if (!opened){
 		$(".container").animate({'bottom':'0px'}, 500);
@@ -47,7 +52,8 @@ $(document).ready(function(){
 			$('.helpdesk').fadeOut(500);
 		}
 		else{
-			$('.helpdesk').html(language[0] + ': <span style="font-weight:bolder">/tp X,Y,Z</span><br>' + language[1] + ': <span style="font-weight:bolder">/tp playername</span><br>' + language[2] + ': <span style="font-weight:bolder">/calladmin</span>');
+			$('.helpdesk').html(
+			((tp_help == "yes")?language[0] + ': <span style="font-weight:bolder">/tp X,Y,Z</span><br>' + language[1] + ': <span style="font-weight:bolder">/tp playername</span><br>':'') + language[2] + ': <span style="font-weight:bolder">/calladmin</span>');
 			showhelp = true;
 			$('.helpdesk').fadeIn(500);
 		}
