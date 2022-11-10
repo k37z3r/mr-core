@@ -77,12 +77,14 @@ registerChatCmd("tp", (player, args) => {
 					posY = parseFloat(posY.trim().replace(",",""));
 					posZ = parseFloat(posZ.trim().replace(",",""));
 					if (!isNaN(posX) && !isNaN(posY) && !isNaN(posZ)){
-						player.spawn(posX, posY, posZ, 0);
+						let position = new alt.Vector3(posX, posY, posZ)
+						player.pos = position;
 					}
 					else{
 						const foundPlayers = alt.Player.all.filter((p) => p.name === args[0]);
 						if (foundPlayers && foundPlayers.length > 0) {
-							player.spawn(foundPlayers[0].pos.x, foundPlayers[0].pos.y, foundPlayers[0].pos.z, 0);
+							let position = new alt.Vector3(foundPlayers[0].pos.x, foundPlayers[0].pos.y, foundPlayers[0].pos.z)
+							player.pos = position;
 						}
 						else
 							return false;
