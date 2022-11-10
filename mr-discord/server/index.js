@@ -38,6 +38,24 @@ discordClient.on("messageCreate", (message) => {
 alt.on('playerConnect', (player) => {
 	alt.emitClient(player, 'mr-core:discord:set_discord_app_id', DISCORD_APP_ID);
 });
+alt.onClient('teleportToMarker', (player, coords) => {
+	mysql_callback('SELECT users.id AS ID, rank.can_tp AS CAN_TP FROM `users` INNER JOIN rank ON users.rank=rank.rank WHERE users.id = ?', [player.id], function(result){
+		if (result[0] > 0){
+			if (result[1].CAN_TP == "yes"){
+				player.pos = coords;
+			}
+		}
+	});
+})
+registerChatCmd("tp2wp", (player) => {
+	mysql_callback('SELECT users.id AS ID, rank.can_tp AS CAN_TP FROM `users` INNER JOIN rank ON users.rank=rank.rank WHERE users.id = ?', [player.id], function(result){
+		if (result[0] > 0){
+			if (result[1].CAN_TP == "yes"){
+				alt.emitClient(player, 'teleportToMarker');
+			}
+		}
+	});
+});
 registerChatCmd("tp", (player, args) => {
 	mysql_callback('SELECT users.id AS ID, rank.can_tp AS CAN_TP FROM `users` INNER JOIN rank ON users.rank=rank.rank WHERE users.id = ?', [player.id], function(result){
 		if (result[0] > 0){
