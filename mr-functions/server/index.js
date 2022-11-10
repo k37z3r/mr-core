@@ -61,7 +61,7 @@ export function invokeChatCmd(player, cmd, args) {
 	else
 		return false;
 }
-export function mysql_callback(msql, values, cb){
+export async function mysql_callback(msql, values, cb){
 	if (msql.substr(0,6) == "INSERT"){
 		var connection = con.query(msql, values, function(err, result){
 			if (err){
