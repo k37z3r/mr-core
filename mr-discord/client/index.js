@@ -2,7 +2,7 @@ import * as alt from 'alt';
 import * as native from 'natives';
 import { _L } from 'mr-functions';
 const view = new alt.WebView("http://resource/client/html/index.html");
-const lang_array = [_L("teleport_to_coords"), _L("teleport_to_player"), _L("call_admin")];
+const lang_array = [_L("teleport_to_coords"), _L("teleport_to_player"), _L("call_admin"), _L("teleport_to_waypoint")];
 async function getOAuthToken(DISCORD_APP_ID) {
     try {
         const token = await alt.Discord.requestOAuth2Token(DISCORD_APP_ID);
@@ -38,8 +38,8 @@ function sendmessage(msg){
 alt.onServer('mr-core:discord:getmessages', (messages) =>{
 	alt.emitServer("mr-core:discord:loadmessages");
 });
-alt.onServer('mr-core:discord:set_help_tp', (rule) => {
-	view.emit('set_help_tp', rule);
+alt.onServer('mr-core:discord:set_help', (rule) => {
+	view.emit('set_help', rule);
 });
 alt.onServer('teleportToMarker', tpToWaypoint)
 view.on('mr-core:discord:close_chat', close_chat);
@@ -59,7 +59,7 @@ alt.on("keyup", (keycode) => {
 	}
 });
 function open_chat(){
-	alt.emitServer('mr-core:discord:set_help_tp');
+	alt.emitServer('mr-core:discord:set_help');
 	opened = true;
 	view.emit("openChat", lang_array);
 	alt.toggleGameControls(false);
