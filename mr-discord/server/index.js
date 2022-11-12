@@ -56,6 +56,21 @@ registerChatCmd("tp2wp", (player) => {
 		}
 	});
 });
+registerChatCmd("tp2player", (player, args) => {
+	mysql_callback('SELECT users.id AS ID, rank.can_tp AS CAN_TP FROM `users` INNER JOIN rank ON users.rank=rank.rank WHERE users.id = ?', [player.id], function(result){
+		if (result[0] > 0){
+			if (result[1].CAN_TP == "yes"){
+				let playername = args.join(' ');
+				console.log(playername);
+				const foundPlayers = alt.Player.all.filter((p) => p.name === playername);
+				if (foundPlayers && foundPlayers.length > 0) {
+					let position = new alt.Vector3(foundPlayers[0].pos.x, foundPlayers[0].pos.y, foundPlayers[0].pos.z)
+					player.pos = position;
+				}
+			}
+		}
+	});
+});
 registerChatCmd("tp", (player, args) => {
 	mysql_callback('SELECT users.id AS ID, rank.can_tp AS CAN_TP FROM `users` INNER JOIN rank ON users.rank=rank.rank WHERE users.id = ?', [player.id], function(result){
 		if (result[0] > 0){
@@ -63,7 +78,7 @@ registerChatCmd("tp", (player, args) => {
 				let posX = "";
 				let posY = "";
 				let posZ = "";
-				if (args.length == 3){
+				if (args.length == 3 && !isNaN(parseFloat(args[0].trim().replace(",",""))) && !isNaN(parseFloat(args[1].trim().replace(",",""))) && !isNaN(parseFloat(args[2].trim().replace(",","")))){
 					posX = args[0];
 					posY = args[1];
 					posZ = args[2];
@@ -71,24 +86,12 @@ registerChatCmd("tp", (player, args) => {
 				else{
 					if (canSplit(args[0], ",")){
 						let pos = args[0].split(",");
-						if (pos.length == 3){
+						if (pos.length == 3 && !isNaN(parseFloat(pos[0].trim().replace(",",""))) && !isNaN(parseFloat(pos[1].trim().replace(",",""))) && !isNaN(parseFloat(pos[2].trim().replace(",","")))){
 							posX = pos[0];
 							posY = pos[1];
 							posZ = pos[2];
 						}
-						else{
-							const foundPlayers = alt.Player.all.filter((p) => p.name === args[0]);
-							if (foundPlayers && foundPlayers.length > 0) {
-								posX = foundPlayers[0].pos.x;
-								posY = foundPlayers[0].pos.y;
-								posZ = foundPlayers[0].pos.z;
-							}
-							else
-								return false;
-						}
 					}
-					else
-						return false;
 				}
 				if (posX.length > 0 && posY.length > 0 && posZ.length > 0){
 					posX = parseFloat(posX.trim().replace(",",""));
@@ -98,24 +101,9 @@ registerChatCmd("tp", (player, args) => {
 						let position = new alt.Vector3(posX, posY, posZ)
 						player.pos = position;
 					}
-					else{
-						const foundPlayers = alt.Player.all.filter((p) => p.name === args[0]);
-						if (foundPlayers && foundPlayers.length > 0) {
-							let position = new alt.Vector3(foundPlayers[0].pos.x, foundPlayers[0].pos.y, foundPlayers[0].pos.z)
-							player.pos = position;
-						}
-						else
-							return false;
-					}
 				}
-				else
-					return false;
 			}
-			else
-				return false;
 		}
-		else
-			return false;
 	});
 });
 registerChatCmd("calladmin", (player, args) => {
@@ -161,16 +149,18 @@ alt.onClient('mr-core:discord:msgtodiscord', async (player, msg) => {
 		}
 	});
 });
-alt.onClient('mr-core:discord:set_help_tp', async (player) => {
+alt.onClient('mr-core:discord:set_help', async (player) => {
 	mysql_callback('SELECT users.id AS ID, rank.can_tp AS CAN_TP FROM `users` INNER JOIN rank ON users.rank=rank.rank WHERE users.id = ?', [player.id], function(result){
 		if (result[0] > 0){
+			let allow_tp;
 			if (result[1].CAN_TP == "yes")
-				alt.emitClient(player, 'mr-core:discord:set_help_tp', 'yes');
+				allow_tp = "yes";
 			else
-				alt.emitClient(player, 'mr-core:discord:set_help_tp', 'no');
+				allow_tp = "no";
+			alt.emitClient(player, 'mr-core:discord:set_help', {can_tp: allow_tp});
 		}
 		else
-			alt.emitClient(player, 'mr-core:discord:set_help_tp', 'no');
+			alt.emitClient(player, 'mr-core:discord:set_help', {can_tp: no});
 	});
 });
 alt.onClient('mr-core:discord:loadmessages', async (player) => {
@@ -182,7 +172,7 @@ alt.onClient('mr-core:discord:loadmessages', async (player) => {
 				if (message.embeds.length > 0 && message.author.bot == true)
 					msg.push([message.createdTimestamp, message.embeds[0].author.name, message.embeds[0].description, message.embeds[0].hexColor]);
 				else if (message.content.length > 0)
-						msg.push([message.createdTimestamp, message.author.username, message.content, member.displayHexColor]);
+					msg.push([message.createdTimestamp, message.author.username, message.content, member.displayHexColor]);
 			});
 		});
 	});
@@ -196,14 +186,13 @@ function set_message(){
 alt.on('playerDisconnect', async (player) => {
 	let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
 	let playerid = player.id;
+	let playername = getDiscordNameById(playerid);
 	if (ANNOUNCE_LOG_IN_OUT=="true"){
-		server.channels.cache.get(DISCORD_STATUS_CHANNEL).send(_L("leaved", [getDiscordNameById(playerid)]));
+		server.channels.cache.get(DISCORD_STATUS_CHANNEL).send(_L("leaved", [playername]));
 	}
 	await mysql_callback("UPDATE users SET id = ? WHERE dsid = ?", [-1, getDiscordById(playerid)], function(result){
 		if (result[0] > 0 && LOG_MYSQL=="true"){
-			console.log(playerid);
-			console.log(getDiscordNameById(playerid));
-			console.log(CurrentOnlineUsers);
+			alt.log(_L("log_user_leaved",[playername]));
 		}
 
 	});
