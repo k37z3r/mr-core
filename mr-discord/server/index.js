@@ -61,7 +61,6 @@ registerChatCmd("tp2player", (player, args) => {
 		if (result[0] > 0){
 			if (result[1].CAN_TP == "yes"){
 				let playername = args.join(' ');
-				console.log(playername);
 				const foundPlayers = alt.Player.all.filter((p) => p.name === playername);
 				if (foundPlayers && foundPlayers.length > 0) {
 					let position = new alt.Vector3(foundPlayers[0].pos.x, foundPlayers[0].pos.y, foundPlayers[0].pos.z)
