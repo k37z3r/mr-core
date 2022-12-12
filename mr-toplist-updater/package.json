@@ -1,0 +1,26 @@
+{
+	"name": "mr-toplist-updater",
+	"version": "0.1",
+	"description": "Update your Toplist entry",
+	"main": "",
+	"scripts": {
+		"test": "tsc",
+		"preversion": "yarn run test",
+		"release": "yarn version --no-git-tag-version"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/k37z3r/toplist"
+	},
+	"dependencies": {
+		"mysql": ">=2",
+		"dotenv": ">=16"
+	},
+	"author": "Luz Iferato",
+	"keywords": ["toplist","altv","fivem","ragemp","nodejs","javascript","updater","js","node-js","toplist","altv","altvmp","altv-server","altv-resource"],
+	"license": "CC-BY-NC-SA/4.0",
+	"bugs": "https://github.com/k37z3r/toplist/issues",
+	"homepage": "https://github.com/k37z3r",
+	"type": "module",
+	"man": "https://github.com/k37z3r/toplist/wiki"
+}
