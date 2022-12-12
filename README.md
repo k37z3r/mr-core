@@ -1,4 +1,5 @@
 # myroleplay
+<img alt="Discord" src="https://img.shields.io/discord/1011635154168582257?style=flat-square&logo=appveyor"> <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/k37z3r/mr-core?style=flat-square&logo=appveyor"> <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/k37z3r/mr-core?style=flat-square&logo=appveyor"> <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/k37z3r/mr-core?style=flat-square&logo=appveyor">
 ## What is mr-core?
 mr-core is the shortname of myroleplay and means a basic framework for altv, written in JS, under CC-BY-NC-SA/4.0 License
 
