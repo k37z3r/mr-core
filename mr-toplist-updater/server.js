@@ -16,14 +16,9 @@ neededValues.forEach((value) => {
     }
 });
 async function doPostRequest() {
-    let wl = "no";
-    if (process.env.whitelist == "true")
-        wl = "yes";
-    else
-        wl = "no";
     var postdata = {
         minage: process.env.MINAGE,
-        whitelist: wl,
+        whitelist: process.env.WHITELIST,
         language: process.env.LANGUAGE,
         framework: 'mr-core',
         voice: 'Utilize alt:V builtin Voice',
