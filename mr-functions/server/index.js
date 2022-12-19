@@ -25,7 +25,10 @@ const neededValues = [
 	'LOG_WHITELIST',
 	'LOG_MYSQL',
 	'ANNOUNCE_LOG_IN_OUT',
-	'DISCORD_ADMINCALL_CHANNEL'
+	'DISCORD_ADMINCALL_CHANNEL',
+	'MINAGE',
+    	'LANGUAGE',
+   	'SECRETPID'
 ];
 neededValues.forEach((value) => {
     if (!(value in process.env)) {
@@ -125,6 +128,8 @@ export const LOG_WHITELIST = process.env.LOG_WHITELIST;
 export const LOG_MYSQL = process.env.LOG_MYSQL;
 export const ANNOUNCE_LOG_IN_OUT = process.env.ANNOUNCE_LOG_IN_OUT;
 export const DISCORD_ADMINCALL_CHANNEL = process.env.DISCORD_ADMINCALL_CHANNEL;
+export const MINAGE = process.env.MINAGE;
+export const SECRETPID = process.env.SECRETPID;
 export function getConfig(value){
 	for(var key in _CONFIG) {
 		if(key == value) {
