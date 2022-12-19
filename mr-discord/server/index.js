@@ -159,7 +159,7 @@ alt.onClient('mr-core:discord:set_help', async (player) => {
 			alt.emitClient(player, 'mr-core:discord:set_help', {can_tp: allow_tp});
 		}
 		else
-			alt.emitClient(player, 'mr-core:discord:set_help', {can_tp: no});
+			alt.emitClient(player, 'mr-core:discord:set_help', {can_tp: "no"});
 	});
 });
 alt.onClient('mr-core:discord:loadmessages', async (player) => {
