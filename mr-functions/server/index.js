@@ -27,11 +27,10 @@ const neededValues = [
 	'ANNOUNCE_LOG_IN_OUT',
 	'DISCORD_ADMINCALL_CHANNEL',
 	'MINAGE',
-    	'LANGUAGE',
    	'SECRETPID',
 	'HUNGER_RATE',
 	'THIRSTY_RATE',
-	'UPDATE_INTERVA'
+	'UPDATE_INTERVAL'
 ];
 neededValues.forEach((value) => {
     if (!(value in process.env)) {
