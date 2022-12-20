@@ -28,7 +28,10 @@ const neededValues = [
 	'DISCORD_ADMINCALL_CHANNEL',
 	'MINAGE',
     	'LANGUAGE',
-   	'SECRETPID'
+   	'SECRETPID',
+	'HUNGER_RATE',
+	'THIRSTY_RATE',
+	'UPDATE_INTERVA'
 ];
 neededValues.forEach((value) => {
     if (!(value in process.env)) {
@@ -130,6 +133,9 @@ export const ANNOUNCE_LOG_IN_OUT = process.env.ANNOUNCE_LOG_IN_OUT;
 export const DISCORD_ADMINCALL_CHANNEL = process.env.DISCORD_ADMINCALL_CHANNEL;
 export const MINAGE = process.env.MINAGE;
 export const SECRETPID = process.env.SECRETPID;
+export const HUNGER_RATE = process.env.HUNGER_RATE;
+export const THIRSTY_RATE = process.env.THIRSTY_RATE;
+export const UPDATE_INTERVAL = process.env.UPDATE_INTERVAL;
 export function getConfig(value){
 	for(var key in _CONFIG) {
 		if(key == value) {
