@@ -1,0 +1,3 @@
+deps = [ 'mr-functions' ]
+main = 'server.js'
+type = 'js'
