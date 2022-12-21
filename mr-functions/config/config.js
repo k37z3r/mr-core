@@ -1,5 +1,7 @@
 export const _CONFIG = {
     LANGUAGE: 'de',
+// HUD
+    STATUS_INTERVAL: 5,    //    how often to check hud in seconds
 // Phone
     PHONE_NUMBER_STARTING_0: true,
     PHONE_EMAIL_DOMAIN: ["mr-core.de","mr-core.com","mr-core.uk"],
