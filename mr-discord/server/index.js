@@ -1,5 +1,4 @@
 import * as alt from 'alt';
-import fs from "fs";
 import axios from 'axios';
 import Discord from 'discord.js';
 const { Client, GatewayIntentBits, EmbedBuilder } = Discord;
@@ -349,4 +348,8 @@ function getOnlineUsersById(id){
 WhitelistUpdate = alt.setInterval(refreshWhitelist, 300000);
 alt.on('resourceStart', async () => {
     discordClient.login(DISCORD_TOKEN).then(() => refreshWhitelist());
+    mysql_callback('UPDATE users SET users.id = ? WHERE users.id > ?', [-1, -1], function(result2){
+        if (result2[0] == 1 && LOG_MYSQL=="true")
+	    alt.log(_L("log_reset_users"));
+    });
 });
