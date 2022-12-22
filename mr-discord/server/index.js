@@ -105,7 +105,7 @@ registerChatCmd("tp", (player, args) => {
 	});
 });
 registerChatCmd("calladmin", (player, args) => {
-	mysql_callback('SELECT username FROM users WHERE id = ?', [player.id], function(result){
+	mysql_callback('SELECT users.username FROM users WHERE users.id = ?', [player.id], function(result){
 		if (result[0] > 0){
 			let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
 			server.channels.cache.get(DISCORD_ADMINCALL_CHANNEL).send("<@&" + DISCORD_ADMIN_ID + "> <@&" + DISCORD_MOD_ID + "> <@&" + DISCORD_SUPPORTER_ID + ">\r\n" + _L("need_help", [result[1].username]));
@@ -114,7 +114,7 @@ registerChatCmd("calladmin", (player, args) => {
 	});
 });
 alt.onClient('mr-core:discord:msgtodiscord', async (player, msg) => {
-	mysql_callback('SELECT username, rank FROM users WHERE id = ?', [player.id], function(result){
+	mysql_callback('SELECT users.username, users.rank FROM users WHERE users.id = ?', [player.id], function(result){
 		if (result[0] > 0){
 			if (msg[0] === "/"){
 				msg = msg.trim().slice(1);
@@ -188,7 +188,7 @@ alt.on('playerDisconnect', async (player) => {
 	if (ANNOUNCE_LOG_IN_OUT=="true"){
 		server.channels.cache.get(DISCORD_STATUS_CHANNEL).send(_L("leaved", [playername]));
 	}
-	await mysql_callback("UPDATE users SET id = ? WHERE dsid = ?", [-1, getDiscordById(playerid)], function(result){
+	await mysql_callback("UPDATE users SET users.id = ? WHERE users.dsid = ?", [-1, getDiscordById(playerid)], function(result){
 		if (result[0] > 0 && LOG_MYSQL=="true"){
 			alt.log(_L("log_user_leaved",[playername]));
 		}
@@ -229,15 +229,15 @@ alt.onClient('mr-core:discord:token', async (player, token) => {
         player.kick(_L("no_whitelisted", [DISCORD_INVITE_LINK]));
         return;
 	}
-	mysql_callback('SELECT id FROM users WHERE dsid = ?', [request.data.id], function(result){
+	mysql_callback('SELECT users.id FROM users WHERE users.dsid = ?', [request.data.id], function(result){
 		if (result[0] == 0){
-			mysql_callback("INSERT INTO users SET ?", {id: player.id, dsid: request.data.id, username: request.data.username}, function(result2){
+			mysql_callback("INSERT INTO users.users SET ?", {id: player.id, dsid: request.data.id, username: request.data.username}, function(result2){
 				if (result2[0] == 1 && LOG_MYSQL=="true")
 					alt.log(_L("log_insert_user",[request.data.username]));
 			});
 		}
 		else{
-			mysql_callback("UPDATE users SET id = ? WHERE dsid = ?", [player.id, request.data.id], function(result2){
+			mysql_callback("UPDATE users SET users.id = ? WHERE users.dsid = ?", [player.id, request.data.id], function(result2){
 				if (result2[0] == 1 && LOG_MYSQL=="true")
 					alt.log(_L("log_update_user",[request.data.username]));
 			});
@@ -287,7 +287,7 @@ function refreshWhitelist(){
 						alt.log(_L("log_whitelist_add",[member.user.username]));
 				}
 			}
-			mysql_callback('SELECT id FROM users WHERE dsid = ?', [member.user.id], function(result){
+			mysql_callback('SELECT users.id FROM users WHERE users.dsid = ?', [member.user.id], function(result){
 				if(result[0] > 0){
 					let rank = "citizen";
 					if (isAdmin)
@@ -298,7 +298,7 @@ function refreshWhitelist(){
 						rank = "supporter";
 					else
 						rank = "citizen";
-					mysql_callback('UPDATE users SET rank="' + rank + '" WHERE dsid = ?', [member.user.id], function(result2){
+					mysql_callback('UPDATE users SET users.rank="' + rank + '" WHERE users.dsid = ?', [member.user.id], function(result2){
 						if (result2[0] > 0 && LOG_MYSQL=="true")
 							alt.log(_L("log_update_user",[member.user.username]));
 					});
@@ -348,8 +348,8 @@ function getOnlineUsersById(id){
 WhitelistUpdate = alt.setInterval(refreshWhitelist, 300000);
 alt.on('resourceStart', async () => {
     discordClient.login(DISCORD_TOKEN).then(() => refreshWhitelist());
-    mysql_callback('UPDATE users SET users.id = ? WHERE users.id > ?', [-1, -1], function(result2){
-        if (result2[0] == 1 && LOG_MYSQL=="true")
-	    alt.log(_L("log_reset_users"));
-    });
+	mysql_callback('UPDATE users SET users.id = ? WHERE users.id > ?', [-1, -1], function(result2){
+		if (result2[0] == 1 && LOG_MYSQL=="true")
+			alt.log(_L("log_reset_users"));
+	});
 });
