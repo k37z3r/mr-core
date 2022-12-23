@@ -1,21 +1,28 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 10 version
+*/
+
 body, html{
-	margin: 0;
-	padding: 0;
-	background-color: transparent;
-	font-size: 14px;
-	color: hsla(164, 0%, 0%, 1);
-	overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    font-size: 14px;
+    color: hsla(164, 0%, 0%, 1);
+    overflow: hidden;
 }
 #phone {
-	background-image: url("../img/phone.png");
-	background-color: hsla(180,100%,20%, 0);
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 500px;
-	width: 275px;
-	position: absolute;
-	bottom: -550px;
-	right: 10px;
+    background-image: url("../img/phone.png");
+    background-color: hsla(180,100%,20%, 0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 275px;
+    position: absolute;
+    bottom: -550px;
+    right: 10px;
 }
 #phone_container {
     height: 412px;
@@ -27,16 +34,18 @@ body, html{
     border: 1px solid hsla(217, 100%, 100%, 1);
     background-image: url('../img/phone_background_std.jpg');
     background-size: cover;
-	overflow: hidden;
+    overflow: hidden;
 }
 #phone_buttons {
-	height: 29px;
-	width: 231px;
-	background-color: hsla(130,100%,0%,1);
-	position: absolute;
-	bottom: 27px;
-	right: 22px;
-	display: flex;
+    height: 29px;
+    width: 231px;
+    background-color: hsla(130,100%,0%,1);
+    position: absolute;
+    bottom: 27px;
+    right: 22px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
 }
 #phone_bottom_menu {
     height: 37px;
@@ -44,405 +53,569 @@ body, html{
     background-color: hsl(0deg 0% 0% / 20%);
     position: absolute;
     bottom: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
 }
 .phone_icons{
-	color: hsla(180,100%,100%,1);
-	font-size:20px;
-	cursor: pointer;
+    color: hsla(180,100%,100%,1);
+    font-size:20px;
+    cursor: pointer;
 }
 .phone_bottom_icons{
-	font-size:32px;
-	cursor: pointer;
+    font-size:32px;
+    cursor: pointer;
 }
 #phone_back{
-	float:left;
-	width: 33%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    float:left;
+    width: 33%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 #phone_close{
-	float:left;
-	width: 34%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    float:left;
+    width: 34%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 #phone_overview_button{
-	float:left;
-	width: 33%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    float:left;
+    width: 33%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 #phone_adressbook{
-	float:left;
-	width: 20%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: hsla(194, 100%, 50%, 1);
-	text-shadow: -1px -1px 0 hsla(0, 100%, 0%, 1), 1px -1px 0 hsla(0, 100%, 0%, 1), -1px 1px 0 hsla(0, 100%, 0%, 1), 1px 1px 0 hsla(0, 100%, 0%, 1);
+    float:left;
+    width: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: hsla(194, 100%, 50%, 1);
+    text-shadow: -1px -1px 0 hsla(0, 100%, 0%, 1), 1px -1px 0 hsla(0, 100%, 0%, 1), -1px 1px 0 hsla(0, 100%, 0%, 1), 1px 1px 0 hsla(0, 100%, 0%, 1);
 }
 #phone_whatsapp{
-	float:left;
-	width: 20%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: hsla(142, 70%, 49%, 1);
-	text-shadow: -1px -1px 0 hsla(0, 100%, 0%, 1), 1px -1px 0 hsla(0, 100%, 0%, 1), -1px 1px 0 hsla(0, 100%, 0%, 1), 1px 1px 0 hsla(0, 100%, 0%, 1);
+    float:left;
+    width: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: hsla(142, 70%, 49%, 1);
+    text-shadow: -1px -1px 0 hsla(0, 100%, 0%, 1), 1px -1px 0 hsla(0, 100%, 0%, 1), -1px 1px 0 hsla(0, 100%, 0%, 1), 1px 1px 0 hsla(0, 100%, 0%, 1);
 }
 #phone_discord{
-	float:left;
-	width: 20%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: hsla(227, 58%, 65%, 1);
-	text-shadow: -1px -1px 0 hsla(0, 100%, 0%, 1), 1px -1px 0 hsla(0, 100%, 0%, 1), -1px 1px 0 hsla(0, 100%, 0%, 1), 1px 1px 0 hsla(0, 100%, 0%, 1);
+    float:left;
+    width: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: hsla(227, 58%, 65%, 1);
+    text-shadow: -1px -1px 0 hsla(0, 100%, 0%, 1), 1px -1px 0 hsla(0, 100%, 0%, 1), -1px 1px 0 hsla(0, 100%, 0%, 1), 1px 1px 0 hsla(0, 100%, 0%, 1);
 }
 #phone_camera{
-	float:left;
-	width: 20%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: hsla(0, 65%, 50%, 1);
-	text-shadow: -1px -1px 0 hsla(0, 0%, 100%, 1), 1px -1px 0 hsla(0, 0%, 100%, 1), -1px 1px 0 hsla(0, 0%, 100%, 1), 1px 1px 0 hsla(0, 0%, 100%, 1);
+    float:left;
+    width: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: hsla(0, 65%, 50%, 1);
+    text-shadow: -1px -1px 0 hsla(0, 0%, 100%, 1), 1px -1px 0 hsla(0, 0%, 100%, 1), -1px 1px 0 hsla(0, 0%, 100%, 1), 1px 1px 0 hsla(0, 0%, 100%, 1);
 }
 #phone_sms{
-	float:left;
-	width: 20%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: hsla(46, 100%, 50%, 1);
-	text-shadow: -1px -1px 0 hsla(0, 100%, 0%, 1), 1px -1px 0 hsla(0, 100%, 0%, 1), -1px 1px 0 hsla(0, 100%, 0%, 1), 1px 1px 0 hsla(0, 100%, 0%, 1);
-	cursor: pointer;
+    float:left;
+    width: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: hsla(46, 100%, 50%, 1);
+    text-shadow: -1px -1px 0 hsla(0, 100%, 0%, 1), 1px -1px 0 hsla(0, 100%, 0%, 1), -1px 1px 0 hsla(0, 100%, 0%, 1), 1px 1px 0 hsla(0, 100%, 0%, 1);
+    cursor: pointer;
 }
 .phone_icons:active{
-	font-size: 18px;
+    font-size: 18px;
 }
 .phone_bottom_icons:active{
-	font-size: 30px;
+    font-size: 30px;
 }
 #phone_numberfield {
-	background-color: hsla(164, 0%, 80%, 1);
-	position: absolute;
-	top: 207px;
-	width: 225px;
+    background-color: hsla(164, 0%, 80%, 1);
+    position: absolute;
+    top: 207px;
+    width: 225px;
 }
 .phone_numfield_button, .phone_numfield_func_button {
-	background-color: hsla(50, 100%, 100%, 1);
-	width: 60px;
-	height: 22px;
-	text-align: center;
-	border: 1px solid hsla(0, 0%, 50%, 1);
-	border-radius: 18px;
-	line-height: 1px;
-	font-size: 14px;
-	padding: 6px 0;
-	margin: 2.5px;
+    background-color: hsla(50, 100%, 100%, 1);
+    width: 60px;
+    height: 22px;
+    text-align: center;
+    border: 1px solid hsla(0, 0%, 50%, 1);
+    border-radius: 18px;
+    line-height: 1px;
+    font-size: 14px;
+    padding: 6px 0;
+    margin: 2.5px;
 }
 .phone_numfield_sup{
-	font-size: 8px;
+    font-size: 8px;
 }
 .phone_number_row {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-content: center;
-	justify-content: center;
-	align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .addcontact, .pickup, .adressbook{
-	font-size: 22px;
+    font-size: 22px;
 }
 .addcontact{
-	background-color: hsla(50, 100%, 50%, 1);
+    background-color: hsla(50, 100%, 50%, 1);
 }
 .pickup{
-	background-color: hsla(145, 66%, 50%, 1);
+    background-color: hsla(145, 66%, 50%, 1);
 }
 .adressbook{
-	background-color: hsla(217, 100%, 50%, 1);
+    background-color: hsla(217, 100%, 50%, 1);
 }
 #phone_search_con {
-	background-color: hsla(164, 0%, 80%, 1);
-	width: 225px;
-	height: 30px;
-	position: absolute;
-	top: 0px;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	align-content: center;
+    background-color: hsla(164, 0%, 80%, 1);
+    width: 225px;
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
 }
 #phone_suggestions {
-	background-color: hsla(164, 0%, 80%, 1);
-	width: 225px;
-	height: 145px;
-	position: absolute;
-	top: 30px;
+    background-color: hsla(164, 0%, 80%, 1);
+    width: 225px;
+    height: 145px;
+    position: absolute;
+    top: 30px;
 }
 #phone_number_con {
-	background-color: hsla(164, 0%, 80%, 1);
-	width: 225px;
-	height: 32px;
-	position: absolute;
-	top: 175px;
-	display: flex;
-	align-content: center;
-	justify-content: flex-start;
-	align-items: center;
+    background-color: hsla(164, 0%, 80%, 1);
+    width: 225px;
+    height: 32px;
+    position: absolute;
+    top: 175px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 #phone_search_field {
-	border: 1px solid hsla(164, 0%, 0%, 1);
-	width: 186px;
-	padding-left: 4px;
-	height: 26px;
-	box-shadow: inset 0px 0px 2px 0px hsla(164, 100%, 0%, 1);
-	left: 31px;
-	position: absolute;
-	border-radius: 0 13px 13px 0;
-	font-size: 20px;
-	background-color: hsla(137, 21%, 83%, 1);
-	white-space: nowrap;
-	overflow: hidden;
+    border: 1px solid hsla(164, 0%, 0%, 1);
+    width: 186px;
+    padding-left: 4px;
+    height: 26px;
+    -webkit-box-shadow: inset 0px 0px 2px 0px hsla(164, 100%, 0%, 1);
+            box-shadow: inset 0px 0px 2px 0px hsla(164, 100%, 0%, 1);
+    left: 31px;
+    position: absolute;
+    border-radius: 0 13px 13px 0;
+    font-size: 20px;
+    background-color: hsla(137, 21%, 83%, 1);
+    white-space: nowrap;
+    overflow: hidden;
 }
 #phone_search_field:hover, #phone_number_input:hover{
-	cursor: text;
+    cursor: text;
 }
 #phone_call{
-	width: 225px;
-	height: 412px;
+    width: 225px;
+    height: 412px;
 }
 #phone_search {
-	position: absolute;
-	left: 3px;
-	top: 1px;
-	font-size: 16px;
-	border: 1px solid hsla(164, 0%, 0%, 1);
-	border-radius: 13px 0 0 13px;
-	box-shadow: inset 0px 0px 2px 0px hsla(164, 100%, 0%, 1);
-	height: 26px;
-	width: 28px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: hsla(137, 21%, 83%, 1);
+    position: absolute;
+    left: 3px;
+    top: 1px;
+    font-size: 16px;
+    border: 1px solid hsla(164, 0%, 0%, 1);
+    border-radius: 13px 0 0 13px;
+    -webkit-box-shadow: inset 0px 0px 2px 0px hsla(164, 100%, 0%, 1);
+            box-shadow: inset 0px 0px 2px 0px hsla(164, 100%, 0%, 1);
+    height: 26px;
+    width: 28px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: hsla(137, 21%, 83%, 1);
 }
 #phone_search:active{
-	font-size: 14px;
+    font-size: 14px;
 }
 #phone_search:hover, #phone_del:hover{
-	cursor: pointer;
+    cursor: pointer;
 }
 #phone_number_input {
-	border: 1px solid hsla(164, 0%, 0%, 1);
-	width: 184px;
-	padding-left: 4px;
-	height: 26px;
-	box-shadow: inset 0px 0px 2px 0px hsla(164, 100%, 0%, 1);
-	font-size: 20px;
-	background-color: hsla(137, 21%, 83%, 1);
-	white-space: nowrap;
-	overflow: hidden;
-	position: absolute;
-	left: 4px;
+    border: 1px solid hsla(164, 0%, 0%, 1);
+    width: 184px;
+    padding-left: 4px;
+    height: 26px;
+    -webkit-box-shadow: inset 0px 0px 2px 0px hsla(164, 100%, 0%, 1);
+            box-shadow: inset 0px 0px 2px 0px hsla(164, 100%, 0%, 1);
+    font-size: 20px;
+    background-color: hsla(137, 21%, 83%, 1);
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    left: 4px;
 }
 #phone_del {
-	position: absolute;
-	right: 4px;
-	font-size: 16px;
-	border: 1px solid hsla(164, 0%, 0%, 1);
-	background-color: hsla(137, 21%, 83%, 1);
-	box-shadow: inset 0px 0px 2px 0px hsla(164, 100%, 0%, 1);
-	height: 26px;
-	width: 28px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    position: absolute;
+    right: 4px;
+    font-size: 16px;
+    border: 1px solid hsla(164, 0%, 0%, 1);
+    background-color: hsla(137, 21%, 83%, 1);
+    -webkit-box-shadow: inset 0px 0px 2px 0px hsla(164, 100%, 0%, 1);
+            box-shadow: inset 0px 0px 2px 0px hsla(164, 100%, 0%, 1);
+    height: 26px;
+    width: 28px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 #phone_del:active{
-	font-size: 14px;
+    font-size: 14px;
 }
 .phone_numfield_button:active{
-	font-size: 12px;
-	height: 20px;
-	width: 58px;
-	margin: 3.5px;
+    font-size: 12px;
+    height: 20px;
+    width: 58px;
+    margin: 3.5px;
 }
 .phone_numfield_func_button:active{
-	font-size: 20px;
-	height: 20px;
-	width: 58px;
-	margin: 3.5px;
+    font-size: 20px;
+    height: 20px;
+    width: 58px;
+    margin: 3.5px;
 }
 .addcontact, .pickup, .adressbook{
-	font-size: 22px;
+    font-size: 22px;
 }
 .phone_numfield_button:active > .phone_numfield_sup{
-	font-size: 7px;
+    font-size: 7px;
 }
 .phone_overview_item {
-	width: 224px;
-	height: 430px;
-	position: relative;
-	zoom: 0.35;
-	border: 1px solid hsla(0, 100%, 0%, 1);
-	pointer-events: none;
-	box-shadow: 0px 0px 6px 6px hsl(173deg 100% 50%);
+    width: 224px;
+    height: 430px;
+    position: relative;
+    zoom: 0.35;
+    border: 1px solid hsla(0, 100%, 0%, 1);
+    pointer-events: none;
+    -webkit-box-shadow: 0px 0px 6px 6px hsl(173deg 100% 50%);
+            box-shadow: 0px 0px 6px 6px hsl(173deg 100% 50%);
 }
 #phone_overview {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     max-width: 224px;
     max-height: 412px;
     height: 412px;
     width: 224px;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     overflow: auto;
     background: hsla(173, 0%, 25%, .75);
-    justify-content: center;
-    align-content: flex-start;
-    align-items: center;
-    flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
 ::-webkit-scrollbar {
-	background: hsla(173, 20%, 35%, 1);
-	width: 12px;
+    background: hsla(173, 20%, 35%, 1);
+    width: 12px;
 }
 ::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 5px hsla(173, 0%, 50%, 1); 
-	border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px hsla(173, 0%, 50%, 1);
+            box-shadow: inset 0 0 5px hsla(173, 0%, 50%, 1); 
+    border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-	background: hsl(173deg 100% 50%); 
-	border-radius: 10px;
+    background: hsl(173deg 100% 50%); 
+    border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-	background: hsla(173, 100%, 35%, 1); 
+    background: hsla(173, 100%, 35%, 1); 
 }
 .overview_item_overlay {
-	display: flex;
-	flex-wrap: wrap;
-	margin: 10px;
-	width: 86px;
-	height: 170px;
-	cursor: pointer;
-	justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 10px;
+    width: 86px;
+    height: 170px;
+    cursor: pointer;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .overview_item_close {
-	position: relative;
-	background: hsla(0, 100%, 50%, 1);
-	width: 84px;
-	height: 18px;
-	top: 2px;
-	left: 0px;
-	border-left: 1px solid hsla(0, 100%, 0%, 1);
-	border-right: 1px solid hsla(0, 100%, 0%, 1);
-	border-bottom: 1px solid hsla(0, 100%, 0%, 1);
-	border-radius: 0 0 5px 5px;
-	color: hsla(0, 100%, 100%, 1);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    position: relative;
+    background: hsla(0, 100%, 50%, 1);
+    width: 84px;
+    height: 18px;
+    top: 2px;
+    left: 0px;
+    border-left: 1px solid hsla(0, 100%, 0%, 1);
+    border-right: 1px solid hsla(0, 100%, 0%, 1);
+    border-bottom: 1px solid hsla(0, 100%, 0%, 1);
+    border-radius: 0 0 5px 5px;
+    color: hsla(0, 100%, 100%, 1);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .no_open_apps {
-	color: hsl(173deg 100% 50%);
+    color: hsl(173deg 100% 50%);
 }
 .overview_item_open {
-	width: 81px;
-	height: 154px;
+    width: 81px;
+    height: 154px;
 }
 #phone_top_apps {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 225px;
     height: 370px;
     max-height: 370px;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
     overflow: auto;
-    align-content: flex-start;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
     top: 7px;
     position: absolute;
 }
 .phone_top_icons {
-	padding: 7px;
-	margin: 2px;
-	cursor: pointer;
+    padding: 7px;
+    margin: 2px;
+    cursor: pointer;
 }
 .phone_settings_icon {
-	color: hsla(0, 0%, 100%, 1);
-	text-shadow: -1px -1px 0 hsla(0, 100%, 0%, 1), 1px -1px 0 hsla(0, 100%, 0%, 1), -1px 1px 0 hsla(0, 100%, 0%, 1), 1px 1px 0 hsla(0, 100%, 0%, 1);
+    color: hsla(0, 0%, 100%, 1);
+    text-shadow: -1px -1px 0 hsla(0, 100%, 0%, 1), 1px -1px 0 hsla(0, 100%, 0%, 1), -1px 1px 0 hsla(0, 100%, 0%, 1), 1px 1px 0 hsla(0, 100%, 0%, 1);
 }
 .phone_bgr_settings_icon {
-	display: flex;
-	background: hsla(0, 0%, 55%, 1);
-	border: 1px solid hsla(204, 71%, 38%, 1);
-	border-radius: 10px;
-	box-shadow: inset 0px 0px 10px 0px hsla(0, 100%, 0%, 1);
-	align-content: center;
-	justify-content: center;
-	align-items: center;
-	width: 52px;
-	height: 52px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: hsla(0, 0%, 55%, 1);
+    border: 1px solid hsla(204, 71%, 38%, 1);
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0px 0px 10px 0px hsla(0, 100%, 0%, 1);
+            box-shadow: inset 0px 0px 10px 0px hsla(0, 100%, 0%, 1);
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 52px;
+    height: 52px;
 }
 .phone_bgr_phone_icon{
-	display: flex;
-	background: hsla(53, 100%, 78%, 1);
-	border: 1px solid hsla(204, 71%, 38%, 1);
-	border-radius: 10px;
-	box-shadow: inset 0px 0px 10px 0px hsla(0, 100%, 0%, 1);
-	align-content: center;
-	justify-content: center;
-	align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: hsla(53, 100%, 78%, 1);
+    border: 1px solid hsla(204, 71%, 38%, 1);
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0px 0px 10px 0px hsla(0, 100%, 0%, 1);
+            box-shadow: inset 0px 0px 10px 0px hsla(0, 100%, 0%, 1);
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .phone_bgr_appstore_icon {
-	display: flex;
-	background: hsla(0,0%,100%,1);
-	border: 1px solid hsla(204, 71%, 38%, 1);
-	border-radius: 10px;
-	box-shadow: inset 0px 0px 10px 0px hsla(0, 100%, 0%, 1);
-	align-content: center;
-	justify-content: center;
-	align-items: center;
-	width: 52px;
-	height: 52px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: hsla(0,0%,100%,1);
+    border: 1px solid hsla(204, 71%, 38%, 1);
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0px 0px 10px 0px hsla(0, 100%, 0%, 1);
+            box-shadow: inset 0px 0px 10px 0px hsla(0, 100%, 0%, 1);
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 52px;
+    height: 52px;
 }
 .phone_appstore_icon {
-	background: hsla(0,0%,100%,1);
-	background-image:linear-gradient(60deg,hsla(240, 100%, 50%, 1),hsla(38, 56%, 33%, 1),hsla(0, 100%, 50%, 1),hsla(270, 100%, 40%, 1));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+    background: hsla(0,0%,100%,1);
+    background-image:-o-linear-gradient(30deg,hsla(240, 100%, 50%, 1),hsla(38, 56%, 33%, 1),hsla(0, 100%, 50%, 1),hsla(270, 100%, 40%, 1));
+    background-image:linear-gradient(60deg,hsla(240, 100%, 50%, 1),hsla(38, 56%, 33%, 1),hsla(0, 100%, 50%, 1),hsla(270, 100%, 40%, 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .phone_email_icon {
-	color: hsla(60, 100%, 0%, 1);
-	text-shadow: -1px -1px 0 hsla(0, 100%, 50%, 1), 1px -1px 0 hsla(0, 100%, 50%, 1), -1px 1px 0 hsla(0, 100%, 50%, 1), 1px 1px 0 hsla(0, 100%, 50%, 1);
+    color: hsla(60, 100%, 0%, 1);
+    text-shadow: -1px -1px 0 hsla(0, 100%, 50%, 1), 1px -1px 0 hsla(0, 100%, 50%, 1), -1px 1px 0 hsla(0, 100%, 50%, 1), 1px 1px 0 hsla(0, 100%, 50%, 1);
 }
 
 .ripple {
-	 width: 5px;
-	 height: 5px;
-	 background-color: transparent;
-	 position: fixed;
-	 border-radius: 50%;
-	 border: 1px solid hsla(0,0%,100%,1);
+     width: 5px;
+     height: 5px;
+     background-color: transparent;
+     position: fixed;
+     border-radius: 50%;
+     border: 1px solid hsla(0,0%,100%,1);
+}
+
+@-webkit-keyframes ripple-effect {
+     to {
+        -webkit-transform:scale(5);
+                transform:scale(5);
+        opacity: 0.01;
+     }
 }
 
 @keyframes ripple-effect {
-	 to {
-		transform:scale(5);
-		opacity: 0.01;
-	 }
+     to {
+        -webkit-transform:scale(5);
+                transform:scale(5);
+        opacity: 0.01;
+     }
 }
 .phone_settings {
     width: 215px;
@@ -455,36 +628,57 @@ body, html{
     overflow: auto;
 }
 .settings_menu {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	flex-direction: row;
-	border-bottom: 1px solid hsla(46, 100%, 0%, 1);
-	border-top: 1px solid hsla(46, 100%, 0%, 1);
-	align-content: center;
-	align-items: center;
-	cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    border-bottom: 1px solid hsla(46, 100%, 0%, 1);
+    border-top: 1px solid hsla(46, 100%, 0%, 1);
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
 }
 .settings_menu:hover, .settings_menu:active{
-	background: hsla(167, 30%, 80%, 1);
-	cursor: pointer;
+    background: hsla(167, 30%, 80%, 1);
+    cursor: pointer;
 }
 .sub_menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     background: hsla(73, 100%, 101%, 1);
-    align-items: center;
-	cursor: pointer;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
 }
 .sub_menu_active{
-	background: hsla(270, 30%, 80%, 1);
-	cursor: pointer;
+    background: hsla(270, 30%, 80%, 1);
+    cursor: pointer;
 }
 .sub_menu:hover, .sub_menu:active{
-	background: hsla(167, 30%, 80%, 1);
-	cursor: pointer;
+    background: hsla(167, 30%, 80%, 1);
+    cursor: pointer;
 }
 .slider_bgd {
     width: 50px;
@@ -492,11 +686,16 @@ body, html{
     background-color: hsla(0, 0%, 85%, 1);
     border: 1px solid hsla(0, 0%, 0%, 1);
     border-radius: 13px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
     margin: 5px;
-	cursor: pointer;
+    cursor: pointer;
 }
 .slider {
     width: 19px;
@@ -508,28 +707,33 @@ body, html{
     position: relative;
 }
 .sub_menu_img {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     background: hsla(73, 100%, 101%, 1);
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .img_preview:hover, .img_preview_active:hover, .img_preview:active, .img_preview_active:active {
-	border: 10px solid hsla(167, 30%, 80%, 1);
-	cursor: pointer;
+    border: 10px solid hsla(167, 30%, 80%, 1);
+    cursor: pointer;
 }
 .img_preview_active{
-	border: 10px solid hsla(270, 30%, 80%, 1);
-	width: 80px;
+    border: 10px solid hsla(270, 30%, 80%, 1);
+    width: 80px;
     height: 146px;
     background-size: contain;
-	cursor: pointer;
+    cursor: pointer;
 }
 .img_preview {
     width: 80px;
     height: 146px;
     border: 10px solid hsla(120, 65%, 100%, 1);
     background-size: contain;
-	cursor: pointer;
+    cursor: pointer;
 }
 .sound_slidecontainer {
   width: 100%;
@@ -542,6 +746,8 @@ body, html{
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
+  -webkit-transition: opacity .2s;
+  -o-transition: opacity .2s;
   transition: opacity .2s;
   cursor: pointer;
   border-radius: 20px;
@@ -562,6 +768,8 @@ body, html{
   border-radius: 50%;
 }
 #default_settings_confirm {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 225px;
     height: 412px;
@@ -573,12 +781,22 @@ body, html{
     background-repeat: no-repeat no-repeat;
     background-position: center center;
     background-size: cover;
-    backdrop-filter: blur(2px);
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: row;
+    -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
 .default_setting_confirm_content {
     width: 200px;
@@ -595,17 +813,28 @@ body, html{
 .default_setting_confirm_text, .default_setting_confirm_buttons {
     padding: 5px;
     background-color: whitesmoke;
-	text-align: center;
+    text-align: center;
 }
 .default_setting_confirm_buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-evenly;
-    align-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
 }
 .confirm_button {
-    box-shadow: inset 0px 1px 3px 0px #91b8b3;
+    -webkit-box-shadow: inset 0px 1px 3px 0px #91b8b3;
+            box-shadow: inset 0px 1px 3px 0px #91b8b3;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #768d87), to(#6c7c7c));
+    background: -o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
     background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
     background-color: #768d87;
     border-radius: 5px;
@@ -623,24 +852,32 @@ body, html{
     text-align: center;
 }
 .confirm_button:hover {
-	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
-	background-color:#6c7c7c;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(5%, #6c7c7c), to(#768d87));
+    background:-o-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+    background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+    background-color:#6c7c7c;
 }
 .confirm_button:active {
-	position:relative;
-	top:1px;
+    position:relative;
+    top:1px;
 }
 .appStoreButton {
+    background: -webkit-gradient(linear, left bottom, right top, from(#1dd862), to(#01af1b));
+    background: -o-linear-gradient(bottom left, #1dd862, #01af1b);
     background: linear-gradient(to top right, #1dd862, #01af1b);
     border: 2px solid #006c29;
     padding-left: 8px;
     padding-right: 8px;
     border-radius: 10px;
     font-family: arial;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
     transition: all 0.25s ease;
-	cursor: pointer;
+    cursor: pointer;
 }
 .appStoreButton:active {
+     background: -webkit-gradient(linear, left bottom, right top, from(#01af1b), to(#1dd862));
+     background: -o-linear-gradient(bottom left, #01af1b, #1dd862);
      background: linear-gradient(to top right, #01af1b, #1dd862);
      border-color: none;
 }
