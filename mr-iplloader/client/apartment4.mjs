@@ -1,12 +1,11 @@
 import * as native from 'natives';
-import * as alt from 'alt';
 import { EnableIpl, SetIplProp, getConfig } from 'mr-functions';
 export let HighLifeApartment1 = {
-	ipl : ["mpbusiness_int_placement_interior_v_mp_apt_h_01_milo_"],
-	Enable : function(state){
+    ipl : ["mpbusiness_int_placement_interior_v_mp_apt_h_01_milo_"],
+    Enable : function(state){
         let StripId, BoozeId, SmokeId;
-		if (state){
- 			EnableIpl(HighLifeApartment1.ipl, state);
+        if (state){
+            EnableIpl(HighLifeApartment1.ipl, state);
             if (getConfig("Load_HighLifeApartment1Strip") == "set1")
                 StripId = "Apart_Hi_Strip_A";
             else if (getConfig("Load_HighLifeApartment1Strip") == "set2")

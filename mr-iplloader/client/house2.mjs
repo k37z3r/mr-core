@@ -1,12 +1,11 @@
 import * as native from 'natives';
-import * as alt from 'alt';
 import { EnableIpl, SetIplProp, getConfig } from 'mr-functions';
 export let MidEndHouse = {
-	ipl : [],
-	Enable : function(state){
+    ipl : [],
+    Enable : function(state){
         let StripId, BoozeId, SmokeId;
-		if (state){
- 			EnableIpl(MidEndHouse.ipl, state);
+        if (state){
+            EnableIpl(MidEndHouse.ipl, state);
             if (getConfig("Load_MidEndHouseStrip") == "set1")
                 StripId = "Apart_Mid_Strip_A";
             else if (getConfig("Load_MidEndHouseStrip") == "set2")

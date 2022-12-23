@@ -1,11 +1,9 @@
-import * as alt from "alt";
-import * as native from 'natives';
 import { EnableIpl } from 'mr-functions';
 export let Yacht = {
-	ipl : [
-		"smboat",
-		"smboat_lod",
-		"hei_yacht_heist",
+    ipl : [
+        "smboat",
+        "smboat_lod",
+        "hei_yacht_heist",
         "hei_yacht_heist_bar",
         "hei_yacht_heist_bar_lod",
         "hei_yacht_heist_bedrm",
@@ -18,8 +16,8 @@ export let Yacht = {
         "hei_yacht_heist_lounge",
         "hei_yacht_heist_lounge_lod",
         "hei_yacht_heist_slod"
-	],
-	Enable : function(state){
-		EnableIpl(Yacht.ipl, state);
-	}
+    ],
+    Enable : function(state){
+        EnableIpl(Yacht.ipl, state);
+    }
 }

@@ -1,11 +1,10 @@
 import * as native from 'natives';
-import * as alt from 'alt';
 import { EnableIpl, SetIplProp, getConfig } from 'mr-functions';
 export let ExecutiveApartment2 = {
-	ipl : [],
-	Enable : function(state){
+    ipl : [],
+    Enable : function(state){
         let IPL, INTID, StripId, BoozeId, SmokeId;
-		if (state){
+        if (state){
             if (getConfig("Load_ExecutiveApartment2Style") == "modern"){
                 IPL = "apa_v_mp_h_01_b";
                 INTID = 227585;
@@ -38,7 +37,7 @@ export let ExecutiveApartment2 = {
                 IPL = "apa_v_mp_h_08_b";
                 INTID = 232961;
             }
-			EnableIpl(IPL, state);
+            EnableIpl(IPL, state);
             if (getConfig("Load_ExecutiveApartment2Strip") == "set1")
                 StripId = "Apart_Hi_Strip_A";
             else if (getConfig("Load_ExecutiveApartment2Strip") == "set2")

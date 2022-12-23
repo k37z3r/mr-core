@@ -1,6 +1,6 @@
 import * as alt from "alt";
 import * as native from 'natives';
-import { EnableIpl, getInteriorByType, SetIplProp, getConfig } from 'mr-functions';
+import { getConfig } from 'mr-functions';
 import { Start } from './unload.mjs';
 import { Base } from './base.mjs';
 import { Gun_Yacht } from './gunyacht.mjs';
@@ -133,17 +133,17 @@ FinanceOffice2.Enable(getConfig("Load_FinanceOffice2"));
 FinanceOffice3.Enable(getConfig("Load_FinanceOffice3"));
 FinanceOffice4.Enable(getConfig("Load_FinanceOffice4"));
 Garage1.Enable(getConfig("Load_Garage1"));
-Garage1.Enable(getConfig("Load_Garage2"));
-Garage1.Enable(getConfig("Load_Garage3"));
-Garage1.Enable(getConfig("Load_Garage4"));
+Garage2.Enable(getConfig("Load_Garage2"));
+Garage3.Enable(getConfig("Load_Garage3"));
+Garage4.Enable(getConfig("Load_Garage4"));
 VehicleWarehouse.Enable(getConfig("VehicleWarehouse"));
 SecurityBillboards.Enable(getConfig("Load_SecurityBillboards"));
 SecurityGarage.Enable(getConfig("Load_SecurityGarage"));
 SecurityMusicRoofTop.Enable(getConfig("Load_SecuritySecurityMusicRoofTop"));
 SecurityOffice1.Enable(getConfig("Load_SecurityOffice1"));
-SecurityOffice1.Enable(getConfig("Load_SecurityOffice2"));
-SecurityOffice1.Enable(getConfig("Load_SecurityOffice3"));
-SecurityOffice1.Enable(getConfig("Load_SecurityOffice4"));
+SecurityOffice2.Enable(getConfig("Load_SecurityOffice2"));
+SecurityOffice3.Enable(getConfig("Load_SecurityOffice3"));
+SecurityOffice4.Enable(getConfig("Load_SecurityOffice4"));
 SecurityStudio.Enable(getConfig("Load_SecurityStudio"));
 Hangar.Enable(getConfig("Load_Hangar"));
 Tunergarage.Enable(getConfig("Load_Tunergarage"));
@@ -152,15 +152,15 @@ TunerMethLab.Enable(getConfig("Load_TunerMethLab"));
 Warehouse.Enable(getConfig("Load_Warehouse"));
 Blips.Enable(getConfig("IPL_Blip_Loader"));
 if (getConfig("Load_cayoPerico")){
-	alt.on("connectionComplete", () => {
-		if(getConfig("Load_cayoPerico")){
-			const blip = new alt.PointBlip(5943.5679611650485, -6272.114833599767, 2);
-			blip.alpha = 0;
-			alt.everyTick(() => {
-				native.setRadarAsExteriorThisFrame();
-				native.setRadarAsInteriorThisFrame(alt.hash("h4_fake_islandx"), 4700.0, -5145.0, 0, 0);
-				native.setDeepOceanScaler(0.1);
-			});
-		}
-	});
+    alt.on("connectionComplete", () => {
+        if(getConfig("Load_cayoPerico")){
+            const blip = new alt.PointBlip(5943.5679611650485, -6272.114833599767, 2);
+            blip.alpha = 0;
+            alt.everyTick(() => {
+                native.setRadarAsExteriorThisFrame();
+                native.setRadarAsInteriorThisFrame(alt.hash("h4_fake_islandx"), 4700.0, -5145.0, 0, 0);
+                native.setDeepOceanScaler(0.1);
+            });
+        }
+    });
 }
