@@ -1,42 +1,80 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 10 version
+*/
+
 @media (prefers-reduced-motion: no-preference) {
-	.header {
-		color: #FFF;
-		background: no-repeat -10% / 10% 100% linear-gradient(90deg, rgba(84,220,200,.2) 0%, rgba(84,220,200,1) 50%, rgba(84,220,200,.2) 100%), black;
-		animation: 2s cubic-bezier(0.6, 0.2, 0.40, 0.8) 0s infinite alternate cylon;
-		width: 100%;
-	}
+    .header {
+        color: rgba(255, 255, 255, 1);
+        background: no-repeat -10% / 10% 100% -webkit-gradient(linear, left top, right top, from(rgba(84,220,200,.2)), color-stop(50%, rgba(84,220,200,1)), to(rgba(84,220,200,.2))), rgba(0, 0, 0, 1);
+        background: no-repeat -10% / 10% 100% -o-linear-gradient(left, rgba(84,220,200,.2) 0%, rgba(84,220,200,1) 50%, rgba(84,220,200,.2) 100%), rgba(0, 0, 0, 1);
+        background: no-repeat -10% / 10% 100% linear-gradient(90deg, rgba(84,220,200,.2) 0%, rgba(84,220,200,1) 50%, rgba(84,220,200,.2) 100%), rgba(0, 0, 0, 1);
+        -webkit-animation: 2s cubic-bezier(0.6, 0.2, 0.40, 0.8) 0s infinite alternate cylon;
+                animation: 2s cubic-bezier(0.6, 0.2, 0.40, 0.8) 0s infinite alternate cylon;
+        width: 100%;
+    }
+}
+@-webkit-keyframes cylon {
+    from {
+        background-position: -15% 90%;
+    }
+    to {
+        background-position: 115% 90%;
+    }
 }
 @keyframes cylon {
-	from {
-		background-position: -15% 90%;
-	}
-	to {
-		background-position: 115% 90%;
-	}
+    from {
+        background-position: -15% 90%;
+    }
+    to {
+        background-position: 115% 90%;
+    }
 }
 body {
-	font-family:'Times New Roman';
-	font-size:14px;
-	font-weight:bold;
-	background-color: transparent;
-	color: white;
-	margin: 0;
-	padding: 0;
+    font-family:'Times New Roman';
+    font-size:14px;
+    font-weight:bold;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 1);
+    margin: 0;
+    padding: 0;
 }
 *{
-	box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 .txt{
-	border-top: 2px solid rgba(84,220,200,1);
-	border-bottom: 2px solid rgba(84,220,200,1);
-	border-right: 2px solid rgba(84,220,200,1);
-	padding: 13px;
-	transform: skew(33deg, 0deg);
+    border-top: 2px solid rgba(84,220,200,1);
+    border-bottom: 2px solid rgba(84,220,200,1);
+    border-right: 2px solid rgba(84,220,200,1);
+    padding: 13px;
+    -webkit-transform: skew(33deg, 0deg);
+        -ms-transform: skew(33deg, 0deg);
+            transform: skew(33deg, 0deg);
 }
 .font{
-	transform: skew(-33deg, 0deg);
-	padding-left: 20px;
+    -webkit-transform: skew(-33deg, 0deg);
+        -ms-transform: skew(-33deg, 0deg);
+            transform: skew(-33deg, 0deg);
+    padding-left: 20px;
 }
 .divposition{
-	bottom: 50vh;
+    bottom: 50vh;
+}
+.helpposition{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+}
+.helptxt {
+    border-top: 2px solid rgba(84,220,200,1);
+    border-bottom: 2px solid rgba(84,220,200,1);
+    border-right: 2px solid rgba(84,220,200,1);
+    padding: 13px 200px;
+    -webkit-transform: skew(33deg, 0deg);
+    -ms-transform: skew(33deg, 0deg);
+    transform: skew(33deg, 0deg);
 }
