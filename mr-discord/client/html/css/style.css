@@ -1,28 +1,46 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 10 version
+*/
+
 body, html{
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
     font-size: 16px;
     color: rgba(233,241,238,1);
-	overflow: hidden;
+    overflow: hidden;
 }
 .container {
     position: absolute;
     bottom: 0;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-	bottom:-400px;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    bottom:-400px;
 }
 .content {
     width: 60%;
     height: 350px;
     background: rgba(54,57,63,1);
     color: rgba(233,241,238,1);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-content: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
 }
 .chat {
     width: 100%;
@@ -44,13 +62,21 @@ body, html{
     position: relative;
 }
 .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-between;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 100%;
     height: 20px;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background: rgba(32,34,37,1);
     padding: 10px;
 }
@@ -59,8 +85,8 @@ body, html{
 }
 .fa-rectangle-xmark {
     color: rgba(255, 0, 0, 1);
-	text-shadow: -1px -1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), 1px 1px 0 rgba(0, 0, 0, 1);
-	font-size: 24px;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), 1px 1px 0 rgba(0, 0, 0, 1);
+    font-size: 24px;
 }
 .fa-circle-question {
     color: rgba(248, 255, 145, 1);
@@ -68,17 +94,25 @@ body, html{
     font-size: 20px;
 }
 .fa-circle-question:active {
-	font-size: 18px;
+    font-size: 18px;
 }
 .fa-rectangle-xmark:active {
-	font-size: 22px;
+    font-size: 22px;
 }
 .icons{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: nowrap;
-    align-content: center;
-    align-items: center;
-    justify-content: space-between;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 50px;
 }
 .title {
@@ -94,19 +128,20 @@ body, html{
     text-shadow: 0 0 1px #000, 0 0 2px #000, 0 0 3px #000, 0 0 4px #54dcc8, 0 0 5px #54dcc8, 0 0 6px #54dcc8, 0 0 7px #54dcc8, 0 0 8px #54dcc8;
 }
 ::-webkit-scrollbar {
-	background: rgba(46,51,56,1);
-	width: 8px;
+    background: rgba(46,51,56,1);
+    width: 8px;
 }
 ::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 5px rgba(46,51,56,1); 
-	border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(46,51,56,1);
+            box-shadow: inset 0 0 5px rgba(46,51,56,1); 
+    border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-	background: rgba(32,34,37,1); 
-	border-radius: 10px;
+    background: rgba(32,34,37,1); 
+    border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-	background: rgba(32,34,37,1); 
+    background: rgba(32,34,37,1); 
 }
 .helpdesk {
     min-width: 400px;
@@ -121,8 +156,10 @@ body, html{
     border-radius: 8px;
     position: absolute;
     z-index: 99999999;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border: 1px solid #999999;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 8px rgba(0,0,0,0.5);
+            box-shadow: 0 1px 8px rgba(0,0,0,0.5);
     display: none;
 }
