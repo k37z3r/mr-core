@@ -1,5 +1,27 @@
 export const _CONFIG = {
     LANGUAGE: 'de',
+    HELP: {
+        "HUD":[
+          {"button":"[73]", "description":"OPEN_HUD"},
+          {"button":"[73]", "description":"CLOSE_HUD"}
+        ],
+        "HANDY":[
+          {"button":"[77]", "description": "OPEN_HANDY"},
+          {"button":"[27]", "description": "CLOSE_HANDY"},
+        ],
+        "DISCORD":[
+          {"button":"[84]", "description": "OPEN_DISCORD"},
+          {"button":"[27]", "description": "CLOSE_DISCORD"},
+        ],
+        "CONSOLE":[
+          {"button":"[119]", "description": "OPEN_CONSOLE"},
+          {"button":"[119]", "description": "CLOSE_CONSOLE"},
+        ],
+        "HELP":[
+          {"button":"[121]", "description": "OPEN_HELP"},
+          {"button":"[121]", "description": "CLOSE_HELP"},
+        ]
+    },
 // HUD
     STATUS_INTERVAL: 5,    //    how often to check hud in seconds
 // Phone
