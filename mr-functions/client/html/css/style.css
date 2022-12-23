@@ -8,8 +8,8 @@
 @media (prefers-reduced-motion: no-preference) {
     .header {
         color: rgba(255, 255, 255, 1);
-        background: no-repeat -10% / 10% 100% -webkit-gradient(linear, left top, right top, from(rgba(84,220,200,.2)), color-stop(50%, rgba(84,220,200,1)), to(rgba(84,220,200,.2))), rgba(0, 0, 0, 1);
         background: no-repeat -10% / 10% 100% -o-linear-gradient(left, rgba(84,220,200,.2) 0%, rgba(84,220,200,1) 50%, rgba(84,220,200,.2) 100%), rgba(0, 0, 0, 1);
+        background: no-repeat -10% / 10% 100% -webkit-gradient(linear, left top, right top, from(rgba(84,220,200,.2)), color-stop(50%, rgba(84,220,200,1)), to(rgba(84,220,200,.2))), rgba(0, 0, 0, 1);
         background: no-repeat -10% / 10% 100% linear-gradient(90deg, rgba(84,220,200,.2) 0%, rgba(84,220,200,1) 50%, rgba(84,220,200,.2) 100%), rgba(0, 0, 0, 1);
         -webkit-animation: 2s cubic-bezier(0.6, 0.2, 0.40, 0.8) 0s infinite alternate cylon;
                 animation: 2s cubic-bezier(0.6, 0.2, 0.40, 0.8) 0s infinite alternate cylon;
@@ -64,9 +64,14 @@ body {
     bottom: 50vh;
 }
 .helpposition{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-content: center;
-    align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100%;
 }
 .helptxt {
