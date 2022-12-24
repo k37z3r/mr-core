@@ -74,8 +74,14 @@ import { Hangar } from './hangar.mjs';
 import { Tunergarage } from './tuner.mjs';
 import { TunerMeetup } from './meetup.mjs';
 import { TunerMethLab } from './methlab.mjs';
-import { Warehouse } from './warehouse.mjs'
+import { Warehouse } from './warehouse.mjs';
 import { Blips } from './blips.mjs';
+import { DrugWars } from './drugwars.mjs';
+import { TrainCrash } from './traincrash.mjs';
+import { RVVAN } from './rvvan.mjs';
+import { Garage5 } from './garage5.mjs';
+import { Freakshow } from './freakshow.mjs';
+import { Newmorgue } from './newmorgue.mjs';
 Start.Unload();
 Base.Enable();
 Graffitis.Enable(getConfig("Load_Graffitis"));
@@ -150,7 +156,13 @@ Tunergarage.Enable(getConfig("Load_Tunergarage"));
 TunerMeetup.Enable(getConfig("Load_TunerMeetup"));
 TunerMethLab.Enable(getConfig("Load_TunerMethLab"));
 Warehouse.Enable(getConfig("Load_Warehouse"));
+DrugWars.Enable(getConfig("Load_Drug_Wars"));
+TrainCrash.Enable(getConfig("Load_Train_Crash"));
+RVVAN.Enable(getConfig("Load_RV_VAN"));
 Blips.Enable(getConfig("IPL_Blip_Loader"));
+Garage5.Enable(getConfig("Load_Garage5"));
+Freakshow.Enable(getConfig("Load_Freak_Show_Gang"));
+Newmorgue.Enable(getConfig("Load_New_Morgue"));
 if (getConfig("Load_cayoPerico")){
     alt.on("connectionComplete", () => {
         if(getConfig("Load_cayoPerico")){

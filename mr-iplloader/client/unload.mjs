@@ -643,7 +643,26 @@ export let Start = {
             "tr_tuner_race_line",
             "reh_simeonfix",
             "reh_int_placement_sum2_interior_0_dlc_int_03_sum2_milo_",
-            "reh_int_placement_sum2_interior_1_dlc_int_04_sum2_milo_"
+            "reh_int_placement_sum2_interior_1_dlc_int_04_sum2_milo_",
+            "xm3_int_placement_xm3_interior_0_dlc_int_01_xm3_milo_",
+            "xm3_int_placement_xm3_interior_1_dlc_int_02_xm3_milo_",
+            "xm3_int_placement_xm3_interior_2_dlc_int_03_xm3_milo_",
+            "xm3_int_placement_xm3_interior_3_dlc_int_04_xm3_milo_",
+            "xm3_collision_fixes",
+            "xm3_cutscene_doors",
+            "xm3_doc_sign",
+            "xm3_garage_fix",
+            "xm3_security_fix",
+            "xm3_stash_cams",
+            "xm3_sum2_fix",
+            "xm3_sum2_fix",
+            "xm3_warehouse",
+            "xm3_warehouse_lod",
+            "xm3_warehouse_grnd",
+            "xm3_train_crash",
+            "xm3_dlc_int_01_xm3",
+            "xm3_int_placement_xm3_interior_1_dlc_int_01_xm3_milo_",
+            "xm3_dlc_int_03_xm3"
         ];
         let props_a = [
             "Apart_Hi_Strip_A",
@@ -1483,6 +1502,28 @@ export let Start = {
             "entity_set_style_4",
             "entity_set_style_5"
         ];
+        let props_an = [
+            "set_equipment_upgrade",
+            "set_product_01",
+            "set_product_02",
+            "set_product_03",
+            "set_product_04",
+            "set_product_05",
+            "set_supplies_01",
+            "set_supplies_02",
+            "set_supplies_03",
+            "set_supplies_04",
+            "set_supplies_05"
+        ];
+        let props_ao = [
+            "entity_set_shell_03",
+            "entity_set_tint_01",
+            "entity_set_numbers_01"
+        ];
+        let props_ap =[
+            "entity_set_roller_door_closed",
+            "entity_set_roller_door_open"
+        ];
         UnSetIplProp(145921, props_a);
         UnSetIplProp(146177, props_a);
         UnSetIplProp(146689, props_a);
@@ -1621,6 +1662,9 @@ export let Start = {
         UnSetIplProp(284673, props_aj);
         UnSetIplProp(289537, props_ak);
         UnSetIplProp(289793, props_am);
+        UnSetIplProp(290305, props_an);
+        UnSetIplProp(290561, props_ao);
+        UnSetIplProp(290817, props_ap);
         EnableIpl(ipl, false);
     }
 }
