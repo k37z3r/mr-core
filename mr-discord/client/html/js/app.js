@@ -10,6 +10,7 @@ var showhelp = false;
 var msg = "";
 var language = [];
 var tp_help = false;
+var sv_help = false;
 alt.on("closeChat", closeChat);
 alt.on("openChat", openChat);
 alt.on('set_help', (rule) => {
@@ -17,6 +18,10 @@ alt.on('set_help', (rule) => {
         tp_help = true;
     else
         tp_help = false;
+    if (rule.can_sv == "yes")
+        sv_help = true;
+    else
+        sv_help = false;
 });
 function openChat(lang_array){
     if (!opened){
@@ -54,7 +59,7 @@ $(document).ready(function(){
             $('.helpdesk').fadeOut(500);
         }
         else{
-            $('.helpdesk').html(((tp_help)?`${language[0]}: <span style="font-weight:bolder">/tp X,Y,Z</span><br>${language[1]}: <span style="font-weight:bolder">/tp2player playername</span><br>${language[3]}: <span style="font-weight:bolder">/tp2wp</span><br>`:'') + language[2] + ': <span style="font-weight:bolder">/calladmin</span>');
+            $('.helpdesk').html(((tp_help)?`${language[0]}: <span style="font-weight:bolder">/tp X,Y,Z</span><br>${language[1]}: <span style="font-weight:bolder">/tp2player playername</span><br>${language[3]}: <span style="font-weight:bolder">/spawnvehicle</span><br>`:'') + ((sv_help)?`${language[4]}: <span style="font-weight:bolder">/tp2wp</span><br>`:'') + language[2] + ': <span style="font-weight:bolder">/calladmin</span>');
             showhelp = true;
             $('.helpdesk').fadeIn(500);
         }
