@@ -1,6 +1,5 @@
 import * as native from 'natives';
 import { SetIplProp, getConfig } from 'mr-functions';
-import { getConfig } from '../../../mr-functions/server';
 export let Freakshow = {
     ipl : [],
     Enable : function(state){
