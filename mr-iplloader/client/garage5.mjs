@@ -1,6 +1,5 @@
 import * as native from 'natives';
 import { EnableIpl, SetIplProp, getConfig } from 'mr-functions';
-import { getConfig } from '../../mr-functions/client';
 export let Garage5 = {
     ipl : ["xm3_int_placement_xm3_interior_1_dlc_int_01_xm3_milo_"],
     Enable : function(state){
