@@ -2,7 +2,7 @@ import * as alt from 'alt';
 import * as native from 'natives';
 import { _L } from 'mr-functions';
 const view = new alt.WebView("http://resource/client/html/index.html");
-const lang_array = [_L("teleport_to_coords"), _L("teleport_to_player"), _L("call_admin"), _L("teleport_to_waypoint")];
+const lang_array = [_L("TELEPORT_TO_COORDS"), _L("TELEPORT_TO_PLAYER"), _L("CALL_ADMIN"), _L("TELEPORT_TO_WAYPOINT"), _L("SPAWN_VEHICLE")];
 async function getOAuthToken(DISCORD_APP_ID) {
     try {
         const token = await alt.Discord.requestOAuth2Token(DISCORD_APP_ID);
