@@ -227,3 +227,31 @@ export async function doPostRequest() {
             alt.log(error.message);
     });
 }
+function doUpdateValues(){
+    alt.Player.all.forEach((player) => {
+        mysql_callback('SELECT users.username AS UNAME, users.id AS UID, users.hunger AS HUNGER, users.thirsty AS THIRSTY, users.isdead AS ISDEAD FROM users WHERE users.id = ?', [player.id], function(result){
+            if (result[0] > 0){
+                if (result[1].ISDEAD == "no" && result[1].UID != -1){
+                    let newhunger, newisdead, newthirsty;
+                    if (result[1].HUNGER < HUNGER_RATE)
+                        newhunger = 0;
+                    else
+                        newhunger = result[1].HUNGER - HUNGER_RATE;
+                    if (result[1].THIRSTY < THIRSTY_RATE)
+                        newthirsty = 0;
+                    else
+                        newthirsty = result[1].THIRSTY - THIRSTY_RATE;
+                    if (newthirsty <= 0 || newhunger <= 0)
+                        newisdead = "yes";
+                    else
+                        newisdead = "no";
+                    mysql_callback('UPDATE users SET users.hunger = ?, users.thirsty = ?, users.isdead = ? WHERE id = ?', [newhunger, newthirsty, newisdead, result[1].UID], function(result2){
+                        if (result2[0] == 1 && LOG_MYSQL=="true")
+                        alt.log(_L("LOG_UPDATE_USER",[result[1].UNAME]));
+                    });
+                }
+            }
+        });
+    });
+}
+UpdateValues = alt.setInterval(doUpdateValues, UPDATE_INTERVAL*60*1000);
