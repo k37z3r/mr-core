@@ -164,6 +164,9 @@ export function format_txt(txt){
     str = str.replaceAll('[84]', replace_buttons('T'));
     str = str.replaceAll('[119]', replace_buttons('F8'));
     str = str.replaceAll('[121]', replace_buttons('F10'));
+    str = str.replaceAll('[188]', replace_buttons(','));
+    str = str.replaceAll('[189]', replace_buttons('-'));
+    str = str.replaceAll('[190]', replace_buttons('.'));
     return str;
 }
 function create_help(){
