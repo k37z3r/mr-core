@@ -59,7 +59,7 @@ $(document).ready(function(){
             $('.helpdesk').fadeOut(500);
         }
         else{
-            $('.helpdesk').html(((tp_help)?`${language[0]}: <span style="font-weight:bolder">/tp X,Y,Z</span><br>${language[1]}: <span style="font-weight:bolder">/tp2player playername</span><br>${language[3]}: <span style="font-weight:bolder">/spawnvehicle</span><br>`:'') + ((sv_help)?`${language[4]}: <span style="font-weight:bolder">/tp2wp</span><br>`:'') + language[2] + ': <span style="font-weight:bolder">/calladmin</span>');
+            $('.helpdesk').html(((tp_help)?`${language[0]}: <span style="font-weight:bolder">/tp X,Y,Z</span><br>${language[1]}: <span style="font-weight:bolder">/tp2player playername</span><br>${language[3]}: <span style="font-weight:bolder">/tp2wp</span><br>`:'') + ((sv_help)?`${language[4]}: <span style="font-weight:bolder">/spawnvehicle</span><br>`:'') + language[2] + ': <span style="font-weight:bolder">/calladmin</span>');
             showhelp = true;
             $('.helpdesk').fadeIn(500);
         }
