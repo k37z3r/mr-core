@@ -20,6 +20,11 @@ export const _CONFIG = {
         "HELP":[
           {"button":"[121]", "description": "OPEN_HELP"},
           {"button":"[121]", "description": "CLOSE_HELP"},
+        ],
+        "CAR_CONTROL":[
+          {"button":"[188]", "description": "LEFT_INDICATOR"},
+          {"button":"[189]", "description": "RIGHT_INDICATOR"},
+          {"button":"[190]", "description": "WARNING_LIGHTS"},
         ]
     },
 // HUD
