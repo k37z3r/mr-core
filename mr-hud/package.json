@@ -1,0 +1,25 @@
+{
+    "name": "mr-hud",
+    "version": "0.1",
+    "description": "hud for mr-core",
+    "main": "",
+    "scripts": {
+        "test": "tsc",
+        "preversion": "yarn run test",
+        "release": "yarn version --no-git-tag-version"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/k37z3r/myroleplay"
+    },
+    "dependencies": {
+        "mysql": ">=2"
+    },
+    "author": "Luz Iferato",
+    "keywords": ["framework","js","core","roleplay","altv","altv-resource","mr-core","myroleplay","discord","hud","toplist"],
+    "license": "CC-BY-NC-SA/4.0",
+    "bugs": "https://github.com/k37z3r/myroleplay/issues",
+    "homepage": "https://github.com/k37z3r",
+    "type": "module",
+    "man": "https://github.com/k37z3r/myroleplay/wiki"
+}

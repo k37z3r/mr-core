@@ -1,0 +1,92 @@
+body, html{
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: rgba(233,241,238,1);
+  overflow: hidden;
+}
+.container {
+  position: relative;
+  top: -100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  bottom: 0px;
+  line-height: 0.3;
+  height:62px;
+}
+.content {
+  height: 62px;
+  background: rgb(84 90 157);
+  color: rgba(233,241,238,1);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.cash {
+  color: rgba(204, 255, 0, 1);
+}
+.bank {
+  color: rgba(0, 245, 255, 1);
+}
+.blackm {
+  color: rgba(0, 0, 0, 1);
+}
+.status {
+  border: 1px solid white;
+  width: 60px;
+  padding: 3px;
+  font-size: small;
+  letter-spacing: 1px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.status2 {
+  border: 1px solid black;
+  width: 60px;
+  padding: 3px;
+  font-size: small;
+  letter-spacing: 1px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.head {
+  padding: 3px;
+  letter-spacing: 1px;
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.percent {
+  font-weight: 900;
+}
+.temperatur {
+  background: linear-gradient(90deg, rgba(0, 0, 139, 1), rgba(0, 0, 255, 1), rgba(0, 128, 0, 1), rgba(255, 165, 0, 1), rgba(255, 0, 0, 1));
+}
+table {
+  width: 100%;
+}
+.blink {
+  animation: blinker 0.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+}
+@keyframes blinker {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}

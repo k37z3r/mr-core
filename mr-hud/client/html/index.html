@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>mr-core hud</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+		<script src="./js/app.js"></script>
+		<link rel="stylesheet" href="./css/style.css">
+	</head>
+	<body>
+		<div class="container" id="container">
+			<div class="content">
+				<table>
+					<tr>
+						<td>
+							<table>
+								<tr>
+									<td><div class="head"><div id="name" class="percent"></div></div></td>
+									<td><div class="head"><div id="uid" class="percent"></div></div></td>
+									<td><div class="head"><i class="fa-solid fa-money-bill-1-wave cash"></i>&nbsp;<div id="cash" class="percent cash"></div></div></td>
+									<td><div class="head"><i class="fa-solid fa-money-check-dollar bank"></i>&nbsp;<div id="bank" class="percent bank"></div></div></td>
+									<td><div class="head"><i class="fa-solid fa-sack-dollar blackm"></i>&nbsp;<div id="blackm" class="percent blackm"></div></div></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table>
+								<tr>
+									<td><div class="status health"><i class="fa-solid fa-heart-pulse"></i><div id="health" class="percent">100%</div></div></td>
+									<td><div class="status shield"><i class="fa-solid fa-shield-halved"></i><div id="shield" class="percent">100%</div></div></td>
+									<td><div class="status hunger"><i class="fa-solid fa-burger"></i><div id="hunger" class="percent">100%</div></div></td>
+									<td><div class="status thirsty"><i class="fa-solid fa-glass-water-droplet"></i><div id="thirsty" class="percent">100%</div></div></td>
+									<td><div class="status toilet"><i class="fa-solid fa-toilet-paper"></i><div id="toilet" class="percent">0%</div></div></td>
+									<!--<td><div class="status temperatur"><i class="fa-solid fa-temperature-quarter"></i><div id="temperatur" class="percent">|</div></div></td>-->
+									<td><div class="status oxygen"><i class="fa-solid fa-lungs"></i><div id="oxygen" class="percent">100%</div></div></td>
+									<td><div class="status running"><i class="fa-solid fa-person-running"></i><div id="running" class="percent">100%</div></div></td>
+									<td><div class="status stress"><i class="fa-solid fa-brain"></i><div id="stress" class="percent">0%</div></div></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
