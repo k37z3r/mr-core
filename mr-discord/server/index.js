@@ -73,16 +73,23 @@ registerChatCmd("spawnvehicle", (player, args) => {
     mysql_callback('SELECT users.id AS ID, rank.can_spawn_vehicle AS SPAWN_VEH FROM `users` INNER JOIN rank ON users.rank=rank.rank WHERE users.id = ?', [player.id], function(result){
         if (result[0] > 0){
             if (result[1].SPAWN_VEH == "yes"){
-                let vehicle = new alt.Vehicle(args[0], player.pos.x+1, player.pos.y+1, player.pos.z, 0, 0, 0);
-                let pvehs = player.getMeta("vehicles");
-                if (pvehs.length >= 3) {
-                    let toDestroy = pvehs.pop();
-                    if (toDestroy != null) {
-                        toDestroy.destroy();
+                mysql_callback('SELECT blacklisted AS B_LIST FROM vehicles WHERE hashname = ?', [args[0]], function(result2){
+                    if (result2[0] > 0){
+                        if (result2[1].B_LIST == "no"){
+                            let vehicle = new alt.Vehicle(args[0], player.pos.x+1, player.pos.y+1, player.pos.z, 0, 0, 0);
+                            let pvehs = player.getMeta("vehicles");
+                            if (pvehs.length >= 3) {
+                                let toDestroy = pvehs.pop();
+                                if (toDestroy != null) {
+                                    toDestroy.destroy();
+                                }
+                            }
+                            pvehs.unshift(vehicle);
+                            player.setMeta("vehicles", pvehs);
+                            alt.emitClient(player, 'mr-core:discord:sclose_chat');
+                        }
                     }
-                }
-                pvehs.unshift(vehicle);
-                player.setMeta("vehicles", pvehs);
+                });
             }
         }
     });
