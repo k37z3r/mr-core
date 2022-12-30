@@ -3,11 +3,11 @@ import axios from 'axios';
 import Discord from 'discord.js';
 const { Client, GatewayIntentBits, EmbedBuilder } = Discord;
 const discordClient = new Client({ intents: [ GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMembers, ] });
-import { DISCORD_OWNER_ID, DISCORD_APP_ID, DISCORD_SERVER_ID, DISCORD_TOKEN, DISCORD_CITIZEN_ID, DISCORD_ADMIN_ID, DISCORD_MOD_ID, DISCORD_SUPPORTER_ID, DISCORD_STATUS_CHANNEL, DISCORD_INVITE_LINK, DISCORD_PREFIX, WHITELIST, LOG_WHITELIST, LOG_MYSQL, ANNOUNCE_LOG_IN_OUT, DISCORD_INGAME_CHANNEL, mysql_callback, _L, sortFunction, registerChatCmd, invokeChatCmd, canSplit, DISCORD_ADMINCALL_CHANNEL } from 'mr-functions';
-let WhitelistUpdate;
+import { DISCORD_OWNER_ID, DISCORD_APP_ID, DISCORD_SERVER_ID, DISCORD_TOKEN, DISCORD_CITIZEN_ID, DISCORD_ADMIN_ID, DISCORD_MOD_ID, DISCORD_SUPPORTER_ID, DISCORD_STATUS_CHANNEL, DISCORD_INVITE_LINK, DISCORD_PREFIX, WHITELIST, LOG_WHITELIST, LOG_MYSQL, ANNOUNCE_LOG_IN_OUT, DISCORD_INGAME_CHANNEL, mysql_callback, _L, sortFunction, registerChatCmd, invokeChatCmd, canSplit, DISCORD_ADMINCALL_CHANNEL, getIdByDiscord, getDiscordNameById, getOnlineUsersByDsid, getDiscordById, refreshWhitelist } from 'mr-functions';
 var CurrentOnlineUsers = [];
 var WhiteList = [];
 var msg = [];
+let UpdateWhiteList;
 discordClient.on('guildMemberUpdate', (oldMember, newMember) => {
     refreshWhitelist();
 });
@@ -31,17 +31,18 @@ discordClient.on("messageCreate", (message) => {
         message.channel.send(_L("DISCORD_HELP"));
     }
     if (message.channel.id === DISCORD_INGAME_CHANNEL) {
-        set_message();
+        alt.emitAllClients('mr-core:discord:getmessages');
     }
 });
 alt.on('playerConnect', (player) => {
     alt.emitClient(player, 'mr-core:discord:set_discord_app_id', DISCORD_APP_ID);
 });
-alt.onClient('teleportToMarker', (player, coords) => {
+alt.onClient('mr-core:discord:teleportToMarker', (player, coords) => {
     mysql_callback('SELECT users.id AS ID, rank.can_tp AS CAN_TP FROM `users` INNER JOIN rank ON users.rank=rank.rank WHERE users.id = ?', [player.id], function(result){
         if (result[0] > 0){
             if (result[1].CAN_TP == "yes"){
                 player.pos = coords;
+                alt.emitClient(player, 'mr-core:discord:close_chat');
             }
         }
     });
@@ -50,7 +51,8 @@ registerChatCmd("tp2wp", (player) => {
     mysql_callback('SELECT users.id AS ID, rank.can_tp AS CAN_TP FROM `users` INNER JOIN rank ON users.rank=rank.rank WHERE users.id = ?', [player.id], function(result){
         if (result[0] > 0){
             if (result[1].CAN_TP == "yes"){
-                alt.emitClient(player, 'teleportToMarker');
+                alt.emitClient(player, 'mr-core:discord:teleportToMarker');
+                alt.emitClient(player, 'mr-core:discord:close_chat');
             }
         }
     });
@@ -64,6 +66,7 @@ registerChatCmd("tp2player", (player, args) => {
                 if (foundPlayers && foundPlayers.length > 0) {
                     let position = new alt.Vector3(foundPlayers[0].pos.x, foundPlayers[0].pos.y, foundPlayers[0].pos.z)
                     player.pos = position;
+                    alt.emitClient(player, 'mr-core:discord:close_chat');
                 }
             }
         }
@@ -86,7 +89,7 @@ registerChatCmd("spawnvehicle", (player, args) => {
                             }
                             pvehs.unshift(vehicle);
                             player.setMeta("vehicles", pvehs);
-                            alt.emitClient(player, 'mr-core:discord:sclose_chat');
+                            alt.emitClient(player, 'mr-core:discord:close_chat');
                         }
                     }
                 });
@@ -123,6 +126,7 @@ registerChatCmd("tp", (player, args) => {
                     if (!isNaN(posX) && !isNaN(posY) && !isNaN(posZ)){
                         let position = new alt.Vector3(posX, posY, posZ)
                         player.pos = position;
+                        alt.emitClient(player, 'mr-core:discord:close_chat');
                     }
                 }
             }
@@ -134,7 +138,7 @@ registerChatCmd("calladmin", (player, args) => {
         if (result[0] > 0){
             let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
             server.channels.cache.get(DISCORD_ADMINCALL_CHANNEL).send("<@&" + DISCORD_ADMIN_ID + "> <@&" + DISCORD_MOD_ID + "> <@&" + DISCORD_SUPPORTER_ID + ">\r\n" + _L("NEED_HELP", [result[1].username]));
-            set_message();
+            alt.emitAllClients('mr-core:discord:getmessages');
         }
     });
 });
@@ -167,7 +171,7 @@ alt.onClient('mr-core:discord:msgtodiscord', async (player, msg) => {
                     ColorId = server.roles.cache.get(DISCORD_ADMIN_ID).hexColor;
                 let Embed = new EmbedBuilder().setColor(ColorId).setAuthor({ name: result[1].username }).setDescription(msg);
                 channel.send({ embeds: [Embed] });
-                set_message();
+                alt.emitAllClients('mr-core:discord:getmessages');
             }
         }
     });
@@ -206,25 +210,22 @@ alt.onClient('mr-core:discord:loadmessages', async (player) => {
     msg.sort(sortFunction);
     alt.emitClient(player, "mr-core:discord:setmessages",  msg);
 });
-function set_message(){
-    alt.emitAllClients('mr-core:discord:getmessages');
-}
 //chat ende
 alt.on('playerDisconnect', async (player) => {
     let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
     let playerid = player.id;
-    let playername = getDiscordNameById(playerid);
+    let playername = getDiscordNameById(playerid, CurrentOnlineUsers);
     if (ANNOUNCE_LOG_IN_OUT=="true"){
         server.channels.cache.get(DISCORD_STATUS_CHANNEL).send(_L("LEAVED", [playername]));
     }
-    await mysql_callback("UPDATE users SET users.id = ? WHERE users.dsid = ?", [-1, getDiscordById(playerid)], function(result){
+    await mysql_callback("UPDATE users SET users.id = ? WHERE users.dsid = ?", [-1, getDiscordById(playerid, CurrentOnlineUsers)], function(result){
         if (result[0] > 0 && LOG_MYSQL=="true"){
             alt.log(_L("LOG_USER_LEAVED",[playername]));
         }
 
     });
-    if (getOnlineUsersById(playerid) > -1)
-        CurrentOnlineUsers.splice(getOnlineUsersById(playerid), 1);
+    if (getOnlineUsersById(playerid, CurrentOnlineUsers) > -1)
+        CurrentOnlineUsers.splice(getOnlineUsersById(playerid, CurrentOnlineUsers), 1);
 });
 alt.onClient('mr-core:discord:token', async (player, token) => {
     let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
@@ -274,11 +275,21 @@ alt.onClient('mr-core:discord:token', async (player, token) => {
     });
     CurrentOnlineUsers.push({id: player.id, dsid: request.data.id, username: request.data.username});
     if (ANNOUNCE_LOG_IN_OUT=="true"){
-        server.channels.cache.get(DISCORD_STATUS_CHANNEL).send(_L("JOINED", [getDiscordNameById(player.id)]));
+        server.channels.cache.get(DISCORD_STATUS_CHANNEL).send(_L("JOINED", [getDiscordNameById(player.id, CurrentOnlineUsers)]));
     }
-    alt.emitClient(player, "mr-core:discord:loggedin", "success");
+    alt.emitClient(player, "mr-core:discord:loggedin", { status: "success", clientID: request.data.id });
+    /*
+    wss://gateway.discord.gg/?v=6&encoding=json
+    let client = discordClient.user;
+    client.setPresence({
+        status: 'idle',
+        activity: {
+            name: 'mr-core',
+            type: 'PLAYING'
+        }
+    });*/
 });
-function refreshWhitelist(){
+alt.on('mr-core:discord:refreshWL', async () =>{
     let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
     server.members.fetch().then(members => {
         members.forEach(member =>{
@@ -295,10 +306,10 @@ function refreshWhitelist(){
                         WhiteList.splice(index, 1);
                         if (LOG_WHITELIST=="true")
                             alt.log(_L("LOG_WHITELIST_DEL",[member.user.username]));
-                        if (getIdByDiscord(member.user.id) != -1){
-                            getIdByDiscord(member.user.id).kick(_L("NO_WHITELISTED", [DISCORD_INVITE_LINK]));
-                            if (getOnlineUsersByDsid(member.user.id) != -1)
-                                WhiteList.splice(getOnlineUsersByDsid(member.user.id), 1);
+                        if (getIdByDiscord(member.user.id, CurrentOnlineUsers) != -1){
+                            getIdByDiscord(member.user.id, CurrentOnlineUsers).kick(_L("NO_WHITELISTED", [DISCORD_INVITE_LINK]));
+                            if (getOnlineUsersByDsid(member.user.id, CurrentOnlineUsers) != -1)
+                                WhiteList.splice(getOnlineUsersByDsid(member.user.id, CurrentOnlineUsers), 1);
                         }
                     }
                 }
@@ -338,46 +349,8 @@ function refreshWhitelist(){
             });
         });
     });
-}
-function getIdByDiscord(dsid){
-    let key;
-    for (key in CurrentOnlineUsers){
-        if (CurrentOnlineUsers[key].dsid == dsid)
-            return CurrentOnlineUsers[key].id;
-    }
-    return -1;
-}
-function getDiscordNameById(id){
-    let key;
-    for (key in CurrentOnlineUsers){
-        if (CurrentOnlineUsers[key].id == id)
-            return CurrentOnlineUsers[key].username;
-    }
-    return -1;
-}
-function getDiscordById(id){
-    let key;
-    for (key in CurrentOnlineUsers){
-        if (CurrentOnlineUsers[key].id == id)
-            return CurrentOnlineUsers[key].dsid;
-    }
-    return -1;
-}
-function getOnlineUsersByDsid(dsid){
-  for (let i=0; i< CurrentOnlineUsers.length; i++){
-    if (dsid == CurrentOnlineUsers[i].dsid)
-      return i;
-  }
-  return -1;
-}
-function getOnlineUsersById(id){
-  for (let i=0; i< CurrentOnlineUsers.length; i++){
-    if (id == CurrentOnlineUsers[i].id)
-      return i;
-  }
-  return -1;
-}
-WhitelistUpdate = alt.setInterval(refreshWhitelist, 300000);
+});
+UpdateWhiteList = alt.setInterval(refreshWhitelist, 3000);
 alt.on('resourceStart', async () => {
     discordClient.login(DISCORD_TOKEN).then(() => refreshWhitelist());
     mysql_callback('UPDATE users SET users.id = ? WHERE users.id > ?', [-1, -1], function(result2){
