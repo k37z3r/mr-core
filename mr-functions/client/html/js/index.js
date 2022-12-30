@@ -6,16 +6,16 @@ if (window.alt === undefined) {
         on: () => {},
     };
 }
-alt.on("openkeymapping", openkeymapping);
-alt.on("closekeymapping", closekeymapping);
-alt.on("setkeymapping", setkeymapping);
-alt.on('drawText', (id) => {
+alt.on("mr-core:functions:openkeymapping", openkeymapping);
+alt.on("mr-core:functions:closekeymapping", closekeymapping);
+alt.on("mr-core:functions:setkeymapping", setkeymapping);
+alt.on("mr-core:functions:drawText", (id) => {
     $("#" + id).animate({'left':'-20px'}, 500);
 });
-alt.on('hideText', (id) => {
+alt.on('mr-core:functions:hideText', (id) => {
     $("#" + id).animate({'left':'-1000px'}, 500);
 });
-alt.on('setText', (id, txt) => {
+alt.on('mr-core:functions:setText', (id, txt) => {
     let element = `<div style="position: absolute; left: -1000px;" id="${id}" class="position"><div class="txt header"><div class="font">${txt}</div></div></div>`;
     $("#container").append(element);
 });
