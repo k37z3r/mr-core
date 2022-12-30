@@ -7,7 +7,3 @@ alt.onClient('mr-core:hud:updateHUD', async (player) => {
         }
     });
 });
-alt.onClient('indicators',(player, indicators)=>{
-    alt.emitAllClients('vehicle:setVehicleIndicatorLights', indicators.vehicle, 1, indicators.left);
-    alt.emitAllClients('vehicle:setVehicleIndicatorLights', indicators.vehicle, 0, indicators.right);
-});
