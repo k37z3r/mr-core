@@ -272,6 +272,20 @@ export function close_chat(){
     }
     alt.toggleRmlControls(false);
 }
+export function close_phone(){
+    alt.toggleGameControls(true);
+    if (alt.isCursorVisible()){
+        alt.showCursor(false);
+    }
+    alt.toggleRmlControls(false);
+}
+export function open_phone(){
+    alt.toggleGameControls(false);
+    if (!alt.isCursorVisible()){
+        alt.showCursor(true);
+    }
+    alt.toggleRmlControls(true);
+}
 export async function tpToWaypoint() {
     res = false;
     const waypoint = native.getFirstBlipInfoId(8);
@@ -301,7 +315,9 @@ alt.on("keyup", (keycode) => {
                 view.emit("mr-core:functions:openkeymapping");
                 keymappingopened = true;
                 alt.toggleGameControls(false);
-                alt.showCursor(true);
+                if (!alt.isCursorVisible()){
+                    alt.showCursor(true);
+                }
                 alt.toggleRmlControls(true);
                 view.focus();
             }
@@ -309,7 +325,9 @@ alt.on("keyup", (keycode) => {
                 view.emit("mr-core:functions:closekeymapping");
                 keymappingopened = false;
                 alt.toggleGameControls(true);
-                alt.showCursor(false);
+                if (alt.isCursorVisible()){
+                    alt.showCursor(false);
+                }
                 alt.toggleRmlControls(false);
                 view.unfocus();
             }
@@ -319,7 +337,9 @@ alt.on("keyup", (keycode) => {
                 view.emit("mr-core:functions:closekeymapping");
                 keymappingopened = false;
                 alt.toggleGameControls(true);
-                alt.showCursor(false);
+                if (alt.isCursorVisible()){
+                    alt.showCursor(false);
+                }
                 alt.toggleRmlControls(false);
                 view.unfocus();
             }
