@@ -28,9 +28,6 @@ alt.on("keyup", (keycode) => {
         break;
     }
 });
-alt.onServer('vehicle:setVehicleIndicatorLights', (vehicle, turnSignal, toggle) => {
-    native.setVehicleIndicatorLights(vehicle.scriptID, turnSignal, toggle);
-});
 alt.onServer('mr-core:hud:set_hud', (results) => {
     let pisdead = native.isPlayerDead(alt.Player.local.scriptID);
     if ((results.hunger < 20 || results.thirsty < 20 || results.toilet > 80 || results.temperatur < 20 || results.temperatur > 80 || results.isdead == "yes" || pisdead) && !hudopened){
