@@ -11,9 +11,9 @@ var msg = "";
 var language = [];
 var tp_help = false;
 var sv_help = false;
-alt.on("closeChat", closeChat);
-alt.on("openChat", openChat);
-alt.on('set_help', (rule) => {
+alt.on("mr-core:discord:closeChat", closeChat);
+alt.on("mr-core:discord:openChat", openChat);
+alt.on('mr-core:discord:set_help', (rule) => {
     if (rule.can_tp == "yes")
         tp_help = true;
     else
@@ -65,7 +65,7 @@ $(document).ready(function(){
         }
     });
 });
-alt.on('setMessages', (messages) => {
+alt.on('mr-core:discord:setMessages', (messages) => {
     $('#messages').html("");
     let msg = "";
     for (let i = 0; i < messages.length; i++){
