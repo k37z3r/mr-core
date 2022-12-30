@@ -11,6 +11,7 @@ const neededValues = [
     'MYSQL_USER',
     'MYSQL_PASSWORD',
     'MYSQL_DATABASE',
+    'DISCORD_OWNER_ID',
     'DISCORD_APP_ID',
     'DISCORD_SERVER_ID',
     'DISCORD_TOKEN',
@@ -47,9 +48,57 @@ const con = mysql.createConnection({
     password: process.env.MYSQL_PASSWORD,
     database: process.env.MYSQL_DATABASE
 });
-
-
 let cmdHandlers = {};
+let UpdateValues;
+export const DISCORD_APP_ID = process.env.DISCORD_APP_ID;
+export const DISCORD_SERVER_ID = process.env.DISCORD_SERVER_ID;
+export const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
+export const DISCORD_CITIZEN_ID = process.env.DISCORD_CITIZEN_ID;
+export const DISCORD_ADMIN_ID = process.env.DISCORD_ADMIN_ID;
+export const DISCORD_MOD_ID = process.env.DISCORD_MOD_ID;
+export const DISCORD_SUPPORTER_ID = process.env.DISCORD_SUPPORTER_ID;
+export const DISCORD_STATUS_CHANNEL = process.env.DISCORD_STATUS_CHANNEL;
+export const DISCORD_INGAME_CHANNEL = process.env.DISCORD_INGAME_CHANNEL;
+export const DISCORD_INVITE_LINK = process.env.DISCORD_INVITE_LINK;
+export const DISCORD_PREFIX = process.env.DISCORD_PREFIX;
+export const WHITELIST = process.env.WHITELIST;
+export const LOG_WHITELIST = process.env.LOG_WHITELIST;
+export const LOG_MYSQL = process.env.LOG_MYSQL;
+export const ANNOUNCE_LOG_IN_OUT = process.env.ANNOUNCE_LOG_IN_OUT;
+export const DISCORD_ADMINCALL_CHANNEL = process.env.DISCORD_ADMINCALL_CHANNEL;
+export const MINAGE = process.env.MINAGE;
+export const SECRETPID = process.env.SECRETPID;
+export const HUNGER_RATE = process.env.HUNGER_RATE;
+export const THIRSTY_RATE = process.env.THIRSTY_RATE;
+export const UPDATE_INTERVAL = process.env.UPDATE_INTERVAL;
+export const DISCORD_OWNER_ID = process.env.DISCORD_OWNER_ID;
+function doUpdateValues(){
+    alt.Player.all.forEach((player) => {
+        mysql_callback('SELECT users.username AS UNAME, users.id AS UID, users.hunger AS HUNGER, users.thirsty AS THIRSTY, users.isdead AS ISDEAD FROM users WHERE users.id = ?', [player.id], function(result){
+            if (result[0] > 0){
+                if (result[1].ISDEAD == "no" && result[1].UID != -1){
+                    let newhunger, newisdead, newthirsty;
+                    if (result[1].HUNGER < HUNGER_RATE)
+                        newhunger = 0;
+                    else
+                        newhunger = result[1].HUNGER - HUNGER_RATE;
+                    if (result[1].THIRSTY < THIRSTY_RATE)
+                        newthirsty = 0;
+                    else
+                        newthirsty = result[1].THIRSTY - THIRSTY_RATE;
+                    if (newthirsty <= 0 || newhunger <= 0)
+                        newisdead = "yes";
+                    else
+                        newisdead = "no";
+                    mysql_callback('UPDATE users SET users.hunger = ?, users.thirsty = ?, users.isdead = ? WHERE id = ?', [newhunger, newthirsty, newisdead, result[1].UID], function(result2){
+                        if (result2[0] == 1 && LOG_MYSQL=="true")
+                        alt.log(_L("LOG_UPDATE_USER",[result[1].UNAME]));
+                    });
+                }
+            }
+        });
+    });
+}
 export function registerChatCmd(cmd, callback) {
     cmd = cmd.toLowerCase();
     if (cmdHandlers[cmd] !== undefined)
@@ -116,27 +165,6 @@ export async function mysql_select_while_cb(msql, values, cb){
         return cb([numrows, ((result[0]==undefined)?null:result)]);
     });
 }
-export const DISCORD_APP_ID = process.env.DISCORD_APP_ID;
-export const DISCORD_SERVER_ID = process.env.DISCORD_SERVER_ID;
-export const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
-export const DISCORD_CITIZEN_ID = process.env.DISCORD_CITIZEN_ID;
-export const DISCORD_ADMIN_ID = process.env.DISCORD_ADMIN_ID;
-export const DISCORD_MOD_ID = process.env.DISCORD_MOD_ID;
-export const DISCORD_SUPPORTER_ID = process.env.DISCORD_SUPPORTER_ID;
-export const DISCORD_STATUS_CHANNEL = process.env.DISCORD_STATUS_CHANNEL;
-export const DISCORD_INGAME_CHANNEL = process.env.DISCORD_INGAME_CHANNEL;
-export const DISCORD_INVITE_LINK = process.env.DISCORD_INVITE_LINK;
-export const DISCORD_PREFIX = process.env.DISCORD_PREFIX;
-export const WHITELIST = process.env.WHITELIST;
-export const LOG_WHITELIST = process.env.LOG_WHITELIST;
-export const LOG_MYSQL = process.env.LOG_MYSQL;
-export const ANNOUNCE_LOG_IN_OUT = process.env.ANNOUNCE_LOG_IN_OUT;
-export const DISCORD_ADMINCALL_CHANNEL = process.env.DISCORD_ADMINCALL_CHANNEL;
-export const MINAGE = process.env.MINAGE;
-export const SECRETPID = process.env.SECRETPID;
-export const HUNGER_RATE = process.env.HUNGER_RATE;
-export const THIRSTY_RATE = process.env.THIRSTY_RATE;
-export const UPDATE_INTERVAL = process.env.UPDATE_INTERVAL;
 export function getConfig(value){
     for(var key in _CONFIG) {
         if(key == value) {
@@ -176,12 +204,10 @@ export function get_dsid(disid, cb){
     });
 }
 export function sortFunction(a, b) {
-    if (a[0] === b[0]) {
+    if (a[0] === b[0])
         return 0;
-    }
-    else {
+    else
         return (a[0] < b[0]) ? -1 : 1;
-    }
 }
 export async function doPostRequest() {
     let wl = "no";
@@ -227,31 +253,45 @@ export async function doPostRequest() {
             alt.log(error.message);
     });
 }
-function doUpdateValues(){
-    alt.Player.all.forEach((player) => {
-        mysql_callback('SELECT users.username AS UNAME, users.id AS UID, users.hunger AS HUNGER, users.thirsty AS THIRSTY, users.isdead AS ISDEAD FROM users WHERE users.id = ?', [player.id], function(result){
-            if (result[0] > 0){
-                if (result[1].ISDEAD == "no" && result[1].UID != -1){
-                    let newhunger, newisdead, newthirsty;
-                    if (result[1].HUNGER < HUNGER_RATE)
-                        newhunger = 0;
-                    else
-                        newhunger = result[1].HUNGER - HUNGER_RATE;
-                    if (result[1].THIRSTY < THIRSTY_RATE)
-                        newthirsty = 0;
-                    else
-                        newthirsty = result[1].THIRSTY - THIRSTY_RATE;
-                    if (newthirsty <= 0 || newhunger <= 0)
-                        newisdead = "yes";
-                    else
-                        newisdead = "no";
-                    mysql_callback('UPDATE users SET users.hunger = ?, users.thirsty = ?, users.isdead = ? WHERE id = ?', [newhunger, newthirsty, newisdead, result[1].UID], function(result2){
-                        if (result2[0] == 1 && LOG_MYSQL=="true")
-                        alt.log(_L("LOG_UPDATE_USER",[result[1].UNAME]));
-                    });
-                }
-            }
-        });
-    });
+export function getIdByDiscord(dsid, CurrentOnlineUsers){
+    let key;
+    for (key in CurrentOnlineUsers){
+        if (CurrentOnlineUsers[key].dsid == dsid)
+            return CurrentOnlineUsers[key].id;
+    }
+    return -1;
+}
+export function getDiscordNameById(id, CurrentOnlineUsers){
+    let key;
+    for (key in CurrentOnlineUsers){
+        if (CurrentOnlineUsers[key].id == id)
+            return CurrentOnlineUsers[key].username;
+    }
+    return -1;
+}
+export function getDiscordById(id, CurrentOnlineUsers){
+    let key;
+    for (key in CurrentOnlineUsers){
+        if (CurrentOnlineUsers[key].id == id)
+            return CurrentOnlineUsers[key].dsid;
+    }
+    return -1;
+}
+export function getOnlineUsersByDsid(dsid, CurrentOnlineUsers){
+    for (let i=0; i< CurrentOnlineUsers.length; i++){
+        if (dsid == CurrentOnlineUsers[i].dsid)
+            return i;
+    }
+    return -1;
+}
+export function getOnlineUsersById(id, CurrentOnlineUsers){
+    for (let i=0; i< CurrentOnlineUsers.length; i++){
+        if (id == CurrentOnlineUsers[i].id)
+            return i;
+    }
+    return -1;
+}
+export function refreshWhitelist(){
+    alt.emit('mr-core:discord:refreshWL');
 }
 UpdateValues = alt.setInterval(doUpdateValues, UPDATE_INTERVAL*60*1000);
