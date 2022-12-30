@@ -1,25 +1,25 @@
 if (window.alt === undefined) {
-	window.alt = {
-		emit: () => {},
-		on: () => {},
-	};
+    window.alt = {
+        emit: () => {},
+        on: () => {},
+    };
 }
-alt.on("openhud", openHUD);
-alt.on("closehud", closeHUD);
-alt.on("set_hud", setHUD);
-alt.on("set_running", setrunning);
+alt.on("mr-core:hud:openhud", openHUD);
+alt.on("mr-core:hud:closehud", closeHUD);
+alt.on("mr-core:hud:set_hud", setHUD);
+alt.on("mr-core:hud:set_running", setrunning);
 let opened = false;
 function openHUD(){
-	if (!opened){
-		$(".container").animate({'top':'0px'}, 500);
-		opened = true;
-	}
+    if (!opened){
+        $(".container").animate({'top':'0px'}, 500);
+        opened = true;
+    }
 }
 function closeHUD(){
-	if (opened){
-		$(".container").animate({'top':'-100px'}, 500);
-		opened = false;
-	}
+    if (opened){
+        $(".container").animate({'top':'-100px'}, 500);
+        opened = false;
+    }
 }
 function setrunning(results){
     if (results.health<20)
