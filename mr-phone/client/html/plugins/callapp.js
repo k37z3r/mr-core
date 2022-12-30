@@ -56,7 +56,7 @@ $(document).ready(function(){
         $("#phone_number_input").html($("#phone_number_input").html() + '#');
     });
     $(document).on('click', '#phone_pickup', function(e){
-        alt.emitServer('mr-core:phone:callout', $("#phone_number_input").html());
+        alt.emitServer('mr-core:phone:phone:callout', $("#phone_number_input").html());
     /*if ($("#phone_number_input").html() == "*#06#")
         //eigene seriennummer zeigen
     if ($("#phone_number_input").html() == "*135#")
