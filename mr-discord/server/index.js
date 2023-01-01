@@ -289,7 +289,7 @@ alt.onClient('mr-core:discord:token', async (player, token) => {
         }
     });*/
 });
-alt.on('mr-core:discord:refreshWL', async () =>{
+alt.on('mr-core:discord:refreshWL', () =>{
     let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
     server.members.fetch().then(members => {
         members.forEach(member =>{
