@@ -289,9 +289,9 @@ alt.onClient('mr-core:discord:token', async (player, token) => {
         }
     });*/
 });
-alt.on('mr-core:discord:refreshWL', () =>{
+alt.on('mr-core:discord:refreshWL', async () =>{
     let server = discordClient.guilds.cache.get(DISCORD_SERVER_ID);
-    server.members.fetch().then(members => {
+    await server.members.fetch().then(members => {
         members.forEach(member =>{
             let isCitizen = member.roles.cache.has(DISCORD_CITIZEN_ID);
             let sf_citizen = (element) => element == member.user.id;
@@ -350,9 +350,9 @@ alt.on('mr-core:discord:refreshWL', () =>{
         });
     });
 });
-UpdateWhiteList = alt.setInterval(refreshWhitelist, 3000);
+UpdateWhiteList = alt.setInterval(refreshWhitelist, 300000);
 alt.on('resourceStart', async () => {
-    discordClient.login(DISCORD_TOKEN).then(() => refreshWhitelist());
+    await discordClient.login(DISCORD_TOKEN).then(() => refreshWhitelist());
     mysql_callback('UPDATE users SET users.id = ? WHERE users.id > ?', [-1, -1], function(result2){
         if (result2[0] == 1 && LOG_MYSQL=="true")
             alt.log(_L("LOG_RESET_LOGIN"));

@@ -14,14 +14,14 @@ alt.on('mr-core:hud:openhud', () =>{
 });
 alt.on("keyup", (keycode) => {
     switch (keycode) {
-        case 73: // Key: I
+        case getConfig("HUD_OPEN_CLOSE"):
             if (!hudopened && alt.gameControlsEnabled()){
                 view.emit("mr-core:hud:openhud");
                 alt.emit('mr-core:functions:hudopened', true);
                 hudopened = true;
             }
             else if (hudopened && alt.gameControlsEnabled()){
-                view.emit("closehud");
+                view.emit("mr-core:hud:closehud");
                 alt.emit('mr-core:functions:hudopened', false);
                 hudopened = false;
             }

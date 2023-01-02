@@ -83,12 +83,12 @@ $(document).ready(function(){
             applyCursorRippleEffect(e, '#phone_buttons');
         }
     });
-    alt.on("closePhone", closePhone);
-    alt.on("openPhone", openPhone);
-    alt.on('load_res_plugins', p_array => {
+    alt.on("mr-core:phone:closePhone", closePhone);
+    alt.on("mr-core:phone:openPhone", openPhone);
+    alt.on('mr-core:phone:load_res_plugins', p_array => {
         dynamicallyLoadScript(p_array);
     });
-    alt.on('load_language', p_array => {
+    alt.on('mr-core:phone:load_language', p_array => {
         language_array = p_array;
     });
 });

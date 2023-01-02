@@ -25,9 +25,11 @@ alt.on('mr-core:discord:set_help', (rule) => {
 });
 function openChat(lang_array){
     if (!opened){
-        $(".container").animate({'bottom':'0px'}, 500);
-        language = lang_array;
-        opened = true;
+        $(".container").animate({'bottom':'0px'}, 500, function() {   
+            language = lang_array;
+            opened = true;
+            $("#msg").focus();
+        });
     }
 }
 function closeChat(){

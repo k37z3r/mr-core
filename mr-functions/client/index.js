@@ -166,18 +166,86 @@ export function replace_buttons(btn1="", btn2=""){
 }
 export function format_txt(txt){
     let str = txt;
+    // alt:v Controls
+    // https://docs.altv.mp/gta/articles/references/controls.html#controls-1
+    str = str.replaceAll('[38-CK]', replace_buttons('E', 'LB'));
+
+    // js keyboard mapping
     str = str.replaceAll('[8]', replace_buttons('&larr;'));
+    str = str.replaceAll('[9]', replace_buttons('TAB'));
     str = str.replaceAll('[13]', replace_buttons('&crarr;'));
+    str = str.replaceAll('[16]', replace_buttons('&uArr;'));
+    str = str.replaceAll('[17]', replace_buttons('CTRL'));
+    str = str.replaceAll('[18]', replace_buttons('ALT'));
     str = str.replaceAll('[27]', replace_buttons('ESC'));
-    str = str.replaceAll('[38]', replace_buttons('E', 'RB'));
+    str = str.replaceAll('[32]', replace_buttons('SPACE'));
+    str = str.replaceAll('[48]', replace_buttons('0'));
+    str = str.replaceAll('[49]', replace_buttons('1'));
+    str = str.replaceAll('[50]', replace_buttons('2'));
+    str = str.replaceAll('[51]', replace_buttons('3'));
+    str = str.replaceAll('[52]', replace_buttons('4'));
+    str = str.replaceAll('[53]', replace_buttons('5'));
+    str = str.replaceAll('[54]', replace_buttons('6'));
+    str = str.replaceAll('[55]', replace_buttons('7'));
+    str = str.replaceAll('[56]', replace_buttons('8'));
+    str = str.replaceAll('[57]', replace_buttons('9'));
+    str = str.replaceAll('[65]', replace_buttons('A'));
+    str = str.replaceAll('[66]', replace_buttons('B'));
+    str = str.replaceAll('[67]', replace_buttons('C'));
+    str = str.replaceAll('[68]', replace_buttons('D'));
+    str = str.replaceAll('[69]', replace_buttons('E'));
+    str = str.replaceAll('[70]', replace_buttons('F'));
+    str = str.replaceAll('[71]', replace_buttons('G'));
+    str = str.replaceAll('[72]', replace_buttons('H'));
     str = str.replaceAll('[73]', replace_buttons('I'));
+    str = str.replaceAll('[74]', replace_buttons('J'));
+    str = str.replaceAll('[75]', replace_buttons('K'));
+    str = str.replaceAll('[76]', replace_buttons('L'));
     str = str.replaceAll('[77]', replace_buttons('M'));
+    str = str.replaceAll('[78]', replace_buttons('N'));
+    str = str.replaceAll('[79]', replace_buttons('O'));
+    str = str.replaceAll('[80]', replace_buttons('P'));
+    str = str.replaceAll('[81]', replace_buttons('Q'));
+    str = str.replaceAll('[82]', replace_buttons('R'));
+    str = str.replaceAll('[83]', replace_buttons('S'));
     str = str.replaceAll('[84]', replace_buttons('T'));
+    str = str.replaceAll('[85]', replace_buttons('U'));
+    str = str.replaceAll('[86]', replace_buttons('V'));
+    str = str.replaceAll('[87]', replace_buttons('W'));
+    str = str.replaceAll('[88]', replace_buttons('X'));
+    str = str.replaceAll('[89]', replace_buttons('Y'));
+    str = str.replaceAll('[90]', replace_buttons('Z'));
+    str = str.replaceAll('[96]', replace_buttons('NUM 0'));
+    str = str.replaceAll('[97]', replace_buttons('NUM 1'));
+    str = str.replaceAll('[98]', replace_buttons('NUM 2'));
+    str = str.replaceAll('[99]', replace_buttons('NUM 3'));
+    str = str.replaceAll('[100]', replace_buttons('NUM 4'));
+    str = str.replaceAll('[101]', replace_buttons('NUM 5'));
+    str = str.replaceAll('[102]', replace_buttons('NUM 6'));
+    str = str.replaceAll('[103]', replace_buttons('NUM 7'));
+    str = str.replaceAll('[104]', replace_buttons('NUM 8'));
+    str = str.replaceAll('[105]', replace_buttons('NUM 9'));
+    str = str.replaceAll('[106]', replace_buttons('NUM *'));
+    str = str.replaceAll('[107]', replace_buttons('NUM +'));
+    str = str.replaceAll('[109]', replace_buttons('NUM -'));
+    str = str.replaceAll('[110]', replace_buttons('NUM ,'));
+    str = str.replaceAll('[111]', replace_buttons('NUM /'));
+    str = str.replaceAll('[112]', replace_buttons('F1'));
+    str = str.replaceAll('[113]', replace_buttons('F2'));
+    str = str.replaceAll('[114]', replace_buttons('F3'));
+    str = str.replaceAll('[115]', replace_buttons('F4'));
+    str = str.replaceAll('[116]', replace_buttons('F5'));
+    str = str.replaceAll('[117]', replace_buttons('F6'));
+    str = str.replaceAll('[118]', replace_buttons('F7'));
     str = str.replaceAll('[119]', replace_buttons('F8'));
+    str = str.replaceAll('[120]', replace_buttons('F9'));
     str = str.replaceAll('[121]', replace_buttons('F10'));
+    str = str.replaceAll('[122]', replace_buttons('F11'));
+    str = str.replaceAll('[123]', replace_buttons('F12'));
     str = str.replaceAll('[188]', replace_buttons(','));
     str = str.replaceAll('[189]', replace_buttons('-'));
     str = str.replaceAll('[190]', replace_buttons('.'));
+
     return str;
 }
 export function create_help(){
@@ -303,6 +371,9 @@ export async function tpToWaypoint() {
         }
         alt.FocusData.clearFocus();
     }
+}
+export function doUpdateCarHud(){
+    alt.emit("mr-core:vehiclecontrol:doUpdateCarHud");
 }
 alt.on('mr-core:functions:hudopened', msg => {
     hudopened = msg;

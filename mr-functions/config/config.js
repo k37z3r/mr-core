@@ -22,16 +22,45 @@ export const _CONFIG = {
           {"button":"[121]", "description": "CLOSE_HELP"},
         ],
         "CAR_CONTROL":[
-          {"button":"[188]", "description": "LEFT_INDICATOR"},
-          {"button":"[189]", "description": "RIGHT_INDICATOR"},
-          {"button":"[190]", "description": "WARNING_LIGHTS"},
+          {"button":"[74]", "description": "LEFT_INDICATOR"},
+          {"button":"[76]", "description": "RIGHT_INDICATOR"},
+          {"button":"[75]", "description": "WARNING_LIGHTS"},
+          {"button":"[85]", "description": "ENGINE_ON_OFF"},
         ]
     },
 // HUD
     STATUS_INTERVAL: 5,    //    how often to check hud in seconds
+    HUD_OPEN_CLOSE: 73,
+// Vehiclecontrol
+    VEHICLECONTROL_LEFT_INDICATOR: 74,    // keyCode for left indicator (List: https://gta-spot.com/keycode.json)
+    VEHICLECONTROL_RIGHT_INDICATOR: 76,    // keyCode for rigth indicator (List: https://gta-spot.com/keycode.json)
+    VEHICLECONTROL_HAZARD: 75,    // keyCode for hazard (List: https://gta-spot.com/keycode.json)
+    VEHICLECONTROL_ENGINE_ON_OFF: 85,    // keyCode for engine on/off (List: https://gta-spot.com/keycode.json)
+    VEHICLECONTROL_SPEED: "kmh",    // kmh or mph
+    VEHICLECONTROL_COMPACTS_RPM: 5000,    // RPM for Compacts
+    VEHICLECONTROL_SEDANS_RPM: 7000,    // RPM for Sedans
+    VEHICLECONTROL_SUVS_RPM: 6500,    // RPM for SUVs
+    VEHICLECONTROL_COUPES_RPM: 9000,    // RPM for Coupes
+    VEHICLECONTROL_MUSCLE_RPM: 8500,    // RPM for Muscle
+    VEHICLECONTROL_SPORTSCLASSIC_RPM: 4500,    // RPM for Sportsclassic
+    VEHICLECONTROL_SPORTS_RPM: 12000,    // RPM for Sports
+    VEHICLECONTROL_SUPER_RPM: 18000,    // RPM for Super
+    VEHICLECONTROL_CAR_OFFROAD_RPM: 9500,    // RPM for Off-Road Car
+    VEHICLECONTROL_CAR_INDUSTRIAL_RPM: 1500,    // RPM for Industrial Car
+    VEHICLECONTROL_CAR_UTILITY_RPM: 1500,    // RPM for Utility Car
+    VEHICLECONTROL_VANS_RPM: 2500,    // RPM for Vans
+    VEHICLECONTROL_CAR_SERVICE_RPM: 2500,    // RPM for Service Car
+    VEHICLECONTROL_CAR_EMERGENCY_RPM: 2500,    // RPM for Emergency Car
+    VEHICLECONTROL_CAR_MILITARY_RPM: 2500,    // RPM for Military Car
+    VEHICLECONTROL_CAR_COMMERCIAL_RPM: 2500,    // RPM for Commercial Car
 // Phone
     PHONE_NUMBER_STARTING_0: true,
     PHONE_EMAIL_DOMAIN: ["mr-core.de","mr-core.com","mr-core.uk"],
+    PHONE_OPEN_BUTTON: 77,    // keyCode for open Phone (List: https://gta-spot.com/keycode.json)
+    PHONE_CLOSE_BUTTON: 27,    // keyCode for close Phone (List: https://gta-spot.com/keycode.json)
+// Discord-Chat
+    DISCORD_OPEN_CHAT: 84,    // keyCode for open Discord (List: https://gta-spot.com/keycode.json)
+    DISCORD_CLOSE_CHAT: 27,    // keyCode for close Phone (List: https://gta-spot.com/keycode.json)
 // IPL-Loader
     IPL_Blip_Loader: true,
     Load_Graffitis: true,    //    1861.28, 2402.11, 58.53    //    2697.32, 3162.18, 58.1    //    2119.12, 3058.21, 53.25
@@ -1017,12 +1046,12 @@ export const _CONFIG = {
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
     //                     Warehouse Setting begin                            //
     //˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅˅//
-	Load_Warehouse: true,    // 849.1047, -3000.209, -45.974354
-	Load_WarehouseStyle1: false,
-	Load_WarehouseStyle2: false,
-	Load_WarehouseStyle3: false,
-	Load_WarehouseStyle4: true,
-	Load_WarehouseStyle5: false,
+    Load_Warehouse: true,    // 849.1047, -3000.209, -45.974354
+    Load_WarehouseStyle1: false,
+    Load_WarehouseStyle2: false,
+    Load_WarehouseStyle3: false,
+    Load_WarehouseStyle4: true,
+    Load_WarehouseStyle5: false,
     //˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄˄//
     //                      Warehouse Setting end                             //
     //˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅˄˅//
